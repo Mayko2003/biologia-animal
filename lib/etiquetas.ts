@@ -86,7 +86,6 @@ export const VALOR_LABEL: Record<ValorCriterio, string> = {
   boca: 'Origina la boca (protostomía)',
   ano: 'Origina el ano (deuterostomía)',
   espiral: 'Espiral',
-  radial: 'Radial',
   'en-T': 'En T',
   otra: 'Otra',
 };
