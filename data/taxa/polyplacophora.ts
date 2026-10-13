@@ -45,6 +45,48 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [120, 122], cita: 'una sola gónada' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'El manto lleva espículas calcáreas y secreta las ocho placas dorsales.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Polyplacophora/', titulo: 'Polyplacophora - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Pie muscular fuerte que les permite adherirse firmemente a sustratos duros.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Polyplacophora/', titulo: 'Polyplacophora - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'De 6 a 88 pares de ctenidios bipectinados dispuestos en los pliegues del manto a cada lado del pie.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Polyplacophora/', titulo: 'Polyplacophora - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Corazón dentro de la cavidad pericárdica, como en el plan general de los moluscos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Un par de metanefridios comunicados con la cavidad pericárdica, como en el plan general de los moluscos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'El sistema nervioso y la configuración de corazón y gónadas se parecen a los de los aplacóforos.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Polyplacophora/', titulo: 'Polyplacophora - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'La cabeza está reducida y carece de ojos y tentáculos; las placas están perforadas por estetas con fotorreceptores.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Polyplacophora/', titulo: 'Polyplacophora - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [],
   reproduccion: [

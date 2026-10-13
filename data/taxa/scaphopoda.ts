@@ -51,6 +51,42 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [284, 284], cita: 'Dioicos, la fecundación es externa' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'El manto rodea el cuerpo y secreta la concha tubular abierta en ambos extremos.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scaphopoda/', titulo: 'Scaphopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Pie excavador con el que se entierran en sedimentos que van de lodos a gravas.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scaphopoda/', titulo: 'Scaphopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'No tienen corazón, branquias ni vasos: la circulación se da por senos simples de hemolinfa.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scaphopoda/', titulo: 'Scaphopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Tienen nefridios; los gametos salen al exterior a través del nefridio derecho.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scaphopoda/', titulo: 'Scaphopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Sistema nervioso ganglionar del plan general de los moluscos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Lóbulos cefálicos con tentáculos filiformes (captáculas) que capturan el alimento; podrían ser receptores táctiles.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scaphopoda/', titulo: 'Scaphopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

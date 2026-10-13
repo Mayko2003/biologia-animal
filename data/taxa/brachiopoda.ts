@@ -25,7 +25,23 @@ const taxon: Taxon = {
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [404, 406], cita: 'tapizada por el manto' }],
     },
   ],
-  embriologia: {},
+  embriologia: {
+    cavidad: {
+      valor: 'enterocelomado',
+      nota: 'Celomados; no siempre se forma el celoma por procesos de enterocelia.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Brachiopoda', titulo: 'Brachiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    blastoporo: {
+      valor: 'ano',
+      nota: 'Desarrollo típicamente deuteróstomo, pese a estar en Lophotrochozoa; los lofoforados fueron considerados deuterostomados clásicamente.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Brachiopoda', titulo: 'Brachiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://animaldiversity.org/accounts/Brachiopoda/', titulo: 'Brachiopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    segmentacion: {
+      valor: 'radial',
+      nota: 'Segmentación típicamente deuteróstoma.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Brachiopoda', titulo: 'Brachiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  },
   sistemas: {
     esqueleto: [
       {
@@ -49,6 +65,43 @@ const taxon: Taxon = {
       {
         texto: 'Los sexos están separados y la fecundación es externa.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [412, 412], cita: 'la fecundación es externa' }],
+      },
+    ],
+    tegumento: [
+      {
+        texto: 'Dos valvas (braquial y pedicular) secretadas por repliegues del manto, que son extensiones del metasoma.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Brachiopoda/', titulo: 'Brachiopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Músculos aductores cierran las valvas y abductores las abren; en los inarticulados la presión celómica ayuda a abrirlas.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Brachiopoda', titulo: 'Brachiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://animaldiversity.org/accounts/Brachiopoda/', titulo: 'Brachiopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Aparato circulatorio abierto, con un pequeño corazón suspendido en el metacele sobre el estómago.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Brachiopoda', titulo: 'Brachiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Tienen dos nefridios con un nefrostoma ciliado y un tubo que desemboca en un nefridioporo lateral.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Brachiopoda', titulo: 'Brachiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Sistema nervioso poco evolucionado: un par de ganglios, uno dorsal y otro ventral.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Brachiopoda', titulo: 'Brachiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Sin órganos sensoriales salvo excepciones: en una especie de Lingula se describe un par de estatocistos.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Brachiopoda/', titulo: 'Brachiopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
       },
     ],
   },
@@ -85,7 +138,13 @@ const taxon: Taxon = {
     },
   ],
   ejemplos: [],
-  notas: [],
+  notas: [
+    {
+      tipo: 'discrepancia',
+      texto: 'Los braquiópodos fueron considerados deuterostomados por su desarrollo (segmentación típicamente deuteróstoma, celoma por enterocelia); los datos moleculares los ubican en Lophotrochozoa.',
+      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [8, 8], cita: 'Brachiopoda y Chaetognatha. Caracteres generales' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Brachiopoda', titulo: 'Brachiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://animaldiversity.org/accounts/Brachiopoda/', titulo: 'Brachiopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+  ],
 };
 
 export default taxon;

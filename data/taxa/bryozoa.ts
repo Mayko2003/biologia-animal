@@ -32,6 +32,16 @@ const taxon: Taxon = {
       valor: 'radial',
       fuentes: [{ tipo: 'apunte', archivo: P, lineas: [17, 19], cita: 'radial (como en Ectoprocta)' }],
     },
+    cavidad: {
+      valor: 'enterocelomado',
+      nota: 'Celoma tripartito formado por enterocelia, como en otros lofoforados.',
+      fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Bryozoa', titulo: 'Bryozoa - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    blastoporo: {
+      valor: 'ano',
+      nota: 'Desarrollo de tipo deuterostomado: segmentación radial y celoma por enterocelia, pese a estar en Lophotrochozoa.',
+      fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Bryozoa', titulo: 'Bryozoa - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
   },
   sistemas: {
     digestivo: [
@@ -56,6 +66,45 @@ const taxon: Taxon = {
       {
         texto: 'Son monoicos.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [385, 385], cita: 'Son monoicos y el' }],
+      },
+    ],
+    tegumento: [
+      {
+        texto: 'Cada zoide consta de un cistidio (pared del cuerpo con su envoltura: zoecio quitinoso, calcificado o gelatinoso) y un polipídoo.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Bryozoa/', titulo: 'Bryozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'El cistidio secreta una envoltura (zoecio) quitinosa, calcificada o gelatinosa que sostiene a la colonia; hay especies incrustantes con exoesqueleto mineralizado.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Bryozoa/', titulo: 'Bryozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sin corazón ni vasos sanguíneos; los nutrientes se reparten entre zoides por el líquido celómico y los funículos.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Bryozoa', titulo: 'Bryozoa - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Sin nefridios ni otros órganos excretores; se cree que el amoníaco difunde a través de la pared del cuerpo y del lofóforo.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Bryozoa', titulo: 'Bryozoa - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Un anillo nervioso rodea la faringe con un ganglio a un lado; los nervios van a los tentáculos y, en colonias, coordinan a los zoides.',
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Bryozoa', titulo: 'Bryozoa - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Sin órganos sensoriales especializados, salvo un órgano similar a un estatocisto descrito en Monobryozoon.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Bryozoa', titulo: 'Bryozoa - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
       },
     ],
   },

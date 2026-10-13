@@ -90,6 +90,13 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [136, 139], cita: 'dos ovarios redondeados próximos' }],
       },
     ],
+    circulatorio: [
+      {
+        texto: 'Sin aparato circulatorio ni respiratorio; estas funciones se realizan por absorción a través de la pared del cuerpo.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Turbellaria/', titulo: 'Turbellaria - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [],
   reproduccion: [

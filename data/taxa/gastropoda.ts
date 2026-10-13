@@ -67,6 +67,30 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [183, 185], cita: 'son monoicos (hermafroditas) y' }],
       },
     ],
+    circulatorio: [
+      {
+        texto: 'Corazón dentro de la cavidad pericárdica, como en el plan general de los moluscos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Metanefridios comunicados con la cavidad pericárdica, como en el plan general de los moluscos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Cabeza bien desarrollada con ojos y 1-2 pares de tentáculos, más una concentración de tejido nervioso (ganglio).',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Gastropoda/', titulo: 'Gastropoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Pie muscular ventral característico para la reptación.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

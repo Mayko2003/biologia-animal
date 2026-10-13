@@ -40,7 +40,31 @@ const taxon: Taxon = {
       ],
     },
   ],
-  embriologia: {},
+  embriologia: {
+    capas: {
+      valor: 'triblastico',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Chaetognatha/', titulo: 'Chaetognatha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    simetria: {
+      valor: 'bilateral',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Chaetognatha/', titulo: 'Chaetognatha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    cavidad: {
+      valor: 'enterocelomado',
+      nota: 'El mesodermo y el celoma se forman por enterocelia, con arreglo tripartito (protocoel, mesocoel, metacoel).',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Chaetognatha/', titulo: 'Chaetognatha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    blastoporo: {
+      valor: 'ano',
+      nota: 'Desarrollo de tipo deuterostomado; fueron considerados deuterostomados por sus caracteres embrionarios.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Chaetognatha/', titulo: 'Chaetognatha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chaetognatha', titulo: 'Chaetognatha - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    segmentacion: {
+      valor: 'radial',
+      nota: 'Segmentación radial, holoblástica e igual, que da una celoblastula.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Chaetognatha/', titulo: 'Chaetognatha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+  },
   sistemas: {
     tegumento: [
       {
@@ -106,6 +130,25 @@ const taxon: Taxon = {
         ],
       },
     ],
+    esqueleto: [
+      {
+        texto: 'Sin esqueleto; la cutícula, la membrana basal, la pared del cuerpo y los celomas llenos de líquido le dan soporte.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Chaetognatha/', titulo: 'Chaetognatha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'La pared del cuerpo está formada por cuatro cuadrantes de músculos longitudinales dorsolaterales y ventrolaterales.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Chaetognatha/', titulo: 'Chaetognatha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Un par de ojos compuestos bajo la epidermis, sin lentes: sirven para recibir luz y orientar el cuerpo, no para formar imágenes.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Chaetognatha/', titulo: 'Chaetognatha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {
@@ -144,6 +187,11 @@ const taxon: Taxon = {
         { tipo: 'apunte', archivo: A, lineas: [425, 427], cita: 'PHYLUM QUETOGNATHOS También conocidos' },
         { tipo: 'apunte', archivo: E, lineas: [590, 592], cita: 'PHYLUM CHAETOGNATHA Son un' },
       ],
+    },
+    {
+      tipo: 'discrepancia',
+      texto: 'El apunte (TP7) los estudia entre los lofotrocozoos, pero su desarrollo es de tipo deuterostomado (segmentación radial, enterocelia); los análisis moleculares los ubican entre los protostomados, cerca de Gnathifera.',
+      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [425, 427], cita: 'También conocidos como gusanos flecha' }, { tipo: 'web', url: 'https://animaldiversity.org/accounts/Chaetognatha/', titulo: 'Chaetognatha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chaetognatha', titulo: 'Chaetognatha - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
     },
   ],
 };

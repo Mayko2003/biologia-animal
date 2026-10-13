@@ -65,6 +65,36 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [335, 342], cita: 'espermodáctilo (4° brazo alargado' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'El manto rodea el saco visceral y posee músculos potentes para la contracción de la cavidad paleal y la respiración.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Cephalopoda/', titulo: 'Cephalopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Corazón dentro de la cavidad pericárdica, como en el plan general de los moluscos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Metanefridios comunicados con la cavidad pericárdica, como en el plan general de los moluscos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Sistema nervioso muy desarrollado: tienen el cerebro más complejo de todos los invertebrados.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Cephalopoda/', titulo: 'Cephalopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Órganos sensoriales complejos; los ojos (salvo en Nautilus) son muy desarrollados y se parecen a los de vertebrados: córnea, lente, retina e iris.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Cephalopoda/', titulo: 'Cephalopoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

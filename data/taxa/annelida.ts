@@ -35,6 +35,10 @@ const taxon: Taxon = {
       valor: 'espiral',
       fuentes: [{ tipo: 'apunte', archivo: P, lineas: [17, 19], cita: 'espiral (Platyhelminthes, Annelida, Nemertea' }],
     },
+    cavidad: {
+      valor: 'esquizocelomado',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Annelida/', titulo: 'Annelida - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
   },
   sistemas: {
     tegumento: [
@@ -85,6 +89,18 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [51, 52], cita: 'Los sexos son unidos' }],
       },
     ],
+    esqueleto: [
+      {
+        texto: 'Esqueleto hidrostático: la presión del líquido celómico, dividido en metámeros, permite los movimientos peristálticos de la locomoción.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Annelida', titulo: 'Annelida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'La pared del cuerpo tiene una capa de músculos circulares externa y una de músculos longitudinales interna.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Annelida/', titulo: 'Annelida - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Annelida', titulo: 'Annelida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {
@@ -103,7 +119,12 @@ const taxon: Taxon = {
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [51, 53], cita: 'fase larvaria llamada trocósfera' }],
     },
   ],
-  bioecologia: [],
+  bioecologia: [
+      {
+        texto: 'Se encuentran en la mayoría de los ambientes húmedos, sobre todo en el mar, pero también en agua dulce; hay especies terrestres.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Annelida', titulo: 'Annelida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+  ],
   ejemplos: [],
   notas: [],
 };

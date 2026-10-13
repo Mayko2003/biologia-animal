@@ -64,6 +64,34 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [277, 279], cita: 'un grupo completo de órganos' }],
       },
     ],
+    esqueleto: [
+      {
+        texto: 'Sin esqueleto; el cuerpo es de tipo macizo.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Platyhelminthes', titulo: 'Platyhelminthes - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Sin aparato circulatorio ni respiratorio; estas funciones se realizan por absorción a través de la pared del cuerpo.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Platyhelminthes/', titulo: 'Platyhelminthes - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sin aparato circulatorio ni respiratorio; estas funciones se realizan por absorción a través de la pared del cuerpo.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Platyhelminthes/', titulo: 'Platyhelminthes - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Sin órganos de los sentidos en el adulto; el escólex solo sirve para anclarse al hospedador.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Cestoda/', titulo: 'Cestoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

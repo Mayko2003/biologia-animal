@@ -47,6 +47,55 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [286, 290], cita: 'Las sanguijuelas son hermafroditas' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'El tegumento exterior tiene un marcado anillamiento que no se corresponde con la metamerización interna.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hirudinea', titulo: 'Hirudinea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Sin estructuras esqueléticas; el celoma está reducido a canales.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hirudinea', titulo: 'Hirudinea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Cada metámero tiene una capa de músculo circular bajo la epidermis y un sistema de músculos longitudinales; poseen una capa muscular doble.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hirudinea', titulo: 'Hirudinea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    digestivo: [
+      {
+        texto: 'Ventosa anterior (cápula), mandíbula, faringe y buche — que puede almacenar sangre hasta cinco veces el tamaño del cuerpo — y luego el intestino.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hirudinea', titulo: 'Hirudinea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Respiran por la piel.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hirudinea', titulo: 'Hirudinea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Dos vasos principales conectados por un seno vascular y por vasos laterales.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hirudinea', titulo: 'Hirudinea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'La cabeza posee órganos sensoriales visuales, olfatorios y táctiles.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hirudinea', titulo: 'Hirudinea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'La cabeza posee formaciones nerviosas y órganos sensoriales (visuales, olfatorios, táctiles).',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hirudinea', titulo: 'Hirudinea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

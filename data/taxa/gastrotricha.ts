@@ -25,7 +25,18 @@ const taxon: Taxon = {
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [402, 404], cita: 'órganos adhesivos que sirven para' }],
     },
   ],
-  embriologia: {},
+  embriologia: {
+    cavidad: {
+      valor: 'pseudocelomado',
+      nota: 'Considerados pseudocelomados, aunque el pseudoceloma está reducido o ausente; algunas fuentes los describen como acelomados.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Gastrotricha', titulo: 'Gastrotricha - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://animaldiversity.org/accounts/Gastrotricha/', titulo: 'Gastrotricha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    segmentacion: {
+      valor: 'espiral',
+      nota: 'Segmentación holoblástica, aparentemente espiral.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Gastrotricha/', titulo: 'Gastrotricha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+  },
   sistemas: {
     muscular: [
       {
@@ -63,6 +74,33 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [437, 440], cita: 'Las formas marinas son hermafroditas' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Cuerpo cubierto por una cutícula de una o varias capas que puede formar espinas, escamas o placas; la epidermis ventral está ciliada (de ahí el nombre de «gusanos de vientre velludo»).',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Gastrotricha/', titulo: 'Gastrotricha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Sin estructuras esqueléticas; la cutícula y sus placas dan protección.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Gastrotricha/', titulo: 'Gastrotricha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Sin órganos respiratorios; el intercambio gaseoso se produce por difusión pasiva a través de la pared del cuerpo.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Gastrotricha/', titulo: 'Gastrotricha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sin aparato circulatorio; la circulación se produce por difusión pasiva a través de la pared del cuerpo.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Gastrotricha/', titulo: 'Gastrotricha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [],
   reproduccion: [
@@ -82,7 +120,13 @@ const taxon: Taxon = {
     },
   ],
   ejemplos: [],
-  notas: [],
+  notas: [
+    {
+      tipo: 'discrepancia',
+      texto: 'El apunte incluye a los gastrotricos entre los lofotrocozoos; los análisis moleculares los agrupaban con platelmintos y gnatíferos en Platyzoa, interpretación hoy atribuida a la atracción de ramas largas.',
+      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [26, 28], cita: 'gastrotricos también pertenecen a este clado' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Platyhelminthes', titulo: 'Platyhelminthes - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
 };
 
 export default taxon;

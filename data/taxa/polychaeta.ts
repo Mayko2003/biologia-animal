@@ -49,6 +49,49 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [257, 257], cita: 'Los sexos son separados' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'La epidermis tiene numerosas glándulas productoras de moco y células neuroepiteliales, y está recubierta por una cutícula fina y transparente.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Polychaeta', titulo: 'Polychaeta - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Sin estructuras esqueléticas; el celoma presurizado funciona como esqueleto hidrostático para la locomoción.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Annelida', titulo: 'Annelida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Las quetas están conectadas por una serie de músculos con el mesenterio ventral, que permite su movimiento y la locomoción del animal.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Polychaeta', titulo: 'Polychaeta - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sistema vascular cerrado; en las familias con el sistema vascular reducido, el líquido celómico realiza las funciones respiratorias.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Polychaeta', titulo: 'Polychaeta - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Metanefridios, un par por metámero: el líquido celómico atraviesa el nefrostoma ciliado y sufre reabsorción selectiva en el conducto.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Annelida', titulo: 'Annelida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Polychaeta', titulo: 'Polychaeta - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'El sistema nervioso sigue el plan básico anélido: cerebro dorsal y cordón nervioso ventral con ganglios por metámero.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Polychaeta', titulo: 'Polychaeta - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    digestivo: [
+      {
+        texto: 'La cavidad bucal y la faringe forman una trompa o probóscide musculosa, a veces evaginable, con papilas y mandíbulas quitinosas; sigue esófago, estómago e intestino con células cloragógenas.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Polychaeta', titulo: 'Polychaeta - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

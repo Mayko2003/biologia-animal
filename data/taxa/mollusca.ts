@@ -35,6 +35,11 @@ const taxon: Taxon = {
       valor: 'espiral',
       fuentes: [{ tipo: 'apunte', archivo: P, lineas: [17, 19], cita: 'espiral (Platyhelminthes, Annelida, Nemertea' }],
     },
+    cavidad: {
+      valor: 'esquizocelomado',
+      nota: 'Celomados, pero el celoma queda reducido en el adulto a vestigios alrededor de nefridios, gónadas, corazón e intestino.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
   },
   sistemas: {
     tegumento: [
@@ -95,6 +100,12 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [82, 84], cita: 'los nefridios actúan como gonoductos' }],
       },
     ],
+    muscular: [
+      {
+        texto: 'El cuerpo se divide en cabeza, masa visceral y un pie muscular característico; la rádula (cuando existe) está provista de potentes músculos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {
@@ -122,7 +133,12 @@ const taxon: Taxon = {
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [86, 88], cita: 'la trocósfera y la veliger' }],
     },
   ],
-  bioecologia: [],
+  bioecologia: [
+      {
+        texto: 'La gástrula se desarrolla en una larva trocófora planctónica, que en la mayoría pasa a larva velígera antes de la metamorfosis al hábito bentónico del adulto.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+  ],
   ejemplos: [],
   notas: [],
 };

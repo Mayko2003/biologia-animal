@@ -34,6 +34,11 @@ const taxon: Taxon = {
       valor: 'en-T',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [17, 18], cita: 'segmentación del huevo en T' }],
     },
+    cavidad: {
+      valor: 'pseudocelomado',
+      nota: 'Blastoceloma (pseudoceloma): los nutrientes y gases se difunden a través del líquido blastocelómico.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Rotifera/', titulo: 'Rotifera - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
   },
   sistemas: {
     tegumento: [
@@ -78,6 +83,27 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [499, 503], cita: 'los individuos son dioicos' }],
       },
     ],
+    esqueleto: [
+      {
+        texto: 'Sin estructuras esqueléticas internas; la cutícula del tronco puede engrosarse formando una lóriga.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Rotifera/', titulo: 'Rotifera - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Sin órganos respiratorios; los gases se difunden hacia el exterior a través de los tejidos y del líquido blastocelómico.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Rotifera/', titulo: 'Rotifera - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sin aparato circulatorio; nutrientes y desechos se difunden directamente por los tejidos y el blastoceloma.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Rotifera/', titulo: 'Rotifera - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [],
   reproduccion: [
@@ -93,7 +119,13 @@ const taxon: Taxon = {
     },
   ],
   ejemplos: [],
-  notas: [],
+  notas: [
+    {
+      tipo: 'discrepancia',
+      texto: 'El apunte los trata en el contexto de los lofotrocozoos; la filogenética molecular ubica a los rotíferos (con los acantocéfalos, clado Syndermata) como grupo hermano de Gnathostomulida, formando el clado Gnathifera.',
+      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [23, 27], cita: 'Los lofotrocozoos (Lophotrochozoa sensu stricto) son' }, { tipo: 'web', url: 'https://animaldiversity.org/accounts/Rotifera/', titulo: 'Rotifera - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+  ],
 };
 
 export default taxon;

@@ -83,6 +83,19 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [139, 146], cita: 'dos pares de diminutos testículos' }],
       },
     ],
+    esqueleto: [
+      {
+        texto: 'Sin estructuras esqueléticas; el celoma presurizado funciona como esqueleto hidrostático (los músculos longitudinales están reforzados por laminillas de colágeno).',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Annelida', titulo: 'Annelida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Capas de músculos circulares (externa) y longitudinales (interna); los músculos longitudinales están reforzados por laminillas de colágeno.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Annelida', titulo: 'Annelida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

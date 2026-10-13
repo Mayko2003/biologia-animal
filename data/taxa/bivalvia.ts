@@ -65,6 +65,36 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [221, 221], cita: 'Los sexos son separados' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'El manto secreta las dos valvas de la concha; en el borde del manto puede haber tentáculos sensoriales y fotorreceptores.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Bivalvia/', titulo: 'Bivalvia - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Corazón dentro de la cavidad pericárdica, como en el plan general de los moluscos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Metanefridios comunicados con la cavidad pericárdica, como en el plan general de los moluscos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Sistema nervioso ganglionar, como en el plan general de los moluscos; la cabeza está reducida.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Mollusca', titulo: 'Mollusca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Las únicas estructuras externas son los palpos labiales; en algunos grupos hay tentáculos sensoriales y fotorreceptores en el borde del manto.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Bivalvia/', titulo: 'Bivalvia - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {
