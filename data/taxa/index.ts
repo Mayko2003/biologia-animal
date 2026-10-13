@@ -88,6 +88,10 @@ import selachii from './selachii';
 import holocephali from './holocephali';
 import actinopterygii from './actinopterygii';
 import sarcopterygii from './sarcopterygii';
+import amphibia from './amphibia';
+import anura from './anura';
+import caudata from './caudata';
+import gymnophiona from './gymnophiona';
 
 export const TAXA: readonly Taxon[] = [
   animalia,
@@ -179,4 +183,8 @@ export const TAXA: readonly Taxon[] = [
   holocephali,
   actinopterygii,
   sarcopterygii,
+  amphibia,
+  anura,
+  caudata,
+  gymnophiona,
 ];

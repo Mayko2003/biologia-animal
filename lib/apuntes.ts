@@ -14,6 +14,7 @@ export const APUNTES = {
   'equidodermos.md': { tp: 12, titulo: 'Equinodermos y Hemicordados' },
   'chordata.md': { tp: 13, titulo: 'Phylum Chordata' },
   'gnatostomatha.md': { tp: 14, titulo: 'Osteichthyes y Chondrichthyes' },
+  'anfibios, reptiles.md': { tp: 15, titulo: 'Anfibios y Reptiles' },
 } as const satisfies Record<string, InfoApunte>;
 
 export type ArchivoApunte = keyof typeof APUNTES;
