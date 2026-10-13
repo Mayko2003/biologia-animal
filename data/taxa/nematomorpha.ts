@@ -12,11 +12,11 @@ const taxon: Taxon = {
   resumen: [
     {
       texto: 'Animales semejantes a nematodos; se conocen aproximadamente unas 320 especies. Los adultos son gusanos largos conocidos vulgarmente como gusanos pelo o crines de caballo.',
-      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [189, 196], cita: 'semejantes a nematodos' }],
+      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [189, 196], cita: 'pelo o crines de caballo' }],
     },
     {
       texto: 'Los adultos son de vida libre y corta, pero los juveniles parasitan a los artrópodos (saltamontes) y rara vez al hombre. Los gordioideos viven en aguas dulces y suelos húmedos; Nectonema es pelágica en aguas marinas.',
-      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [198, 203], cita: 'pelo o crines de caballo' }],
+      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [198, 203], cita: 'vida libre y corta' }],
     },
   ],
   morfologiaExterna: [
