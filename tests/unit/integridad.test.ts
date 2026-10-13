@@ -1,42 +1,15 @@
-import { readFileSync } from 'node:fs';
-import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { TAXA } from '@/data/taxa';
-import { dominioPermitido, type ArchivoApunte } from '@/lib/apuntes';
 import { NIVEL_ORDEN } from '@/lib/etiquetas';
 import { recorrerItems } from '@/lib/recorrer';
-import { normalizarEspacios } from '@/lib/texto';
 import { VALORES_CRITERIO, type CriterioId, type FuenteApunte, type Taxon } from '@/lib/types';
-
-const cacheLineas = new Map<ArchivoApunte, string[]>();
-function lineasDe(archivo: ArchivoApunte): string[] {
-  let l = cacheLineas.get(archivo);
-  if (!l) {
-    l = readFileSync(path.join(process.cwd(), 'animal-data', archivo), 'utf8').split('\n');
-    cacheLineas.set(archivo, l);
-  }
-  return l;
-}
-
-function verificarCita(f: FuenteApunte): boolean {
-  const lineas = lineasDe(f.archivo);
-  const [ini, fin] = f.lineas;
-  if (ini < 1 || fin > lineas.length || ini > fin) return false;
-  const trecho = normalizarEspacios(lineas.slice(ini - 1, fin).join(' '));
-  return trecho.includes(normalizarEspacios(f.cita));
-}
+import { erroresDeFuente, verificarCita } from './verificar-fuentes';
 
 function id(t: Taxon, seccion: string, texto: string) {
   return `${t.slug} · ${seccion} · "${texto.slice(0, 60)}"`;
 }
 
 const items = TAXA.flatMap((t) => recorrerItems(t).map((i) => ({ t, i })));
-const fuentesApunte = items.flatMap(({ t, i }) =>
-  i.fuentes.filter((f) => f.tipo === 'apunte').map((f) => ({ t, i, f: f as FuenteApunte })),
-);
-const fuentesWeb = items.flatMap(({ t, i }) =>
-  i.fuentes.filter((f) => f.tipo === 'web').map((f) => ({ t, i, f })),
-);
 
 describe('integridad de datos', () => {
   it('slugs únicos con formato válido', () => {
@@ -110,23 +83,11 @@ describe('integridad de datos', () => {
     }
   });
 
-  it('fuentes de apunte: rango válido y cita presente', () => {
-    for (const { t, i, f } of fuentesApunte) {
-      const lineas = lineasDe(f.archivo);
-      const [ini, fin] = f.lineas;
-      expect(ini >= 1 && ini <= fin && fin <= lineas.length && fin - ini <= 120, id(t, i.seccion, i.texto)).toBe(true);
-      const palabras = f.cita.trim().split(/\s+/).length;
-      expect(palabras >= 3 && palabras <= 25, `${id(t, i.seccion, i.texto)} — cita de ${palabras} palabras`).toBe(true);
-      expect(verificarCita(f), `${id(t, i.seccion, i.texto)} — cita ausente en ${f.archivo} L${ini}–${fin}: "${f.cita}"`).toBe(true);
-    }
-  });
-
-  it('fuentes web: https, dominio permitido, metadatos completos', () => {
-    for (const { t, i, f } of fuentesWeb) {
-      expect(f.url.startsWith('https://'), id(t, i.seccion, i.texto)).toBe(true);
-      expect(dominioPermitido(f.url), `${id(t, i.seccion, i.texto)} — ${f.url}`).toBe(true);
-      expect(f.titulo.length > 0 && f.sitio.length > 0, id(t, i.seccion, i.texto)).toBe(true);
-      expect(f.consultado, id(t, i.seccion, i.texto)).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  it('todas las fuentes son válidas', () => {
+    for (const { t, i } of items) {
+      for (const f of i.fuentes) {
+        expect(erroresDeFuente(f), id(t, i.seccion, i.texto)).toEqual([]);
+      }
     }
   });
 
