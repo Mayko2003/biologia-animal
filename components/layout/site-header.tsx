@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { CajaBusqueda } from '@/components/busqueda/caja-busqueda';
 
 const enlaces = [
   { href: '/', label: 'Inicio' },
@@ -26,6 +27,7 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+        <CajaBusqueda />
       </div>
     </header>
   );

@@ -8,7 +8,7 @@ import {
 } from '@/lib/busqueda';
 import { taxonFalso } from './fixtures';
 
-const fuenteFalsa = { tipo: 'apunte' as const, archivo: 'x.md' as const, lineas: [1, 1] as [number, number], cita: 'abc' };
+const fuenteFalsa = { tipo: 'apunte' as const, archivo: 'annelidos.md' as const, lineas: [1, 1] as [number, number], cita: 'abc' };
 
 const taxonAnnelida = taxonFalso({
   slug: 'annelida',
