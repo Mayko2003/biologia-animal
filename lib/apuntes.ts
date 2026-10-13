@@ -40,3 +40,7 @@ export function etiquetaFuente(f: Fuente): string {
   }
   return f.sitio;
 }
+
+export function tieneApunte(fuentes: Fuente[]): boolean {
+  return fuentes.some((f) => f.tipo === 'apunte');
+}

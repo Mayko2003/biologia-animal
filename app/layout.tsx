@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { FiltroFuentesProvider } from "@/components/fuentes/filtro-fuentes";
 import { SiteHeader } from "@/components/layout/site-header";
 import "./globals.css";
 
@@ -25,8 +26,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <SiteHeader />
-        <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-8">{children}</main>
+        <FiltroFuentesProvider>
+          <SiteHeader />
+          <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-8">{children}</main>
+        </FiltroFuentesProvider>
       </body>
     </html>
   );
