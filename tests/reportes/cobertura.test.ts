@@ -16,7 +16,7 @@ describe('reporte de cobertura', () => {
     const filas = taxa.map((t) => {
       const f = calcularCobertura(t);
       return {
-        slug: f.slug, nivel: f.nivel, res: f.resumen, morfo: f.morfo, emb: f.emb,
+        slug: f.slug, nivel: f.nivel, resu: f.resumen, morfo: f.morfo, emb: f.emb,
         ...Object.fromEntries(SISTEMAS.map((s) => [CORTOS[s], f.sistemas[s]])),
         esp: f.especiales, repro: f.repro, bio: f.bioeco, ej: f.ejemplos, notas: f.notas,
       };
