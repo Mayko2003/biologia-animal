@@ -139,7 +139,7 @@ plan/                      # este plan
 | E5 Web | T41–T46 | Completar huecos con fuentes externas (T46 opcional: tetrápodos) |
 | E6 Cierre | T47–T49 | E2E, pulido, verificación final |
 | E7 TP15 | T50–T51 | Contenido del apunte de anfibios y reptiles (TP15) |
-| E8 Móvil | T52–T58 | Diseño móvil: tab bar, bottom sheet, vistas lista, comparador apilado |
+| E8 Móvil | T52–T59 | Diseño móvil: tab bar, bottom sheet, vistas lista, comparador apilado |
 
 Lista completa:
 
@@ -201,6 +201,7 @@ Lista completa:
 - [T56](tickets/T56-ficha-movil.md) Ficha de grupo: índice móvil sticky y cabecera compacta
 - [T57](tickets/T57-comparador-movil.md) Comparador: tarjetas apiladas en móvil
 - [T58](tickets/T58-pulido-movil.md) Pulido móvil: targets táctiles, popover de fuentes y clases compartidas
+- [T59](tickets/T59-ficha-movil-contenido.md) Ficha de grupo/clase: contenido adaptado a móvil
 
 ## 7. Guías compartidas
 
