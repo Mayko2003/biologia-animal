@@ -4,6 +4,7 @@ import { tieneApunte } from '@/lib/apuntes';
 import type { Dato } from '@/lib/types';
 import { FuenteBadge } from '@/components/fuentes/fuente-badge';
 import { useFiltroFuentes } from '@/components/fuentes/filtro-fuentes';
+import { IconoAlerta } from '@/components/ui/iconos-sistemas';
 
 export function DatoList({ datos, vacio = 'Sin datos en los apuntes ni en las fuentes consultadas.' }: { datos: Dato[]; vacio?: string }) {
   const { modo } = useFiltroFuentes();
@@ -16,11 +17,15 @@ export function DatoList({ datos, vacio = 'Sin datos en los apuntes ni en las fu
     return <p className="text-sm text-zinc-500 italic dark:text-zinc-400">Solo hay datos de fuentes externas (ocultos por el filtro).</p>;
   }
   return (
-    <ul className="space-y-2">
+    <ul className="grid gap-2">
       {visibles.map((d, i) => (
-        <li key={i} className="text-sm leading-relaxed">
+        <li
+          key={i}
+          className="rounded-lg border border-zinc-200 border-l-2 border-l-emerald-500/70 bg-white p-3 text-sm leading-relaxed transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:border-l-emerald-500/60 dark:bg-zinc-900"
+        >
           {d.ausente && (
-            <span className="mr-1 inline-flex items-center rounded px-1.5 py-0.5 text-[11px] font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-200">
+            <span className="mr-1 inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-200">
+              <IconoAlerta className="h-3 w-3" />
               Ausente
             </span>
           )}

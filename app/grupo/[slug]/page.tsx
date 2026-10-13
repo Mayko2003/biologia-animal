@@ -1,18 +1,17 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { FiltroFuentesToggle } from '@/components/fuentes/filtro-fuentes';
 import { Breadcrumb } from '@/components/taxon/breadcrumb';
 import { DatoList } from '@/components/taxon/dato-list';
 import { EjemploList } from '@/components/taxon/ejemplo-list';
-import { EmbriologiaTabla } from '@/components/taxon/embriologia-tabla';
+import { EmbriologiaSpecs } from '@/components/taxon/embriologia-specs';
+import { FichaHero } from '@/components/taxon/ficha-hero';
 import { IndiceSecciones, IndiceSeccionesMovil } from '@/components/taxon/indice-secciones';
 import { NotaList } from '@/components/taxon/nota-list';
-import { RankBadge } from '@/components/taxon/rank-badge';
 import { SistemasTabs } from '@/components/taxon/sistemas-tabs';
 import { Subgrupos, tituloSubgrupos } from '@/components/taxon/subgrupos';
-import { BOTON } from '@/components/ui/clases';
+import { Reveal } from '@/components/ui/reveal';
 import { Seccion } from '@/components/ui/seccion';
 import { esGrupoSuperior } from '@/lib/arbol';
 import {
@@ -23,6 +22,7 @@ import {
   getTaxon,
   todos,
 } from '@/lib/taxa';
+import { SISTEMAS } from '@/lib/types';
 
 export function generateStaticParams() {
   return todos.map((t) => ({ slug: t.slug }));
@@ -59,6 +59,19 @@ async function Ficha({ params }: { params: PageProps<'/grupo/[slug]'>['params'] 
   const tieneSubgrupos = arbol.hijos.length > 0;
   const tieneEmbriologia = Object.keys(embriologia).length > 0;
 
+  const stats = {
+    datos:
+      taxon.resumen.length +
+      taxon.morfologiaExterna.length +
+      taxon.reproduccion.length +
+      taxon.bioecologia.length +
+      taxon.estructurasEspeciales.reduce((n, e) => n + e.datos.length, 0) +
+      Object.values(taxon.sistemas).reduce((n, d) => n + (d?.length ?? 0), 0),
+    sistemasConDatos: SISTEMAS.filter((s) => (taxon.sistemas[s]?.length ?? 0) > 0).length,
+    sistemasTotal: SISTEMAS.length,
+    ejemplos: taxon.ejemplos.length,
+  };
+
   const secciones: { id: string; titulo: string; contenido: React.ReactNode }[] = [];
   if (tieneSubgrupos) {
     secciones.push({
@@ -74,7 +87,7 @@ async function Ficha({ params }: { params: PageProps<'/grupo/[slug]'>['params'] 
     secciones.push({
       id: 'seccion-embriologia',
       titulo: 'Desarrollo embrionario',
-      contenido: <EmbriologiaTabla embriologia={embriologia} nombres={nombres} />,
+      contenido: <EmbriologiaSpecs embriologia={embriologia} nombres={nombres} />,
     });
   }
   if (!superior) {
@@ -97,35 +110,29 @@ async function Ficha({ params }: { params: PageProps<'/grupo/[slug]'>['params'] 
   return (
     <div className="grid gap-10 lg:grid-cols-[1fr_220px]">
       <div className="min-w-0 space-y-8">
-        <header className="space-y-3">
+        <div className="space-y-3">
           <Breadcrumb ruta={ruta} />
-          <div className="flex flex-wrap items-center gap-2">
-            <RankBadge nivel={taxon.nivel} />
-            <h1 className="text-2xl font-bold sm:text-3xl">{taxon.nombre}</h1>
-            {taxon.externo && (
-              <span className="rounded px-2 py-0.5 text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">
-                Grupo no incluido en los apuntes
-              </span>
-            )}
-          </div>
-          {taxon.nombreComun && <p className="text-lg text-zinc-500 dark:text-zinc-400">{taxon.nombreComun}</p>}
-          {taxon.sinonimos && taxon.sinonimos.length > 0 && (
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">También: {taxon.sinonimos.join(', ')}</p>
-          )}
-          <div className="flex flex-wrap items-center gap-2 pt-1">
-            <Link href={`/arbol?sel=${slug}`} className={BOTON}>Ver en el árbol</Link>
-            <Link href={`/mapa?sel=${selMapa}`} className={BOTON}>Ver en el mapa</Link>
-            <Link href={`/comparar?a=${slug}`} className={BOTON}>Comparar con…</Link>
-            <span className="w-full sm:w-auto sm:ml-auto"><FiltroFuentesToggle /></span>
-          </div>
-        </header>
+          <FichaHero
+            nivel={taxon.nivel}
+            nombre={taxon.nombre}
+            nombreComun={taxon.nombreComun}
+            sinonimos={taxon.sinonimos}
+            externo={taxon.externo}
+            slug={slug}
+            selMapa={selMapa}
+            stats={stats}
+            acciones={<FiltroFuentesToggle />}
+          />
+        </div>
 
         <IndiceSeccionesMovil secciones={secciones.map((s) => ({ id: s.id, titulo: s.titulo }))} />
 
         {secciones.map((s) => (
-          <Seccion key={s.id} id={s.id} titulo={s.titulo}>
-            {s.contenido}
-          </Seccion>
+          <Reveal key={s.id}>
+            <Seccion id={s.id} titulo={s.titulo}>
+              {s.contenido}
+            </Seccion>
+          </Reveal>
         ))}
       </div>
 

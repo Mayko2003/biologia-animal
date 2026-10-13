@@ -12,6 +12,34 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  --animate-fade-up: fade-up 0.4s ease-out both;
+  --animate-breathe: breathe 7s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes breathe {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.45;
+    }
+    50% {
+      transform: scale(1.07);
+      opacity: 0.8;
+    }
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

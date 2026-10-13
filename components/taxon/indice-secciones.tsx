@@ -32,17 +32,17 @@ export function IndiceSecciones({ secciones }: { secciones: SeccionRef[] }) {
   return (
     <nav aria-label="Secciones de la ficha" className="sticky top-20 hidden lg:block">
       <p className="text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">En esta ficha</p>
-      <ul className="mt-2 space-y-1.5 text-sm">
+      <ul className="mt-2 space-y-1.5 border-l border-zinc-200 text-sm dark:border-zinc-800">
         {secciones.map((s) => (
           <li key={s.id}>
             <a
               href={`#${s.id}`}
               aria-current={activa === s.id ? 'true' : undefined}
-              className={
+              className={`-ml-px inline-block border-l-2 py-0.5 pl-3 transition-colors ${
                 activa === s.id
-                  ? 'font-medium text-emerald-700 dark:text-emerald-400'
-                  : 'text-zinc-600 hover:text-emerald-700 hover:underline dark:text-zinc-300 dark:hover:text-emerald-400'
-              }
+                  ? 'border-emerald-500 font-medium text-emerald-700 dark:text-emerald-400'
+                  : 'border-transparent text-zinc-600 hover:border-emerald-300 hover:text-emerald-700 dark:text-zinc-300 dark:hover:border-emerald-700 dark:hover:text-emerald-400'
+              }`}
             >
               {s.titulo}
             </a>
@@ -80,9 +80,9 @@ export function IndiceSeccionesMovil({ secciones }: { secciones: SeccionRef[] })
             <a
               href={`#${s.id}`}
               aria-current={activa === s.id ? 'true' : undefined}
-              className={`inline-flex min-h-[40px] items-center rounded-md px-3 py-1.5 ${
+              className={`relative inline-flex min-h-[40px] items-center rounded-md px-3 py-1.5 transition-colors ${
                 activa === s.id
-                  ? 'bg-emerald-100 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200'
+                  ? 'bg-emerald-100 font-medium text-emerald-800 after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:rounded-full after:bg-emerald-500 dark:bg-emerald-900/40 dark:text-emerald-200'
                   : 'text-zinc-600 hover:bg-zinc-100 hover:text-emerald-700 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-emerald-400'
               }`}
             >

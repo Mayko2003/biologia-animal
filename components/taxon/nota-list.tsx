@@ -4,6 +4,7 @@ import type { Nota } from '@/lib/types';
 import { tieneApunte } from '@/lib/apuntes';
 import { FuenteBadge } from '@/components/fuentes/fuente-badge';
 import { useFiltroFuentes } from '@/components/fuentes/filtro-fuentes';
+import { IconoAlerta, IconoInfo } from '@/components/ui/iconos-sistemas';
 
 export function NotaList({ notas }: { notas: Nota[] }) {
   const { modo } = useFiltroFuentes();
@@ -21,7 +22,12 @@ export function NotaList({ notas }: { notas: Nota[] }) {
                 : 'border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900'
             }`}
           >
-            <p className={`font-medium ${esDiscrepancia ? 'text-amber-800 dark:text-amber-300' : 'text-zinc-700 dark:text-zinc-300'}`}>
+            <p
+              className={`flex items-center gap-1.5 font-medium ${
+                esDiscrepancia ? 'text-amber-800 dark:text-amber-300' : 'text-zinc-700 dark:text-zinc-300'
+              }`}
+            >
+              {esDiscrepancia ? <IconoAlerta className="h-4 w-4" /> : <IconoInfo className="h-4 w-4" />}
               {esDiscrepancia ? 'Discrepancia' : 'Aclaración'}
             </p>
             <div className="mt-1 leading-relaxed">
