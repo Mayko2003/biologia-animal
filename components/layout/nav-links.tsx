@@ -17,7 +17,7 @@ const ACTIVO = 'font-medium text-zinc-900 dark:text-zinc-100';
 
 function Links({ activo }: { activo: string | null }) {
   return (
-    <nav aria-label="Principal" className="flex gap-5 overflow-x-auto whitespace-nowrap">
+    <nav aria-label="Principal" className="hidden lg:flex gap-5">
       {enlaces.map((e) => {
         const esActual = e.href === '/' ? activo === '/' : activo?.startsWith(e.href);
         return (

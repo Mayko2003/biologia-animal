@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import { CajaBusqueda } from '@/components/busqueda/caja-busqueda';
 import { NavLinks, NavLinksEstaticos } from '@/components/layout/nav-links';
+import { IconoBuscar } from '@/components/ui/iconos';
 
 export function SiteHeader() {
   return (
@@ -14,6 +15,13 @@ export function SiteHeader() {
           <NavLinks />
         </Suspense>
         <CajaBusqueda />
+        <Link
+          href="/buscar"
+          aria-label="Buscar"
+          className="ml-auto lg:hidden p-2 -mr-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+        >
+          <IconoBuscar />
+        </Link>
       </div>
     </header>
   );

@@ -2,7 +2,7 @@ import Form from 'next/form';
 
 export function CajaBusqueda() {
   return (
-    <Form action="/buscar" role="search" className="ml-auto hidden sm:block">
+    <Form action="/buscar" role="search" className="ml-auto hidden lg:block">
       <label htmlFor="caja-q" className="sr-only">
         Buscar
       </label>
