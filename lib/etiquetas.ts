@@ -69,6 +69,15 @@ export const CRITERIO_LABEL: Record<CriterioId, string> = {
   segmentacion: 'Segmentación del huevo',
 };
 
+export const COLOR_VALOR: Record<ValorCriterio, string> = {
+  'sin-tejidos': '#f59e0b', diblastico: '#06b6d4', triblastico: '#8b5cf6',
+  asimetrico: '#f59e0b', radial: '#06b6d4', birradial: '#14b8a6', bilateral: '#8b5cf6', pentarradial: '#ec4899',
+  'no-aplica': '#a1a1aa', acelomado: '#f59e0b', pseudocelomado: '#06b6d4', esquizocelomado: '#8b5cf6', enterocelomado: '#ec4899',
+  boca: '#8b5cf6', ano: '#ec4899',
+  espiral: '#8b5cf6', 'en-T': '#f59e0b', otra: '#14b8a6',
+};
+export const COLOR_SIN_DATO = '#d4d4d8';
+
 export const VALOR_LABEL: Record<ValorCriterio, string> = {
   'sin-tejidos': 'Sin tejidos verdaderos',
   diblastico: 'Diblástico',
