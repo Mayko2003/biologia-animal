@@ -12,6 +12,7 @@ import { NotaList } from '@/components/taxon/nota-list';
 import { RankBadge } from '@/components/taxon/rank-badge';
 import { SistemasTabs } from '@/components/taxon/sistemas-tabs';
 import { Subgrupos, tituloSubgrupos } from '@/components/taxon/subgrupos';
+import { BOTON } from '@/components/ui/clases';
 import { Seccion } from '@/components/ui/seccion';
 import { esGrupoSuperior } from '@/lib/arbol';
 import {
@@ -32,9 +33,6 @@ export async function generateMetadata({ params }: PageProps<'/grupo/[slug]'>): 
   const t = getTaxon(slug);
   return t ? { title: t.nombre, description: t.resumen[0]?.texto } : {};
 }
-
-const BOTON =
-  'inline-flex min-h-[40px] items-center rounded-md border border-zinc-300 px-3 py-1.5 text-sm text-zinc-700 hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-emerald-600 dark:hover:text-emerald-400';
 
 export default function Page({ params }: PageProps<'/grupo/[slug]'>) {
   return (

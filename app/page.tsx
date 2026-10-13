@@ -61,7 +61,7 @@ export default function Page() {
                   <li key={p.slug}>
                     <Link
                       href={`/grupo/${p.slug}`}
-                      className="inline-block rounded-full border border-zinc-300 px-2.5 py-1 text-xs hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
+                      className="inline-flex min-h-[40px] items-center rounded-full border border-zinc-300 px-3.5 py-1.5 text-sm hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
                     >
                       {p.nombre}
                     </Link>

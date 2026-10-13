@@ -6,6 +6,7 @@ import type { ReactNode } from 'react';
 import { buscarNodo, esGrupoSuperior, phylaDe, rutaHasta } from '@/lib/arbol';
 import type { NodoArbol } from '@/lib/types';
 import { RankBadge } from '@/components/taxon/rank-badge';
+import { BOTON, BOTON_PRIMARIO } from '@/components/ui/clases';
 import { IconoCerrar } from '@/components/ui/iconos';
 import { useEsEscritorio } from '@/components/ui/use-media';
 
@@ -23,7 +24,7 @@ function ItemSubgrupo({ nodo, onSeleccionar }: { nodo: NodoArbol; onSeleccionar:
             type="button"
             aria-label={`Ver clases de ${nodo.nombre}`}
             onClick={() => onSeleccionar(nodo.slug)}
-            className="ml-auto rounded border border-zinc-300 px-1.5 py-0.5 text-[11px] text-zinc-600 hover:border-emerald-400 dark:border-zinc-700 dark:text-zinc-400"
+            className="ml-auto min-h-[40px] rounded border border-zinc-300 px-3 py-1 text-xs text-zinc-600 hover:border-emerald-400 dark:border-zinc-700 dark:text-zinc-400"
           >
             Ver clases
           </button>
@@ -75,10 +76,7 @@ function ContenidoPanel({
 
       {nodo.resumenCorto && <p className="text-sm text-zinc-600 dark:text-zinc-300">{nodo.resumenCorto}</p>}
 
-      <Link
-        href={`/grupo/${nodo.slug}`}
-        className="inline-block rounded-md bg-emerald-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-emerald-700"
-      >
+      <Link href={`/grupo/${nodo.slug}`} className={BOTON_PRIMARIO}>
         Ver ficha completa
       </Link>
 
@@ -109,11 +107,7 @@ function ContenidoPanel({
             const ruta = rutaHasta(arbol, nodo.slug);
             const padre = ruta[ruta.length - 2];
             return padre ? (
-              <button
-                type="button"
-                onClick={() => onSeleccionar(padre.slug)}
-                className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm hover:border-emerald-400 dark:border-zinc-700"
-              >
+              <button type="button" onClick={() => onSeleccionar(padre.slug)} className={BOTON}>
                 Ver grupo superior
               </button>
             ) : null;

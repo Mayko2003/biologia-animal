@@ -12,7 +12,7 @@ export function FuenteBadge({ fuente }: { fuente: Fuente }) {
         <summary className={`${BASE_SUMMARY} bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-200`}>
           Apunte · {etiquetaFuente(fuente)}
         </summary>
-        <div className="absolute z-20 mt-1 w-72 rounded-md border border-zinc-200 bg-white p-3 text-xs shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
+        <div className="absolute z-20 mt-1 w-72 rounded-md border border-zinc-200 bg-white p-3 text-xs shadow-lg max-sm:fixed max-sm:inset-x-3 max-sm:bottom-3 max-sm:z-50 max-sm:mt-0 max-sm:max-h-[60dvh] max-sm:w-auto max-sm:overflow-auto dark:border-zinc-700 dark:bg-zinc-900">
           <p className="font-medium">TP{info.tp} — {info.titulo}</p>
           <p className="mt-1 text-zinc-500 dark:text-zinc-400">Archivo: {fuente.archivo}</p>
           <p className="text-zinc-500 dark:text-zinc-400">Líneas {fuente.lineas[0]}–{fuente.lineas[1]}</p>
@@ -26,7 +26,7 @@ export function FuenteBadge({ fuente }: { fuente: Fuente }) {
       <summary className={`${BASE_SUMMARY} bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-200`}>
         Externo · {fuente.sitio}
       </summary>
-      <div className="absolute z-20 mt-1 w-72 rounded-md border border-zinc-200 bg-white p-3 text-xs shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
+      <div className="absolute z-20 mt-1 w-72 rounded-md border border-zinc-200 bg-white p-3 text-xs shadow-lg max-sm:fixed max-sm:inset-x-3 max-sm:bottom-3 max-sm:z-50 max-sm:mt-0 max-sm:max-h-[60dvh] max-sm:w-auto max-sm:overflow-auto dark:border-zinc-700 dark:bg-zinc-900">
         <p className="font-medium">{fuente.titulo}</p>
         <p className="mt-1 text-zinc-500 dark:text-zinc-400">{fuente.sitio}</p>
         <a

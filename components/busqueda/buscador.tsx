@@ -65,7 +65,9 @@ export function Buscador({ docs }: { docs: DocBusqueda[] }) {
         <input
           id="buscar-q"
           type="search"
-          autoFocus
+          ref={(el) => {
+            if (el && window.matchMedia('(pointer: fine)').matches) el.focus();
+          }}
           value={texto}
           onChange={(e) => programar(e.target.value)}
           placeholder="Ej.: nefridios, notocorda, larva trocófora…"
@@ -81,7 +83,7 @@ export function Buscador({ docs }: { docs: DocBusqueda[] }) {
               key={s}
               type="button"
               onClick={() => aplicar(s)}
-              className="rounded-md border border-zinc-300 px-2 py-1 hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
+              className="min-h-[40px] rounded-md border border-zinc-300 px-3 py-1.5 hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
             >
               {s}
             </button>
@@ -111,7 +113,7 @@ export function Buscador({ docs }: { docs: DocBusqueda[] }) {
                 <li key={c.id}>
                   <Link
                     href={`/grupo/${r.slug}${c.ancla ? `#${c.ancla}` : ''}`}
-                    className="block rounded px-2 py-1.5 text-sm hover:bg-zinc-50 dark:hover:bg-zinc-900"
+                    className="block rounded px-2.5 py-2 text-sm hover:bg-zinc-50 dark:hover:bg-zinc-900"
                   >
                     <span className="font-semibold">{c.seccionLabel}</span>
                     {c.soloExterno && (

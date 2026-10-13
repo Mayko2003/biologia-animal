@@ -3,6 +3,7 @@
 import type { NodoArbol } from '@/lib/types';
 import { PanelSeleccion } from '@/components/navegacion/panel-seleccion';
 import { useParametro, useSeleccion } from '@/components/navegacion/use-seleccion';
+import { PILL_ACTIVO, PILL_BASE, PILL_INACTIVO_SUAVE } from '@/components/ui/clases';
 import { ArbolGrafico } from './arbol-grafico';
 import { ArbolLista } from './arbol-lista';
 
@@ -17,7 +18,7 @@ export function ExploradorArbol({ arbol }: { arbol: NodoArbol }) {
         type="button"
         aria-pressed={vistaActual === 'lista'}
         onClick={() => setVista(null)}
-        className={`min-h-[40px] rounded px-3 py-1.5 ${vistaActual === 'lista' ? 'bg-emerald-600 text-white' : 'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'}`}
+        className={`${PILL_BASE} ${vistaActual === 'lista' ? PILL_ACTIVO : PILL_INACTIVO_SUAVE}`}
       >
         Lista
       </button>
@@ -25,7 +26,7 @@ export function ExploradorArbol({ arbol }: { arbol: NodoArbol }) {
         type="button"
         aria-pressed={vistaActual === 'grafico'}
         onClick={() => setVista('grafico')}
-        className={`min-h-[40px] rounded px-3 py-1.5 ${vistaActual === 'grafico' ? 'bg-emerald-600 text-white' : 'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'}`}
+        className={`${PILL_BASE} ${vistaActual === 'grafico' ? PILL_ACTIVO : PILL_INACTIVO_SUAVE}`}
       >
         Gráfico
       </button>

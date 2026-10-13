@@ -3,6 +3,7 @@
 import { CRITERIO_LABEL } from '@/lib/etiquetas';
 import { CRITERIOS, type CriterioId } from '@/lib/types';
 import { useParametro } from '@/components/navegacion/use-seleccion';
+import { PILL_ACTIVO, PILL_BASE, PILL_INACTIVO } from '@/components/ui/clases';
 
 export function useLente(): CriterioId | null {
   const [lente] = useParametro('lente');
@@ -23,11 +24,7 @@ export function SelectorLente() {
         role="radio"
         aria-checked={actual === null}
         onClick={() => setLente(null)}
-        className={`inline-flex min-h-[40px] shrink-0 items-center rounded-md px-3 py-2 text-sm font-medium ${
-          actual === null
-            ? 'bg-emerald-600 text-white'
-            : 'border border-zinc-300 text-zinc-600 hover:border-emerald-400 dark:border-zinc-700 dark:text-zinc-300'
-        }`}
+        className={`${PILL_BASE} shrink-0 ${actual === null ? PILL_ACTIVO : PILL_INACTIVO}`}
       >
         Sin lente
       </button>
@@ -38,11 +35,7 @@ export function SelectorLente() {
           role="radio"
           aria-checked={actual === c}
           onClick={() => setLente(c)}
-          className={`inline-flex min-h-[40px] shrink-0 items-center rounded-md px-3 py-2 text-sm font-medium ${
-            actual === c
-              ? 'bg-emerald-600 text-white'
-              : 'border border-zinc-300 text-zinc-600 hover:border-emerald-400 dark:border-zinc-700 dark:text-zinc-300'
-          }`}
+          className={`${PILL_BASE} shrink-0 ${actual === c ? PILL_ACTIVO : PILL_INACTIVO}`}
         >
           {CRITERIO_LABEL[c]}
         </button>

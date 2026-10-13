@@ -58,7 +58,7 @@ export function MapaConceptual({
           type="button"
           aria-label="Alejar"
           onClick={() => setEscala((e) => Math.max(0.6, Math.round((e - 0.1) * 10) / 10))}
-          className="rounded-md border border-zinc-300 px-2 py-1 text-sm dark:border-zinc-700"
+          className="h-10 min-w-10 rounded-md border border-zinc-300 px-2 text-sm dark:border-zinc-700"
         >
           −
         </button>
@@ -66,7 +66,7 @@ export function MapaConceptual({
           type="button"
           aria-label="Restablecer zoom"
           onClick={() => setEscala(1)}
-          className="rounded-md border border-zinc-300 px-2 py-1 text-xs dark:border-zinc-700"
+          className="h-10 min-w-10 rounded-md border border-zinc-300 px-2 text-xs dark:border-zinc-700"
         >
           100%
         </button>
@@ -74,7 +74,7 @@ export function MapaConceptual({
           type="button"
           aria-label="Acercar"
           onClick={() => setEscala((e) => Math.min(1.4, Math.round((e + 0.1) * 10) / 10))}
-          className="rounded-md border border-zinc-300 px-2 py-1 text-sm dark:border-zinc-700"
+          className="h-10 min-w-10 rounded-md border border-zinc-300 px-2 text-sm dark:border-zinc-700"
         >
           +
         </button>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useSyncExternalStore } from 'react';
+import { PILL_ACTIVO, PILL_BASE, PILL_INACTIVO_SUAVE } from '@/components/ui/clases';
 
 export type ModoFiltro = 'todas' | 'apuntes';
 
@@ -43,18 +44,14 @@ export function FiltroFuentesToggle() {
     { valor: 'apuntes', label: 'Solo apuntes' },
   ];
   return (
-    <div className="inline-flex rounded-md border border-zinc-300 p-0.5 text-xs dark:border-zinc-700" role="group" aria-label="Filtro de fuentes">
+    <div className="inline-flex rounded-md border border-zinc-300 p-0.5 text-sm dark:border-zinc-700" role="group" aria-label="Filtro de fuentes">
       {opciones.map((o) => (
         <button
           key={o.valor}
           type="button"
           aria-pressed={modo === o.valor}
           onClick={() => setModo(o.valor)}
-          className={`rounded px-2 py-1 ${
-            modo === o.valor
-              ? 'bg-emerald-600 text-white'
-              : 'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'
-          }`}
+          className={`${PILL_BASE} ${modo === o.valor ? PILL_ACTIVO : PILL_INACTIVO_SUAVE}`}
         >
           {o.label}
         </button>
