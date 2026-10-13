@@ -24,10 +24,13 @@ export function Subgrupos({ nivel, arbol }: { nivel: Nivel; arbol: NodoArbol }) 
         <div key={h.slug}>
           <TaxonCard nodo={h} />
           {h.hijos.length > 0 && (
-            <ul className="mt-1 flex flex-wrap gap-x-3 gap-y-1 pl-2 text-xs">
+            <ul className="mt-1 flex flex-wrap gap-0.5 pl-2">
               {h.hijos.map((n) => (
                 <li key={n.slug}>
-                  <Link href={`/grupo/${n.slug}`} className="text-zinc-500 hover:text-emerald-700 hover:underline dark:text-zinc-400 dark:hover:text-emerald-400">
+                  <Link
+                    href={`/grupo/${n.slug}`}
+                    className="inline-flex min-h-[36px] items-center rounded px-2 text-sm text-zinc-500 hover:text-emerald-700 hover:underline dark:text-zinc-400 dark:hover:text-emerald-400"
+                  >
                     {n.nombre}
                   </Link>
                 </li>

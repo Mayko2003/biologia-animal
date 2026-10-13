@@ -96,7 +96,7 @@ async function Ficha({ params }: { params: PageProps<'/grupo/[slug]'>['params'] 
 
   return (
     <div className="grid gap-10 lg:grid-cols-[1fr_220px]">
-      <div className="space-y-8">
+      <div className="min-w-0 space-y-8">
         <header className="space-y-3">
           <Breadcrumb ruta={ruta} />
           <div className="flex flex-wrap items-center gap-2">

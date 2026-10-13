@@ -38,6 +38,7 @@ export function SistemasTabs({
   useEffect(() => {
     if (!idsValidos.has(hash)) return;
     document.getElementById(`panel-${hash}`)?.scrollIntoView({ block: 'nearest' });
+    document.getElementById(hash)?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hash]);
 
@@ -63,7 +64,7 @@ export function SistemasTabs({
       <div
         role="tablist"
         aria-label="Sistemas"
-        className="flex gap-1 overflow-x-auto whitespace-nowrap pb-1 lg:flex-wrap lg:overflow-visible"
+        className="flex gap-1 overflow-x-auto whitespace-nowrap pb-1 [-webkit-mask-image:linear-gradient(to_right,black_85%,transparent)] [mask-image:linear-gradient(to_right,black_85%,transparent)] lg:flex-wrap lg:overflow-visible lg:[-webkit-mask-image:none] lg:[mask-image:none]"
         onKeyDown={onKeyDown}
       >
         {pestanas.map((p) => (
