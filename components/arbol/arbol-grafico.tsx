@@ -9,7 +9,7 @@ import type { NodoArbol } from '@/lib/types';
 const FILA = 30;
 const COLUMNA = 200;
 const MARGEN = 24;
-const RADIO = 6;
+const RADIO = 9;
 
 export function ArbolGrafico({
   arbol,
@@ -143,6 +143,7 @@ export function ArbolGrafico({
                     }}
                     className="cursor-pointer"
                   >
+                    <circle r={16} fill="transparent" />
                     <circle
                       r={RADIO}
                       fill={colapsado ? '#fff' : NIVEL_COLOR_HEX[d.nivel]}

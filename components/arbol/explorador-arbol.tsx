@@ -12,12 +12,12 @@ export function ExploradorArbol({ arbol }: { arbol: NodoArbol }) {
   const vistaActual = vista === 'grafico' ? 'grafico' : 'lista';
 
   const botones = (
-    <div className="mb-3 inline-flex rounded-md border border-zinc-300 p-0.5 text-xs dark:border-zinc-700" role="group" aria-label="Vista del árbol">
+    <div className="mb-3 inline-flex rounded-md border border-zinc-300 p-0.5 text-sm dark:border-zinc-700" role="group" aria-label="Vista del árbol">
       <button
         type="button"
         aria-pressed={vistaActual === 'lista'}
         onClick={() => setVista(null)}
-        className={`rounded px-2 py-1 ${vistaActual === 'lista' ? 'bg-emerald-600 text-white' : 'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'}`}
+        className={`min-h-[40px] rounded px-3 py-1.5 ${vistaActual === 'lista' ? 'bg-emerald-600 text-white' : 'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'}`}
       >
         Lista
       </button>
@@ -25,7 +25,7 @@ export function ExploradorArbol({ arbol }: { arbol: NodoArbol }) {
         type="button"
         aria-pressed={vistaActual === 'grafico'}
         onClick={() => setVista('grafico')}
-        className={`rounded px-2 py-1 ${vistaActual === 'grafico' ? 'bg-emerald-600 text-white' : 'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'}`}
+        className={`min-h-[40px] rounded px-3 py-1.5 ${vistaActual === 'grafico' ? 'bg-emerald-600 text-white' : 'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'}`}
       >
         Gráfico
       </button>
