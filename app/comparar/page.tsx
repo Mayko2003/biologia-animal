@@ -45,7 +45,7 @@ export default function Page() {
           Elegí dos grupos o clases para ver un cuadro comparativo.
         </p>
       </header>
-      <Suspense fallback={<p className="text-sm text-zinc-500">Cargando comparador…</p>}>
+      <Suspense fallback={<div className="h-96 animate-pulse rounded-lg bg-zinc-100 dark:bg-zinc-900" />}>
         <Comparador taxa={todos} opciones={construirOpciones()} />
       </Suspense>
     </div>

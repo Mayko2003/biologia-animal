@@ -16,7 +16,7 @@ export default function Page() {
           Clado → Phylum → Subphylum → Superclase → Clase → Subclase. Seleccioná un grupo para ver sus clases.
         </p>
       </header>
-      <Suspense fallback={<p className="text-sm text-zinc-500">Cargando árbol…</p>}>
+      <Suspense fallback={<div className="h-96 animate-pulse rounded-lg bg-zinc-100 dark:bg-zinc-900" />}>
         <ExploradorArbol arbol={arbol} />
       </Suspense>
     </div>

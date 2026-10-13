@@ -1,13 +1,7 @@
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { CajaBusqueda } from '@/components/busqueda/caja-busqueda';
-
-const enlaces = [
-  { href: '/', label: 'Inicio' },
-  { href: '/mapa', label: 'Mapa conceptual' },
-  { href: '/arbol', label: 'Árbol' },
-  { href: '/comparar', label: 'Comparar' },
-  { href: '/buscar', label: 'Buscar' },
-];
+import { NavLinks, NavLinksEstaticos } from '@/components/layout/nav-links';
 
 export function SiteHeader() {
   return (
@@ -16,17 +10,9 @@ export function SiteHeader() {
         <Link href="/" className="font-semibold shrink-0">
           Biología Animal
         </Link>
-        <nav aria-label="Principal" className="flex gap-5 overflow-x-auto whitespace-nowrap">
-          {enlaces.map((e) => (
-            <Link
-              key={e.href}
-              href={e.href}
-              className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-            >
-              {e.label}
-            </Link>
-          ))}
-        </nav>
+        <Suspense fallback={<NavLinksEstaticos />}>
+          <NavLinks />
+        </Suspense>
         <CajaBusqueda />
       </div>
     </header>

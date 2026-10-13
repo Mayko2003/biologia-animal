@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold">Buscar</h1>
-      <Suspense fallback={<p className="text-sm text-zinc-500">Cargando buscador…</p>}>
+      <Suspense fallback={<div className="h-64 animate-pulse rounded-lg bg-zinc-100 dark:bg-zinc-900" />}>
         <Buscador docs={docs} />
       </Suspense>
     </div>

@@ -29,7 +29,7 @@ export default function Page() {
           define al grupo. Los phyla están a la derecha. Seleccioná cualquier caja para ver sus clases.
         </p>
       </header>
-      <Suspense fallback={<p className="text-sm text-zinc-500">Cargando mapa…</p>}>
+      <Suspense fallback={<div className="h-[70vh] animate-pulse rounded-lg bg-zinc-100 dark:bg-zinc-900" />}>
         <ExploradorMapa mapa={MAPA_EMBRIONARIO} arbol={arbol} valores={valores} />
       </Suspense>
     </div>
