@@ -79,6 +79,17 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [251, 253], cita: 'fecundación es externa' }],
       },
     ],
+    excretor: [
+      {
+        texto: 'Carecen de órganos excretores diferenciados.',
+        ausente: true,
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [56, 56], cita: 'órganos excretores diferenciados' }],
+      },
+      {
+        texto: 'Sin órganos excretores distintos: los desechos nitrogenados salen por los pies ambulacrales y las pápulas, y los celomocitos fagocitan residuos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Asteroidea', titulo: 'Asteroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

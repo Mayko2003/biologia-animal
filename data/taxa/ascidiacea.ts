@@ -73,6 +73,24 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [224, 228], cita: 'hermafroditas pero autoestériles' }],
       },
     ],
+    esqueleto: [
+      {
+        texto: 'Túnica exoesquelética de celulosa que cubre todo el cuerpo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Urochordata', titulo: 'Urochordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'El manto contiene fibras musculares; bandas musculares longitudinales retraen los sifones.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Urochordata', titulo: 'Urochordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Tentáculos sensitivos piliformes en la entrada del saco branquial; la larva posee un ojo medio con retina y un otolito pigmentado.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Urochordata', titulo: 'Urochordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [],
   reproduccion: [

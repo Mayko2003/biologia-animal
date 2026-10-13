@@ -69,6 +69,35 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [393, 396], cita: 'un gonoporo intertentacular' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'El esqueleto dérmico típico de los equinodermos está reducido a osículos microscópicos (escleritos), por lo que el cuerpo es blando y alargado.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Holothuroidea', titulo: 'Holothuroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Un anillo calcáreo que rodea la faringe sirve para la inserción de los músculos que mueven los tentáculos orales y de los que contraen el cuerpo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Holothuroidea', titulo: 'Holothuroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+      {
+        texto: 'Por la acción de los músculos de la pared del cuerpo sobre el cuerpo lleno de líquido, las holoturias pueden contraerse y extenderse realizando movimientos vermiformes.',
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [348, 350], cita: 'acción de los músculos de la' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Carecen de órganos excretores diferenciados.',
+        ausente: true,
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [56, 56], cita: 'órganos excretores diferenciados' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Los pies de los ambulacros dorsales están reducidos y solo son usados como táctiles y respiratorios; los tentáculos orales recogen el alimento.',
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [343, 346], cita: 'usados como táctiles y respiratorios' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

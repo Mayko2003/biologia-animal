@@ -38,6 +38,16 @@ const taxon: Taxon = {
       valor: 'bilateral',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [644, 644], cita: 'una simetría bilateral' }],
     },
+    cavidad: {
+      valor: 'enterocelomado',
+      nota: 'El celoma queda dividido en proceloma, mesoceloma y metaceloma, situados en la sección correspondiente del cuerpo.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hemichordata', titulo: 'Hemichordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    segmentacion: {
+      valor: 'radial',
+      nota: 'División radial propia de los deuterostomados.',
+      fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Deuterostome', titulo: 'Deuterostome - Wikipedia in English', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
   },
   sistemas: {
     circulatorio: [
@@ -56,6 +66,49 @@ const taxon: Taxon = {
       {
         texto: 'Presentan un cordón nervioso dorsal y hueco.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [635, 635], cita: 'cordón nervioso dorsal y' }],
+      },
+    ],
+    tegumento: [
+      {
+        texto: 'Cuerpo blando en forma de gusano, con las tres regiones características (prosoma, mesosoma y metasoma).',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hemichordata', titulo: 'Hemichordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Sin esqueleto mineralizado.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hemichordata', titulo: 'Hemichordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'En los enteropneustos el prosoma excava galerías en el sedimento mediante movimientos peristálticos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Enteropneusta', titulo: 'Enteropneusta - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    digestivo: [
+      {
+        texto: 'Hendiduras faríngeas ciliadas en la primera parte del intestino («intestino branquial»); en los enteropneustos un divertículo bucal (estomocorda) se extiende en el protocele.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hemichordata', titulo: 'Hemichordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Enteropneusta', titulo: 'Enteropneusta - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Las hendiduras branquiales de la faringe permiten la salida del agua y la respiración; los enteropneustos tienen hasta cien y los pterobranquios un par o ninguna.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hemichordata', titulo: 'Hemichordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Pterobranchia', titulo: 'Pterobranchia - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Receptores sensoriales constituidos por células neurosensoriales en la epidermis y células fotorreceptoras.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Enteropneusta', titulo: 'Enteropneusta - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    reproductor: [
+      {
+        texto: 'Sexos separados; las gónadas se disponen en hileras dorsolaterales en la parte anterior del tronco.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Enteropneusta', titulo: 'Enteropneusta - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
       },
     ],
   },
@@ -85,6 +138,10 @@ const taxon: Taxon = {
       texto: 'Exclusivamente marinos; todos son bentónicos cuando adultos.',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [636, 659], cita: 'cuando son adultos, son' }],
     },
+    {
+      texto: 'De los huevos fertilizados se desarrollan larvas ciliadas, parecidas a las de los equinodermos, de las que salen los adultos.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hemichordata', titulo: 'Hemichordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
   ],
   ejemplos: [],
   notas: [
@@ -92,6 +149,11 @@ const taxon: Taxon = {
       tipo: 'aclaracion',
       texto: 'No presentan una auténtica notocorda sino una estomocorda (expansión del tubo digestivo); por eso dejaron de considerarse cordados.',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [620, 640], cita: 'no era homólogo de' }],
+    },
+    {
+      tipo: 'aclaracion',
+      texto: 'Los hemicordados son el grupo hermano de los equinodermos y con ellos conforman el clado Ambulacraria.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Hemichordata', titulo: 'Hemichordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
     },
   ],
 };

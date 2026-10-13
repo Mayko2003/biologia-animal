@@ -57,6 +57,41 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [467, 469], cita: 'a la abertura genital' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Esqueleto externo cubierto solo por la epidermis, constituido por numerosas placas calcáreas unidas rígidamente en un caparazón (testa), con púas móviles articuladas.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Echinoidea', titulo: 'Echinoidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'La linterna de Aristóteles, estructura esquelética y muscular protráctil cerca de la boca, sostiene los cinco dientes; las púas y los pies ambulacrales también son móviles.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Echinoidea', titulo: 'Echinoidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Carecen de órganos excretores diferenciados.',
+        ausente: true,
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [56, 56], cita: 'órganos excretores diferenciados' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Entre las espinas se ubican los pedicelarios sobre largos pedúnculos flexibles; la superficie lleva además espinas y pies ambulacrales sensitivos.',
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [436, 437], cita: 'pedicelarios sobre largos pedúnculos' }],
+      },
+      {
+        texto: 'Anillo nervioso alrededor de la boca con cinco nervios radiales (plan equinodermo); sin ojos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Asteroidea', titulo: 'Asteroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sistema hemal reducido del plan equinodermo; el fluido de la cavidad corporal distribuye el oxígeno y los nutrientes.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Asteroidea', titulo: 'Asteroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

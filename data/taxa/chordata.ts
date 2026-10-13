@@ -19,7 +19,12 @@ const taxon: Taxon = {
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [18, 22], cita: 'Cinco caracteres sobresalientes' }],
     },
   ],
-  morfologiaExterna: [],
+  morfologiaExterna: [
+    {
+      texto: 'Plan corporal con cinco sinapomorfías: notocorda, tubo neural hueco dorsal, hendiduras branquiales en la faringe, endostilo y cola postanal, presentes al menos en alguna fase del desarrollo.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
   embriologia: {
     simetria: {
       valor: 'bilateral',
@@ -29,8 +34,79 @@ const taxon: Taxon = {
       valor: 'triblastico',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [17, 17], cita: 'tres capas germinales' }],
     },
+    cavidad: {
+      valor: 'enterocelomado',
+      nota: 'Celomados con celoma bien desarrollado, que se pierde en algunos grupos.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    segmentacion: {
+      valor: 'radial',
+      nota: 'División radial propia de los deuterostomados; varía en los vertebrados según el tipo de huevo.',
+      fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Deuterostome', titulo: 'Deuterostome - Wikipedia in English', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
   },
-  sistemas: {},
+  sistemas: {
+    tegumento: [
+      {
+        texto: 'Varía por grupo: túnica celulósica en los urocordados, epidermis simple en los anfioxos y piel con derivados (escamas, plumas, pelo) en los vertebrados.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Urochordata', titulo: 'Urochordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'La notocorda, varilla semirrígida de sostén dorsal al tubo digestivo, es el eje del plan cordado; en los vertebrados es reemplazada por la columna.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Cuerpo segmentado con musculatura en miómeros en el tronco y la cola.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    digestivo: [
+      {
+        texto: 'Tubo digestivo completo con faringe perforada por hendiduras branquiales y endostilo ventral que segrega mucílago para capturar alimento.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Las hendiduras branquiales de la faringe intervienen en la respiración en los grupos acuáticos; en los anfioxos sirven solo para alimentarse y la respiración es cutánea.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://en.wikipedia.org/wiki/Lancelet', titulo: 'Lancelet - Wikipedia in English', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Corazón ventral con vasos sanguíneos dorsales y ventrales.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Varía por grupo: nefridios metaméricos en los cefalocordados y riñones en los vertebrados.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Cephalochordata', titulo: 'Cephalochordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Un solo cordón nervioso dorsal y tubular (tubo neural hueco), rasgo definitorio del filo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Varía por grupo: mecanorreceptores y ocelos en los cefalocordados; órganos sensoriales complejos en los vertebrados.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Cephalochordata', titulo: 'Cephalochordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    reproductor: [
+      {
+        texto: 'Reproducción sexual; algunos tunicados además se reproducen asexualmente por gemación.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+  },
   estructurasEspeciales: [
     {
       titulo: 'Notocordio',
@@ -78,10 +154,42 @@ const taxon: Taxon = {
       ],
     },
   ],
-  reproduccion: [],
-  bioecologia: [],
-  ejemplos: [],
-  notas: [],
+  reproduccion: [
+    {
+      texto: 'Los cinco caracteres del filo (notocorda, tubo neural, hendiduras branquiales, endostilo y cola postanal) se observan en todos los embriones de los cordados y pueden desaparecer, cambiar o persistir en el adulto.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
+  bioecologia: [
+    {
+      texto: 'El mayor phylum de deuteróstomos; incluye desde tunicados sésiles y anfioxos filtradores hasta los vertebrados en todos los ambientes.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
+  ejemplos: [
+    {
+      nombre: 'Urochordata',
+      descripcion: 'tunicados (ascidias, salpas, larváceos)',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Urochordata', titulo: 'Urochordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    {
+      nombre: 'Cephalochordata',
+      descripcion: 'anfioxos o lancetas',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Cephalochordata', titulo: 'Cephalochordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    {
+      nombre: 'Vertebrata',
+      descripcion: 'el mayor grupo del filo',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
+  notas: [
+    {
+      tipo: 'aclaracion',
+      texto: 'La literatura actual ubica a los urocordados como grupo hermano de los vertebrados (clado Olfactores), por delante de los cefalocordados.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chordata', titulo: 'Chordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
 };
 
 export default taxon;

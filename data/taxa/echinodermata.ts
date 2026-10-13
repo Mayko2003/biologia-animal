@@ -35,6 +35,11 @@ const taxon: Taxon = {
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [32, 33], cita: 'simetría radial pentámera' }],
       nota: 'Las larvas tienen simetría bilateral; los adultos, radial pentámera.',
     },
+    segmentacion: {
+      valor: 'radial',
+      nota: 'División radial propia de los deuterostomados: los cortes ocurren paralelos o perpendiculares al eje polar.',
+      fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Deuterostome', titulo: 'Deuterostome - Wikipedia in English', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
   },
   sistemas: {
     esqueleto: [
@@ -66,6 +71,52 @@ const taxon: Taxon = {
       {
         texto: 'La mayor parte de los miembros son dioicos y los órganos genitales son sencillos: no hay cópula y normalmente la fecundación es externa, en el agua.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [59, 60], cita: 'la fecundación es externa' }],
+      },
+    ],
+    tegumento: [
+      {
+        texto: 'Epidermis sobre una dermis que contiene los osículos esqueléticos; la superficie presenta espinas o tubérculos sobresalientes (piel espinosa).',
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [41, 47], cita: 'espinas o tubérculos que' }],
+      },
+      {
+        texto: 'La pared corporal se compone de una epidermis exterior delgada, una dermis espesa de tejido conectivo y un peritoneo interior.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Asteroidea', titulo: 'Asteroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Bajo la dermis hay una capa de músculos circulares y otra más externa de músculos longitudinales; la musculatura bordea la cavidad celomática revestida por un peritoneo ciliado.',
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [148, 152], cita: 'musculatura constituida por una capa' }],
+      },
+      {
+        texto: 'Además de la musculatura de la pared, los pies ambulacrales se mueven por la presión del fluido del sistema vascular acuífero.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Echinodermata', titulo: 'Echinodermata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'El sistema circulatorio sanguíneo está reducido y es difícil de ver: vasos que rodean a la boca y vasos radiales (uno en cada brazo en las estrellas), debajo del conducto radial del sistema vascular acuífero.',
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [241, 244], cita: 'sanguíneo está reducido y es' }],
+      },
+      {
+        texto: 'El sistema hemal acompaña al vascular acuífero; el fluido de la cavidad corporal distribuye el oxígeno y los nutrientes.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Asteroidea', titulo: 'Asteroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Sin cerebro: un nervio circumoral (anillo) con cordones nerviosos radiales en cada brazo, más un plexo nervioso subepidérmico.',
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [245, 249], cita: 'nervio circumoral con cordones' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Pies ambulacrales terminales en forma de tentáculo de función sensorial y un pequeño ocelo rojo en la punta de cada brazo (en las estrellas).',
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [108, 112], cita: 'de función sensorial, así' }],
+      },
+      {
+        texto: 'Algunas ofiuras llevan microlentes de calcita en las placas dorsales que concentran la luz sobre nervios fotosensibles.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Ophiuroidea', titulo: 'Ophiuroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
       },
     ],
   },

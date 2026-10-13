@@ -43,6 +43,55 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [576, 577], cita: 'producen en los brazos' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Cuerpo en forma de copa (cáliz) compuesto de 2 o 3 anillos de placas fusionadas; la cara oral va cubierta por una membrana, el tegmen.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crinoidea', titulo: 'Crinoidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Los lirios de mar sésiles doblan su pedúnculo y extienden los brazos para alimentarse; las plumas de mar se sujetan con los cirros y pueden reptar o nadar con los brazos.',
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [555, 558], cita: 'reptar o nadar con los' }],
+      },
+    ],
+    digestivo: [
+      {
+        texto: 'Suspensívoros: los pies ambulacrales conducen el zooplancton y las partículas hacia los surcos ambulacrales, donde los cilios las transportan envueltas en moco hasta la boca central del tegmen; el ano se abre en un interambulacro.',
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [557, 563], cita: 'transportan las partículas envueltas' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'No poseen madreporito; el sistema ambulacral típico de los equinodermos adquiere en los crinoideos una función respiratoria.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crinoidea', titulo: 'Crinoidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sistema hemal reducido del plan equinodermo; las pínnulas intervienen además en la circulación.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crinoidea', titulo: 'Crinoidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Carecen de órganos excretores diferenciados.',
+        ausente: true,
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [56, 56], cita: 'órganos excretores diferenciados' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Anillo nervioso circumoral con cordones radiales (plan equinodermo).',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Asteroidea', titulo: 'Asteroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Sin órganos visuales; los pies ambulacrales y los surcos de los brazos son sensoriales al captar las partículas.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crinoidea', titulo: 'Crinoidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

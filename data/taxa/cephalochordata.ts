@@ -79,6 +79,19 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [329, 330], cita: '25 pares de gónadas' }],
       },
     ],
+    respiratorio: [
+      {
+        texto: 'Sin sistema respiratorio: respiran solo a través de la piel; las hendiduras branquiales sirven para alimentarse, no para respirar.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Lancelet', titulo: 'Lancelet - Wikipedia in English', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Mecanorreceptores (rostro, cirros peribucales, velo faríngeo y cola) y fotorreceptores u ocelos dorsolaterales: un par cerca de la vesícula cerebral y cientos más en el tronco.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Cephalochordata', titulo: 'Cephalochordata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

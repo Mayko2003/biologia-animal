@@ -47,6 +47,43 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [306, 310], cita: 'las paredes de las' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Epidermis sobre la dermis con osículos calcáreos; los brazos están cubiertos por placas.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Ophiuroidea', titulo: 'Ophiuroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Asteroidea', titulo: 'Asteroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Cada brazo es una columna de osículos («vértebras») articulados entre sí y unidos por músculos, lo que permite movimientos serpentinos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Ophiuroidea', titulo: 'Ophiuroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Carecen de órganos excretores diferenciados.',
+        ausente: true,
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [56, 56], cita: 'órganos excretores diferenciados' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Anillo nervioso circumoral con cordones radiales en cada brazo (plan equinodermo).',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Asteroidea', titulo: 'Asteroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Las placas dorsales de los brazos llevan microlentes de calcita que concentran la luz sobre nervios aparentemente fotosensibles, un órgano visual difuso.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Ophiuroidea', titulo: 'Ophiuroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sistema hemal reducido del plan equinodermo; el fluido de la cavidad corporal distribuye el oxígeno y los nutrientes.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Asteroidea', titulo: 'Asteroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {
