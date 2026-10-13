@@ -27,8 +27,8 @@ fila. En `<lg` pasa a **tarjetas apiladas por característica** con los valores 
 3. **Barra sticky de contexto** en `<lg`: `sticky top-14 z-30` con `A: {nombreA}` y `B: {nombreB}` truncados
    (`truncate`) + el botón Intercambiar (`aria-label="Intercambiar A y B"`, target ≥40 px) — que siempre se
    sepa qué es A y qué es B al scrollear.
-4. Montaje: como en T54, ambas variantes montadas y alternadas por CSS (`lg:hidden` / `hidden lg:block`) —
-   la tabla completa queda para `lg+`.
+4. Montaje: como en T54, alternar con `useEsEscritorio()` de `components/ui/use-media.ts` (no montar ambas
+   por CSS — duplica el DOM y rompe el strict mode de Playwright). La tabla completa queda para `lg+`.
 5. Los selectores (`<select>` con `optgroup`) ya funcionan en móvil; solo darles `min-h-[44px]`
    (`h-11` o `py-2.5`) si hoy son más bajos.
 6. Verificar que `Ancestro común:` y el link al taxón común (hoy fuera de la tabla) sigan visibles en móvil.

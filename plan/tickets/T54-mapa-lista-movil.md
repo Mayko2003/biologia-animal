@@ -30,10 +30,10 @@ de ancho con scroll en dos ejes. Los lentes siguen coloreando los ítems. El can
      (`COLOR_VALOR`/`COLOR_SIN_DATO` de `lib/etiquetas.ts`, módulo puro, permitido en cliente) y la
      **leyenda existente se reutiliza tal cual** (mismos textos `Acelomado (n)`…).
    - Las hojas-phylum muestran además `RankBadge` si corresponde.
-2. **`explorador-mapa.tsx`**: montar ambas vistas y alternar por CSS — `<div className="lg:hidden">` con
-   `MapaLista` y `<div className="hidden lg:block">` con el canvas actual. (El SVG es chico; montar los dos es
-   más simple y robusto que `matchMedia`, que introduce hydration mismatch.) El toolbar de zoom (−/+/100%)
-   queda dentro del wrapper `hidden lg:block`.
+2. **`explorador-mapa.tsx`**: alternar con `useEsEscritorio()` de `components/ui/use-media.ts`
+   (`useSyncExternalStore` + `matchMedia('(min-width: 1024px)')`, creado en T53): escritorio → canvas actual;
+   móvil → `MapaLista`. No montar ambas por CSS: duplica el DOM y rompe el strict mode de Playwright. El
+   toolbar de zoom (−/+/100%) solo en escritorio.
 3. **`selector-lente.tsx`**: pills a `min-h-[40px] px-3 py-2 text-sm` y fila única con
    `overflow-x-auto whitespace-nowrap` (en vez de `flex-wrap`) — 6 lentes en una fila scrolleable.
 4. La leyenda del lente debe aparecer en ambas vistas (hoy probablemente la renderiza el canvas: moverla o
