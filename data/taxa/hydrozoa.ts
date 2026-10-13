@@ -79,6 +79,33 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [426, 438], cita: 'La mayoría de las hidras son dioicas' }],
       },
     ],
+    respiratorio: [
+      {
+        texto: 'Sin órganos respiratorios; el intercambio gaseoso se produce por difusión a través de la superficie del cuerpo.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Los pólipos y el cenosarco pueden secretar envolturas quitinosas o recubrimientos calcáreos.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Hydrozoa/', titulo: 'Hydrozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sin aparato circulatorio; en las colonias los estolones y la cavidad gastrovascular compartida distribuyen el alimento entre los pólipos.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Hydrozoa/', titulo: 'Hydrozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Sin órganos excretores; los desechos salen por la única abertura de la cavidad gastrovascular.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

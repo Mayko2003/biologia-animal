@@ -55,6 +55,16 @@ const taxon: Taxon = {
       valor: 'radial',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [276, 276], cita: 'La segmentación es completa y generalmente radial' }],
     },
+    cavidad: {
+      valor: 'no-aplica',
+      nota: 'Organización a nivel celular, sin cavidad corporal; el atrio es parte del sistema acuífero.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Porifera/', titulo: 'Porifera - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    blastoporo: {
+      valor: 'no-aplica',
+      nota: 'Sin blastoporo del tipo de los eumetazoos.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Porifera/', titulo: 'Porifera - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
   },
   sistemas: {
     tegumento: [
@@ -154,6 +164,20 @@ const taxon: Taxon = {
       {
         texto: 'La producción de gametos comenzaría por cambios en la temperatura del agua, en el fotoperíodo o en el estado de regresión celular, según la especie.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [260, 262], cita: 'cambios en la temperatura del agua, en el fotoperíodo' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Sin tejido muscular verdadero; algunas células (miocitos, pinacocitos) son contráctiles y regulan los poros.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Porifera/', titulo: 'Porifera - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Sin órganos de los sentidos; las células responden directamente a los estímulos.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Porifera/', titulo: 'Porifera - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
       },
     ],
   },
@@ -283,6 +307,14 @@ const taxon: Taxon = {
       tipo: 'aclaracion',
       texto: 'Por su posición filogenética aislada (no dan origen a ningún otro grupo), es frecuente separar a las esponjas en el subreino Parazoa, aparte del resto de los animales pluricelulares (Eumetazoa).',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [28, 32], cita: 'se apartan muy pronto de la línea evolutiva principal' }],
+    },
+    {
+      tipo: 'discrepancia',
+      texto: 'Tradicionalmente se considera a las esponjas el linaje más antiguo de los animales; varios análisis filogenómicos recientes ubican en cambio a los ctenóforos como grupo hermano del resto de los animales.',
+      fuentes: [
+        { tipo: 'web', url: 'https://www.nature.com/articles/s41586-026-10643-z', titulo: 'A blastoporal organizer in a ctenophore', sitio: 'Nature', consultado: '2026-10-13' },
+        { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Ctenophora', titulo: 'Ctenophora - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' },
+      ],
     },
   ],
 };

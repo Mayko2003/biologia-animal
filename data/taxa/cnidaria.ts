@@ -47,6 +47,21 @@ const taxon: Taxon = {
       nota: 'Para algunos autores los Anthozoos presentarían un mesodermo primario (triblásticos).',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [330, 335], cita: 'todos los Cnidarios son Diblásticos' }],
     },
+    cavidad: {
+      valor: 'no-aplica',
+      nota: 'Tienen cavidad gastrovascular, no cavidad corporal.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Cnidaria/', titulo: 'Cnidaria - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    blastoporo: {
+      valor: 'boca',
+      nota: 'La depresión de la gastrulación se forma en el polo animal, que se convierte en el polo oral.',
+      fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    segmentacion: {
+      valor: 'otra',
+      nota: 'Segmentación total e igual (holoblástica); el patrón varía según el grupo.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
   },
   sistemas: {
     tegumento: [
@@ -73,6 +88,43 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [411, 413], cita: 'residuos nitrogenados (amoníacos) se difunden' }],
       },
     ],
+    circulatorio: [
+      {
+        texto: 'Sin aparato circulatorio; la cavidad gastrovascular distribuye el alimento.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Sin esqueleto mineralizado en la mayoría; algunas colonias secretan envolturas quitinosas o recubrimientos calcáreos (como los corales).',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Hydrozoa/', titulo: 'Hydrozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://animaldiversity.org/accounts/Anthozoa/', titulo: 'Anthozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Células epiteliomusculares cuyas bases forman fibras musculares; en Anthozoa y Scyphozoa la mesoglea contiene además células musculares.',
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Red nerviosa descentralizada (nerve net), una epidérmica y otra gastrodérmica; sin cerebro ni sistema nervioso central.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Cnidaria/', titulo: 'Cnidaria - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://en.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Estatocistos para la orientación en las medusas y ocelos simples; los cubozoos poseen ojos verdaderos con retina, córnea y lente.',
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    reproductor: [
+      {
+        texto: 'Individuos monoicos o dioicos; las gónadas forman los gametos en las medusas (o en los pólipos de los antozoos).',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Cnidaria/', titulo: 'Cnidaria - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {
@@ -93,7 +145,12 @@ const taxon: Taxon = {
       ],
     },
   ],
-  reproduccion: [],
+  reproduccion: [
+    {
+      texto: 'Reproducción asexual por gemación en los pólipos y sexual por gametos; de la fecundación surge una larva plánula ciliada de nado libre.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Cnidaria/', titulo: 'Cnidaria - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+  ],
   bioecologia: [
     {
       texto: 'Son carnívoros; se alimentan principalmente de pequeños crustáceos.',
@@ -112,6 +169,11 @@ const taxon: Taxon = {
       tipo: 'aclaracion',
       texto: 'Para algunos autores todos los cnidarios son diblásticos; otros opinan que los Anthozoos presentarían una tercera capa o mesodermo primario (triblásticos), que proviene del ectodermo y es de aparición tardía. El mesodermo secundario aparece recién en los bilaterios.',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [330, 335], cita: 'los Anthozoos presentarían una tercera capa' }],
+    },
+    {
+      tipo: 'discrepancia',
+      texto: 'El apunte menciona el debate diblásticos vs mesodermo en Anthozoa; la literatura agrega que los cnidarios podrían descender de ancestros triblásticos, ya que sus músculos corresponden al tipo que en bilaterios deriva del mesodermo.',
+      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [330, 335], cita: 'los Anthozoos presentarían una tercera capa' }, { tipo: 'web', url: 'https://en.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
     },
   ],
 };

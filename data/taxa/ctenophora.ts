@@ -40,8 +40,35 @@ const taxon: Taxon = {
       nota: 'Falsa simetría bilateral; unos pocos presentan simetría bilateral.',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [605, 606], cita: 'simetría birradial o falsa simetría bilateral' }],
     },
+    cavidad: {
+      valor: 'acelomado',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Ctenophora/', titulo: 'Ctenophora - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    blastoporo: {
+      valor: 'boca',
+      nota: 'El labio del blastoporo induce la formación de faringe y boca (organizador blastoporal).',
+      fuentes: [{ tipo: 'web', url: 'https://www.nature.com/articles/s41586-026-10643-z', titulo: 'A blastoporal organizer in a ctenophore', sitio: 'Nature', consultado: '2026-10-13' }],
+    },
+    segmentacion: {
+      valor: 'otra',
+      nota: 'Segmentación total y determinada, propia del grupo.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Ctenophora', titulo: 'Ctenophora - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
   },
   sistemas: {
+    tegumento: [
+      {
+        texto: 'Epidermis externa y gastrodermis interna que encierran a la mesoglea, una capa gelatinosa de tejido mesenquimático.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Ctenophora/', titulo: 'Ctenophora - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Cuerpo gelatinoso sin estructuras esqueléticas.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Ctenophora/', titulo: 'Ctenophora - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
     muscular: [
       {
         texto: 'Contienen ocho hileras lineales de cilios, denominados paletas natatorias o peines (de donde deriva su nombre), que se mueven sincrónicamente para nadar; las células musculares para las contracciones están en la mesoglea.',
@@ -52,6 +79,10 @@ const taxon: Taxon = {
       {
         texto: 'Poseen aparato digestivo; en el polo oral se abre la boca con forma de hendidura. Carnívoros: atrapan con los tentáculos animales planctónicos (medusas, copépodos, ostras, huevos de peces).',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [612, 637], cita: 'sí poseen aparato digestivo' }],
+      },
+      {
+        texto: 'A continuación del estómago, el canal aboral desemboca en dos poros anales que comunican el digestivo con el exterior.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Ctenophora', titulo: 'Ctenophora - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
       },
     ],
     respiratorio: [
@@ -130,12 +161,28 @@ const taxon: Taxon = {
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [635, 637], cita: 'Carnívoros, se alimentan de otros animales' }],
     },
   ],
-  ejemplos: [],
+  ejemplos: [
+    {
+      nombre: 'Mnemiopsis leidyi',
+      descripcion: 'ctenóforo modelo de estudio; especie invasora que dañó la pesca del mar Negro',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Ctenophora/', titulo: 'Ctenophora - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    {
+      nombre: 'Pleurobrachia',
+      descripcion: 'género de ctenóforos incapaz de producir luz (no bioluminiscente)',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Ctenophora/', titulo: 'Ctenophora - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+  ],
   notas: [
     {
       tipo: 'discrepancia',
       texto: 'El apunte los declara tripoblásticos y los ubica en Radiata aunque unos pocos tienen simetría bilateral.',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [597, 607], cita: 'PHYLUM CTENOPHORA (TRIPOBLÁSTICOS)' }],
+    },
+    {
+      tipo: 'discrepancia',
+      texto: 'La literatura actual los considera mayormente diblásticos (su mesénquima derivaría del endodermo, como ectomesodermo) aunque el debate continúa; además, varios estudios filogenómicos los ubican como grupo hermano del resto de los animales.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Ctenophora', titulo: 'Ctenophora - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://www.nature.com/articles/s41586-026-10643-z', titulo: 'A blastoporal organizer in a ctenophore', sitio: 'Nature', consultado: '2026-10-13' }],
     },
   ],
 };

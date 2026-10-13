@@ -22,6 +22,10 @@ const taxon: Taxon = {
       texto: 'Generalmente mayores que las hidromedusas: diámetro de campana de 2 a 40 cm y algunas especies aún mayores (2 m).',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [549, 550], cita: 'diámetro de campana de 2 a 40 cm' }],
     },
+    {
+      texto: 'Unas 200 especies organizadas en cuatro órdenes; viven en todos los océanos, la mayoría cerca de las costas.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scyphozoa/', titulo: 'Scyphozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
   ],
   morfologiaExterna: [
     {
@@ -71,6 +75,52 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [585, 589], cita: 'Scifozoos como Cubozoos son dioicos' }],
       },
     ],
+    respiratorio: [
+      {
+        texto: 'Sin órganos respiratorios; el intercambio gaseoso se produce por difusión a través de la superficie del cuerpo.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sin aparato circulatorio; la cavidad gastrovascular distribuye el alimento.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Cuerpo gelatinoso compuesto mayormente de agua, sin partes duras.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scyphozoa/', titulo: 'Scyphozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Nadan por contracción y relajación de los músculos de la campana, que expulsan agua a modo de chorro.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scyphozoa/', titulo: 'Scyphozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Sin órganos excretores; los desechos salen por la única abertura de la cavidad gastrovascular.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://en.wikipedia.org/wiki/Cnidaria', titulo: 'Cnidaria - Wikipedia', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Sin cefalización ni cerebro; una red nerviosa difusa controla la natación.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scyphozoa/', titulo: 'Scyphozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'En algunas especies hay ocelos sensibles a la luz en el margen de la campana.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scyphozoa/', titulo: 'Scyphozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [],
   reproduccion: [
@@ -94,6 +144,16 @@ const taxon: Taxon = {
     },
   ],
   ejemplos: [
+    {
+      nombre: 'Aurelia',
+      descripcion: 'la medusa luna, una de las escifomedusas más conocidas',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scyphozoa/', titulo: 'Scyphozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    {
+      nombre: 'Cyanea',
+      descripcion: 'la medusa melena de león',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Scyphozoa/', titulo: 'Scyphozoa - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
     {
       nombre: 'Aurelia',
       descripcion: 'se alimenta atrapando plancton con el moco de la superficie subumbelar ciliada',
