@@ -24,12 +24,12 @@ export function NotaList({ notas }: { notas: Nota[] }) {
             <p className={`font-medium ${esDiscrepancia ? 'text-amber-800 dark:text-amber-300' : 'text-zinc-700 dark:text-zinc-300'}`}>
               {esDiscrepancia ? 'Discrepancia' : 'Aclaración'}
             </p>
-            <p className="mt-1 leading-relaxed">
+            <div className="mt-1 leading-relaxed">
               {n.texto}{' '}
               {n.fuentes.map((f, j) => (
                 <FuenteBadge key={j} fuente={f} />
               ))}
-            </p>
+            </div>
           </div>
         );
       })}

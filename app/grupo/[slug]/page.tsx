@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 import { FiltroFuentesToggle } from '@/components/fuentes/filtro-fuentes';
 import { Breadcrumb } from '@/components/taxon/breadcrumb';
 import { DatoList } from '@/components/taxon/dato-list';
@@ -35,7 +36,15 @@ export async function generateMetadata({ params }: PageProps<'/grupo/[slug]'>): 
 const BOTON =
   'rounded-md border border-zinc-300 px-3 py-1.5 text-sm text-zinc-700 hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-emerald-600 dark:hover:text-emerald-400';
 
-export default async function Page({ params }: PageProps<'/grupo/[slug]'>) {
+export default function Page({ params }: PageProps<'/grupo/[slug]'>) {
+  return (
+    <Suspense fallback={<div className="h-[60vh] animate-pulse rounded-lg bg-zinc-100 dark:bg-zinc-900" />}>
+      <Ficha params={params} />
+    </Suspense>
+  );
+}
+
+async function Ficha({ params }: { params: PageProps<'/grupo/[slug]'>['params'] }) {
   const { slug } = await params;
   const taxon = getTaxon(slug);
   if (!taxon) notFound();

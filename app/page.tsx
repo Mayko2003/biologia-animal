@@ -92,7 +92,7 @@ export default function Page() {
 
       <section className="space-y-2">
         <h2 className="text-lg font-semibold">Cómo leer las fuentes</h2>
-        <p className="text-sm text-zinc-600 dark:text-zinc-400">
+        <div className="text-sm text-zinc-600 dark:text-zinc-400">
           Cada dato muestra de dónde sale: los datos de los apuntes de la cátedra llevan la insignia{' '}
           <FuenteBadge fuente={{ tipo: 'apunte', archivo: 'annelidos.md', lineas: [36, 38], cita: 'El sistema circulatorio es cerrado' }} />{' '}
           y los que se completaron con bibliografía externa llevan{' '}
@@ -107,7 +107,7 @@ export default function Page() {
           />
           . Tocá una insignia para ver el detalle (líneas y cita literal, o el enlace externo). Con el filtro
           &ldquo;Solo apuntes&rdquo; de cada ficha podés ocultar los datos externos.
-        </p>
+        </div>
       </section>
     </div>
   );
