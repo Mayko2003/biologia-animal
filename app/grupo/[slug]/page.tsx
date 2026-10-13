@@ -7,7 +7,7 @@ import { Breadcrumb } from '@/components/taxon/breadcrumb';
 import { DatoList } from '@/components/taxon/dato-list';
 import { EjemploList } from '@/components/taxon/ejemplo-list';
 import { EmbriologiaTabla } from '@/components/taxon/embriologia-tabla';
-import { IndiceSecciones } from '@/components/taxon/indice-secciones';
+import { IndiceSecciones, IndiceSeccionesMovil } from '@/components/taxon/indice-secciones';
 import { NotaList } from '@/components/taxon/nota-list';
 import { RankBadge } from '@/components/taxon/rank-badge';
 import { SistemasTabs } from '@/components/taxon/sistemas-tabs';
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps<'/grupo/[slug]'>): 
 }
 
 const BOTON =
-  'rounded-md border border-zinc-300 px-3 py-1.5 text-sm text-zinc-700 hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-emerald-600 dark:hover:text-emerald-400';
+  'inline-flex min-h-[40px] items-center rounded-md border border-zinc-300 px-3 py-1.5 text-sm text-zinc-700 hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-emerald-600 dark:hover:text-emerald-400';
 
 export default function Page({ params }: PageProps<'/grupo/[slug]'>) {
   return (
@@ -103,7 +103,7 @@ async function Ficha({ params }: { params: PageProps<'/grupo/[slug]'>['params'] 
           <Breadcrumb ruta={ruta} />
           <div className="flex flex-wrap items-center gap-2">
             <RankBadge nivel={taxon.nivel} />
-            <h1 className="text-3xl font-bold">{taxon.nombre}</h1>
+            <h1 className="text-2xl font-bold sm:text-3xl">{taxon.nombre}</h1>
             {taxon.externo && (
               <span className="rounded px-2 py-0.5 text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">
                 Grupo no incluido en los apuntes
@@ -118,9 +118,11 @@ async function Ficha({ params }: { params: PageProps<'/grupo/[slug]'>['params'] 
             <Link href={`/arbol?sel=${slug}`} className={BOTON}>Ver en el árbol</Link>
             <Link href={`/mapa?sel=${selMapa}`} className={BOTON}>Ver en el mapa</Link>
             <Link href={`/comparar?a=${slug}`} className={BOTON}>Comparar con…</Link>
-            <span className="ml-auto"><FiltroFuentesToggle /></span>
+            <span className="w-full sm:w-auto sm:ml-auto"><FiltroFuentesToggle /></span>
           </div>
         </header>
+
+        <IndiceSeccionesMovil secciones={secciones.map((s) => ({ id: s.id, titulo: s.titulo }))} />
 
         {secciones.map((s) => (
           <Seccion key={s.id} id={s.id} titulo={s.titulo}>

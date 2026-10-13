@@ -60,7 +60,12 @@ export function SistemasTabs({
 
   return (
     <div>
-      <div role="tablist" aria-label="Sistemas" className="flex flex-wrap gap-1" onKeyDown={onKeyDown}>
+      <div
+        role="tablist"
+        aria-label="Sistemas"
+        className="flex gap-1 overflow-x-auto whitespace-nowrap pb-1 lg:flex-wrap lg:overflow-visible"
+        onKeyDown={onKeyDown}
+      >
         {pestanas.map((p) => (
           <button
             key={p.id}
@@ -69,8 +74,11 @@ export function SistemasTabs({
             role="tab"
             aria-selected={activa === p.id}
             aria-controls={`panel-${p.id}`}
-            onClick={() => activar(p.id)}
-            className={`rounded-md px-2.5 py-1.5 text-xs font-medium ${
+            onClick={(e) => {
+              activar(p.id);
+              e.currentTarget.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+            }}
+            className={`min-h-[40px] shrink-0 rounded-md px-3 py-1.5 text-sm font-medium ${
               activa === p.id
                 ? 'bg-emerald-600 text-white'
                 : p.datos.length === 0
