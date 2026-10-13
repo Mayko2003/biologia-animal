@@ -50,6 +50,50 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [340, 342], cita: 'Tienen un solo ojo' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Cutícula quitinosa fina, sin caparazón.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Copepoda', titulo: 'Copepoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    digestivo: [
+      {
+        texto: 'Tubo digestivo completo del plan crustáceo; se alimentan filtrando o capturando plancton.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Copepoda', titulo: 'Copepoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'La mayoría carece de branquias; el intercambio es por la superficie corporal.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Copepoda', titulo: 'Copepoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Por su pequeño tamaño no necesitan corazón ni sistema circulatorio desarrollado; solo Calanoida posee corazón, aunque sin vasos sanguíneos.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Copepoda', titulo: 'Copepoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Glándulas maxilares.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Copepoda', titulo: 'Copepoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Cadena nerviosa ventral del plan crustáceo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    reproductor: [
+      {
+        texto: 'Reproducción sexual; del huevo sale una larva nauplio.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Copepoda', titulo: 'Copepoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [],
   reproduccion: [

@@ -75,6 +75,18 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [357, 360], cita: 'red de mangueritas' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Exoesqueleto quitinoso del plan quelicerado, con placas dorsales (terguitos) y ventrales (esternitos).',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Exoesqueleto quitinoso articulado que mudan periódicamente.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

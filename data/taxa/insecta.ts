@@ -97,6 +97,12 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [625, 639], cita: 'órgano copulador o pene' }],
       },
     ],
+    esqueleto: [
+      {
+        texto: 'El exoesqueleto o ectoesqueleto recubre todo el cuerpo; también se conoce como integumento.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Insecta', titulo: 'Insecta - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

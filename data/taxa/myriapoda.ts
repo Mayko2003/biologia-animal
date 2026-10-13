@@ -69,6 +69,24 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [509, 520], cita: 'gónadas son dorsales e' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Cuerpo recubierto por la cutícula quitinosa del exoesqueleto; los paurópodos la tienen blanda, sin calcificar.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Pauropoda', titulo: 'Pauropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Exoesqueleto quitinoso articulado que mudan periódicamente (ecdisis).',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Músculos segmentarios asociados al exoesqueleto y a los numerosos apéndices locomotores.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {
@@ -99,6 +117,11 @@ const taxon: Taxon = {
       tipo: 'aclaracion',
       texto: 'El cuerpo con cabeza y tronco alargado de muchos segmentos con patas fue en otro tiempo considerado suficiente para reunir a los cuatro grupos en una sola Clase Myriapoda (=muchas patas), pero al existir diferencias fundamentales entre ellos se abandonó este taxón, que quedó solo como un nombre colectivo.',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [469, 472], cita: 'se abandonó este taxón' }],
+    },
+    {
+      tipo: 'discrepancia',
+      texto: 'El apunte aclara que Myriapoda es solo un nombre colectivo; los estudios genéticos actuales sí apoyan su condición monofilética, aunque sugieren que estarían más cerca de los quelicerados que de los hexápodos.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Myriapoda', titulo: 'Myriapoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
     },
   ],
 };

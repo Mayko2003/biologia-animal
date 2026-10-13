@@ -75,6 +75,30 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [231, 267], cita: 'desarrollar el marsupio' }],
       },
     ],
+    muscular: [
+      {
+        texto: 'Músculos estriados asociados al exoesqueleto y a los apéndices, incluido el poderoso músculo extensor abdominal de la fuga.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Malacostraca', titulo: 'Malacostraca - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Glándulas antenales (en la base de la segunda antena), del plan excretor crustáceo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Cadena nerviosa ventral con ganglios por segmento y cerebro dorsal.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Ojos compuestos, con frecuencia pedunculados.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crustacea', titulo: 'Crustacea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

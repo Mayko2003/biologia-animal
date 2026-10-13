@@ -40,6 +40,25 @@ const taxon: Taxon = {
       valor: 'en-T',
       fuentes: [{ tipo: 'apunte', archivo: P, lineas: [17, 19], cita: 'huevo en T (como' }],
     },
+    cavidad: {
+      valor: 'pseudocelomado',
+      nota: 'Vermes seudocelomados; la presión del líquido seudocelomático mantiene cerrada la faringe.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Nematoda', titulo: 'Nematoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    capas: {
+      valor: 'triblastico',
+      nota: 'Seudocelomado y protostomado: condición propia de triblásticos.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Nematoda', titulo: 'Nematoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    simetria: {
+      valor: 'bilateral',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Nematoda', titulo: 'Nematoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    blastoporo: {
+      valor: 'boca',
+      nota: 'Los nematodos y sus parientes cercanos se cuentan entre los metazoos protostomados.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Nematoda', titulo: 'Nematoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
   },
   sistemas: {
     tegumento: [
@@ -96,6 +115,13 @@ const taxon: Taxon = {
       {
         texto: 'En Ascaris lumbricoides los sexos son separados. El sistema reproductor masculino consta de dos testículos, vasos deferentes, vesícula seminal, conducto eyaculador y un saco con dos dardos (=espículas) que se insertan en la vulva durante la cópula. El femenino posee un ovario, un oviducto y un útero al que le continúa la vagina que se abre en la vulva.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [72, 84], cita: 'sistema reproductor masculino' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Sin esqueleto mineralizado; la cutícula escleroproteica y la presión del líquido seudocelomático dan rigidez al cuerpo.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Nematoda', titulo: 'Nematoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
       },
     ],
   },

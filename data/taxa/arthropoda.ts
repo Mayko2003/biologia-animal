@@ -33,7 +33,31 @@ const taxon: Taxon = {
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [128, 144], cita: 'pigmentos melánicos marrones' }],
     },
   ],
-  embriologia: {},
+  embriologia: {
+    cavidad: {
+      valor: 'esquizocelomado',
+      nota: 'El celoma se forma por esquizocelia pero queda muy reducido (zonas de los sistemas reproductor y excretor); la mayor parte de la cavidad corporal es un hemocele abierto.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Arthropoda/', titulo: 'Arthropoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    capas: {
+      valor: 'triblastico',
+      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [42, 44], cita: 'tres capas germinales' }],
+    },
+    simetria: {
+      valor: 'bilateral',
+      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [42, 43], cita: 'Poseen simetría bilateral' }],
+    },
+    blastoporo: {
+      valor: 'boca',
+      nota: 'Protóstomos: el blastoporo origina la boca.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Arthropoda/', titulo: 'Arthropoda - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    segmentacion: {
+      valor: 'otra',
+      nota: 'Cuerpo dividido en segmentos o somitos articulados exteriormente; los embriones de todos los artrópodos están segmentados, con regionalización (tagmatización).',
+      fuentes: [{ tipo: 'apunte', archivo: A, lineas: [42, 44], cita: 'segmentos o somitos articulados' }, { tipo: 'web', url: 'https://en.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia in English', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  },
   sistemas: {
     tegumento: [
       {
@@ -91,6 +115,18 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [76, 78], cita: 'dejan pasar cerdas sensitivas' }],
       },
     ],
+    excretor: [
+      {
+        texto: 'Variable según el grupo: glándulas antenales y maxilares en crustáceos, glándulas coxales en arácnidos, y tubos de Malpighi en insectos y miriápodos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    reproductor: [
+      {
+        texto: 'Reproducción sexual: las hembras, fecundadas por los machos, ponen huevos; el desarrollo puede ser directo o indirecto.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {
@@ -107,7 +143,16 @@ const taxon: Taxon = {
       ],
     },
   ],
-  reproduccion: [],
+  reproduccion: [
+    {
+      texto: 'Reproducción sexual con puesta de huevos; el desarrollo puede ser directo o indirecto.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    {
+      texto: 'Los apéndices abdominales cumplen funciones reproductoras: retener los huevos o aferrarse a la pareja durante la cópula.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
   bioecologia: [
     {
       texto: 'Debido al exoesqueleto no existen artrópodos de gran tamaño (un cangrejo japonés llega a 3,50 m con las patas extendidas; ningún insecto viviente sobrepasa los 27 cm; los menores rondan 1 mm).',

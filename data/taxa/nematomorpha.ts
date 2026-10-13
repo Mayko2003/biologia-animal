@@ -35,6 +35,24 @@ const taxon: Taxon = {
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [225, 227], cita: 'cavidad es un pseudocele' }],
       nota: 'El apunte lo describe solo en adultos postreproductores.',
     },
+    capas: {
+      valor: 'triblastico',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Nematomorpha', titulo: 'Nematomorpha - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    simetria: {
+      valor: 'bilateral',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Nematomorpha', titulo: 'Nematomorpha - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    blastoporo: {
+      valor: 'boca',
+      nota: 'El clado se anida dentro de Ecdysozoa, un grupo de animales protóstomos.',
+      fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Nematomorpha/', titulo: 'Nematomorpha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
+    },
+    segmentacion: {
+      valor: 'no-aplica',
+      nota: 'Carecen de segmentación corporal.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Nematomorpha', titulo: 'Nematomorpha - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
   },
   sistemas: {
     tegumento: [
@@ -72,6 +90,32 @@ const taxon: Taxon = {
       {
         texto: 'Los sexos están separados; hay gónadas largas y cilíndricas que se extienden a lo largo del cuerpo, y los espermiductos o los oviductos llevan a la cloaca. Durante la cópula un macho forma bucles y se sujeta fuertemente alrededor del extremo posterior de la hembra.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [231, 233], cita: 'gónadas largas y cilíndricas' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'El pseudoceloma, cavidad corporal llena de líquido, actúa como hidroesqueleto.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Nematomorpha', titulo: 'Nematomorpha - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Carecen de sistemas respiratorio y circulatorio.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Nematomorpha', titulo: 'Nematomorpha - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Carecen de sistema circulatorio.',
+        ausente: true,
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Nematomorpha', titulo: 'Nematomorpha - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Algunas especies poseen cuatro «células gigantes» conectadas al sistema nervioso central, con microvellosidades, que se supone cumplen funciones sensoriales.',
+        fuentes: [{ tipo: 'web', url: 'https://animaldiversity.org/accounts/Nematomorpha/', titulo: 'Nematomorpha - Animal Diversity Web', sitio: 'Animal Diversity Web', consultado: '2026-10-13' }],
       },
     ],
   },

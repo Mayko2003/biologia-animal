@@ -41,9 +41,56 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [316, 316], cita: 'gran ojo compuesto' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Cutícula quitinosa; en varios grupos forma un caparazón traslúcido que envuelve el cuerpo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crustacea', titulo: 'Crustacea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Músculos asociados a los apéndices en forma de lámina (filopodios) usados para nadar y filtrar.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Branchiopoda', titulo: 'Branchiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Los apéndices troncales llevan una pequeña lámina branquial en la parte externa que interviene en la respiración.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Branchiopoda', titulo: 'Branchiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sistema circulatorio abierto del plan crustáceo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crustacea', titulo: 'Crustacea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Glándulas antenales y maxilares del plan crustáceo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Cadena nerviosa ventral con ganglios por segmento.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    reproductor: [
+      {
+        texto: 'Al desovar, los huevos quedan en el lodo del fondo (huevos de resistencia en varias especies).',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Branchiopoda', titulo: 'Branchiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [],
-  reproduccion: [],
+  reproduccion: [
+    {
+      texto: 'El desarrollo se inicia con una larva nauplio y llega al adulto a través de varios cambios.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Branchiopoda', titulo: 'Branchiopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
   bioecologia: [
     {
       texto: 'Daphnia se usa en estudios sobre ecología y limnología, evolución y ecotoxicología, y es muy popular en acuicultura y acuariofilia como alimento para peces.',

@@ -65,6 +65,48 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [178, 180], cita: 'órganos de intercambio gaseoso' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Exoesqueleto articulado formado principalmente de quitina; en muchos el tórax está cubierto por un caparazón que se desarrolla de un pliegue de la epidermis.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crustacea', titulo: 'Crustacea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Exoesqueleto quitinoso articulado, a veces impregnado de sales calcáreas (caparazón).',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crustacea', titulo: 'Crustacea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Músculos estriados asociados al exoesqueleto y a los apéndices birrámeos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Glándulas antenales y maxilares, situadas en la base de esos apéndices.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Cadena nerviosa ventral con ganglios por segmento y cerebro (sincerebro) dorsal.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Ojos compuestos sésiles o pedunculados; la larva nauplio lleva un ojo naupliano mediano característico.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crustacea', titulo: 'Crustacea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    reproductor: [
+      {
+        texto: 'Reproducción sexual; en algunos grupos (peracáridos) las hembras guardan los huevos en un marsupio entre los pereiópodos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crustacea', titulo: 'Crustacea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {
@@ -77,15 +119,37 @@ const taxon: Taxon = {
       ],
     },
   ],
-  reproduccion: [],
+  reproduccion: [
+    {
+      texto: 'Característica definitoria del grupo: la larva nauplio, provista de un ojo naupliano en alguna etapa de la vida.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crustacea', titulo: 'Crustacea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
   bioecologia: [
     {
       texto: 'Los crustáceos son epibentónicos (con apéndices pesados adaptados para la reptación y excavación), además de nadadores y suspensívoros; existe el mayor número de artrópodos filtradores y suspensívoros, con alimentación filtradora mediante sedas en lugar de cilios y apéndices especiales que baten el agua.',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [105, 119], cita: 'filtradores y suspensívoros' }],
     },
   ],
-  ejemplos: [],
-  notas: [],
+  ejemplos: [
+    {
+      nombre: 'Penaeus',
+      descripcion: 'género de camarones de interés pesquero',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crustacea', titulo: 'Crustacea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    {
+      nombre: 'Pollicipes cornucopia',
+      descripcion: 'percebe, cirrípedo de interés comercial',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Cirripedia', titulo: 'Cirripedia - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
+  notas: [
+    {
+      tipo: 'discrepancia',
+      texto: 'El apunte trata Crustacea y Hexapoda como subphyla separados; la literatura actual establece que los crustáceos son parafiléticos y que los hexápodos son «crustáceos terrestres» (clado Pancrustacea).',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crustacea', titulo: 'Crustacea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
 };
 
 export default taxon;

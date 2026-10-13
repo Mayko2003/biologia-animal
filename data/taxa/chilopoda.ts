@@ -43,6 +43,54 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [555, 569], cita: 'el gonoporo se abre' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Exoesqueleto quitinoso del plan miriápodo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Exoesqueleto quitinoso articulado que mudan periódicamente.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Músculos segmentarios asociados a los apéndices locomotores.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Sistema de tráqueas y espiráculos análogo al de los hexápodos; en Notostigmophora los espiráculos son centro-dorsales y en el resto, laterales.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Myriapoda', titulo: 'Myriapoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chilopoda', titulo: 'Chilopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Corazón tubular dorsal que bombea la hemolinfa hacia la cabeza a través de la aorta.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Myriapoda', titulo: 'Myriapoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Tubos de Malpighi, como en los demás miriápodos e insectos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Cadena nerviosa ventral con pares de ganglios por segmento y cerebro dorsal.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Algunas especies poseen ojos laterales: Geophilomorpha son ciegos, Scutigeromorpha tienen un par de ojos compuestos y el resto puede tener uno o más pares de ojos simples.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chilopoda', titulo: 'Chilopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

@@ -77,6 +77,24 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [288, 295], cita: 'una vesícula seminal única' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Exoesqueleto quitinoso del plan quelicerado.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Exoesqueleto quitinoso articulado que mudan periódicamente.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Músculos del exoesqueleto; algunas articulaciones de las patas carecen de extensores y usan energía elástica cuticular.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arachnida', titulo: 'Arachnida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

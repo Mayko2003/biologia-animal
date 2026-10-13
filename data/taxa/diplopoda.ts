@@ -65,6 +65,36 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [623, 624], cita: 'separados e inseminación indirecta' }],
       },
     ],
+    esqueleto: [
+      {
+        texto: 'Exoesqueleto quitinoso calcificado que mudan periódicamente.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Diplopoda', titulo: 'Diplopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Músculos segmentarios asociados a los numerosos apéndices locomotores.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Respiran a través de dos pares de espiráculos ubicados ventralmente en cada segmento, cerca de la base de las patas.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Diplopoda', titulo: 'Diplopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Dos pares de tubos de Malpighi situados cerca de la mitad del intestino.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Diplopoda', titulo: 'Diplopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Ojos con varios ocelos (ojos simples) de lente plana dispuestos en un campo ocelar a cada lado de la cabeza.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Diplopoda', titulo: 'Diplopoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [
     {

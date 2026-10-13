@@ -22,7 +22,68 @@ const taxon: Taxon = {
     },
   ],
   embriologia: {},
-  sistemas: {},
+  sistemas: {
+    tegumento: [
+      {
+        texto: 'Cuerpo recubierto por el exoesqueleto quitinoso de los artrópodos; se diferencian de los demás por los quelíceros y por carecer de antenas.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chelicerata', titulo: 'Chelicerata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Exoesqueleto quitinoso articulado que mudan periódicamente (ecdisis).',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Músculos segmentarios asociados al exoesqueleto y a los apéndices articulados.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    digestivo: [
+      {
+        texto: 'Tubo digestivo completo; los quelíceros, primer par de apéndices, procesan o inyectan el alimento.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chelicerata', titulo: 'Chelicerata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Branquias en los acuáticos (merostomados); filotráqueas (pulmones en libro), tráqueas o ambas en los terrestres (arácnidos).',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Merostomata', titulo: 'Merostomata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arachnida', titulo: 'Arachnida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sistema circulatorio abierto con corazón dentro de la cámara pericárdica y hendiduras laterales por donde ingresa la sangre.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arachnida', titulo: 'Arachnida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Glándulas coxales que desembocan en la base de las patas; en arácnidos además tubos de Malpighi.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arachnida', titulo: 'Arachnida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Sistema nervioso concentrado, con fusión de numerosos ganglios formando una masa cerebral.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arachnida', titulo: 'Arachnida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Ojos compuestos laterales y/o ojos simples medianos; carecen de antenas.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Chelicerata', titulo: 'Chelicerata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    reproductor: [
+      {
+        texto: 'Reproducción sexual; ponen huevos y el desarrollo puede ser directo o indirecto.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+  },
   estructurasEspeciales: [
     {
       titulo: 'Quelíceros y pedipalpos',
@@ -34,8 +95,18 @@ const taxon: Taxon = {
       ],
     },
   ],
-  reproduccion: [],
-  bioecologia: [],
+  reproduccion: [
+    {
+      texto: 'Reproducción sexual con puesta de huevos; los merostomados (xifosuros) los depositan en la arena de las playas.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Merostomata', titulo: 'Merostomata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
+  bioecologia: [
+    {
+      texto: 'Los merostomados son acuáticos con branquias; los arácnidos conquistaron el medio terrestre con filotráqueas y tráqueas.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Merostomata', titulo: 'Merostomata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arachnida', titulo: 'Arachnida - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
   ejemplos: [],
   notas: [],
 };

@@ -39,6 +39,54 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [395, 398], cita: 'estado unisexual alterno' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'Cuerpo cubierto por placas externas calcificadas a modo de armadura; crecen por adición de material a la cubierta, sin mudas tras la metamorfosis.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Cirripedia', titulo: 'Cirripedia - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'Músculos del apéndice pedunculado y de las ramas torácicas (cirros) filtradoras.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Cirripedia', titulo: 'Cirripedia - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    digestivo: [
+      {
+        texto: 'Tubo digestivo completo; se alimentan filtrando plancton con los apéndices torácicos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Cirripedia', titulo: 'Cirripedia - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Intercambio gaseoso asociado a los apéndices y a la superficie corporal (plan crustáceo).',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sistema circulatorio abierto del plan crustáceo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'Glándulas antenales y maxilares del plan crustáceo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Cadena nerviosa ventral con ganglios; en el adulto sésil está concentrada.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Arthropoda', titulo: 'Arthropoda - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'La larva nauplio lleva un ojo naupliano mediano característico; el adulto sésil carece de ojos compuestos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Crustacea', titulo: 'Crustacea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [],
   reproduccion: [
