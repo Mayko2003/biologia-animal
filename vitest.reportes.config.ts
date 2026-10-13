@@ -9,5 +9,6 @@ export default defineConfig({
     environment: 'node',
     include: ['tests/reportes/**/*.test.ts'],
     passWithNoTests: true,
+    disableConsoleIntercept: true,
   },
 });
