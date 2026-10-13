@@ -5,8 +5,10 @@ import { COLOR_SIN_DATO, COLOR_VALOR, VALOR_LABEL } from '@/lib/etiquetas';
 import type { CriterioId, NodoArbol, NodoMapa, ValorCriterio } from '@/lib/types';
 import { PanelSeleccion } from '@/components/navegacion/panel-seleccion';
 import { useSeleccion } from '@/components/navegacion/use-seleccion';
+import { useEsEscritorio } from '@/components/ui/use-media';
 import { LeyendaLente } from './leyenda-lente';
 import { MapaConceptual } from './mapa-conceptual';
+import { MapaLista } from './mapa-lista';
 import { SelectorLente, useLente } from './selector-lente';
 
 function hojasDel(n: NodoMapa): NodoMapa[] {
@@ -24,6 +26,7 @@ export function ExploradorMapa({
 }) {
   const [sel, setSel] = useSeleccion();
   const lente = useLente();
+  const escritorio = useEsEscritorio();
 
   const hojas = useMemo(() => hojasDel(mapa), [mapa]);
 
@@ -53,7 +56,11 @@ export function ExploradorMapa({
       <div className="min-w-0 space-y-3">
         <SelectorLente />
         {lente && <LeyendaLente criterio={lente} conteo={conteo} />}
-        <MapaConceptual mapa={mapa} seleccionado={sel} onSeleccionar={setSel} estiloHoja={estiloHoja} />
+        {escritorio ? (
+          <MapaConceptual mapa={mapa} seleccionado={sel} onSeleccionar={setSel} estiloHoja={estiloHoja} />
+        ) : (
+          <MapaLista mapa={mapa} seleccionado={sel} onSeleccionar={setSel} estiloHoja={estiloHoja} />
+        )}
       </div>
       <PanelSeleccion arbol={arbol} slug={sel} onSeleccionar={setSel} />
     </div>
