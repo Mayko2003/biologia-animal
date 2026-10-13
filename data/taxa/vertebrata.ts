@@ -36,10 +36,74 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [369, 376], cita: 'formar el encéfalo' }],
       },
     ],
+    tegumento: [
+      {
+        texto: 'El tegumento consta de epidermis, dermis e hipodermis, y puede presentar diferenciaciones córneas, estructuras protectoras y sensoriales, glándulas y cromatóforos responsables de la coloración.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    muscular: [
+      {
+        texto: 'El aparato locomotor de los vertebrados se ha adaptado de su función inicial, la natación, a otras acciones que permiten movimientos complejos según el medio.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    digestivo: [
+      {
+        texto: 'El aparato digestivo es completo.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Respiración branquial en las formas acuáticas (ciclóstomos, peces y larvas de anfibios) y pulmonar en las terrestres.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Sistema circulatorio con corazón dividido en cámaras, arterias, venas y capilares, más un sistema linfático; en los peces hay un circuito sistémico y otro branquial con corazón de una aurícula y un ventrículo, y en muchos vertebrados terrestres la circulación es doble.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    excretor: [
+      {
+        texto: 'El aparato excretor está formado por el aparato renal y las glándulas sudoríparas.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'La parte anterior del tubo neural se ensancha para formar el encéfalo, alojado en el cráneo; el sistema nervioso comprende el sistema nervioso central (encéfalo y médula espinal) y el periférico (ganglios y nervios espinales), más un sistema nervioso autónomo que inerva las vísceras.',
+        fuentes: [{ tipo: 'apunte', archivo: A, lineas: [369, 376], cita: 'formar el encéfalo' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Sentidos: ojos dispuestos en cámara de visión lateral (binocular en algunas aves y primates), tangorreceptores con órganos táctiles y demás órganos de los sentidos.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
+    reproductor: [
+      {
+        texto: 'Reproducción sexual, habitualmente con sexos separados, fecundación interna o externa, y formas ovíparas y vivíparas.',
+        fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+    ],
   },
   estructurasEspeciales: [],
-  reproduccion: [],
-  bioecologia: [],
+  reproduccion: [
+    {
+      texto: 'La reproducción es sexual salvo excepciones (hermafroditismo en algunos peces); habitualmente con sexos separados, fecundación interna o externa; en los mamíferos el embrión se desarrolla en el interior de la madre.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
+  bioecologia: [
+    {
+      texto: 'Ocupan mares, aguas dulces, tierra y aire con gran variedad de formas de vida.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
   ejemplos: [],
   notas: [
     {

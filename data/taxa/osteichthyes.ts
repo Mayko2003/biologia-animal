@@ -85,6 +85,12 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [330, 331], cita: 'una larva Alevin' }],
       },
     ],
+    excretor: [
+    {
+      texto: 'La excreción corre a cargo del aparato renal; el mucus de la piel regula la permeabilidad y contribuye a la defensa contra patógenos.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Osteichthyes', titulo: 'Osteichthyes - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    ],
   },
   estructurasEspeciales: [
     {
@@ -97,8 +103,22 @@ const taxon: Taxon = {
       ],
     },
   ],
-  reproduccion: [],
-  bioecologia: [],
+  reproduccion: [
+    {
+      texto: 'Gónadas pares; son ovíparos (algunos ovovivíparos o vivíparos), con fecundación externa salvo excepciones; la mayoría con desarrollo indirecto, con larva alevín.',
+      fuentes: [{ tipo: 'apunte', archivo: 'gnatostomatha.md', lineas: [330, 331], cita: 'Gónadas pares, son ovíparos' }],
+    },
+    {
+      texto: 'La reproducción es generalmente ovípara, con puestas que pueden llegar a millones de huevos para compensar la alta mortalidad de las crías.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Osteichthyes', titulo: 'Osteichthyes - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
+  bioecologia: [
+    {
+      texto: 'Peces óseos marinos y de agua dulce; la coloración suele ser mimética: oscura en el dorso sobre fondos marinos y plateada en el flanco (argenteum).',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Osteichthyes', titulo: 'Osteichthyes - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
   ejemplos: [
     {
       nombre: 'perca',
@@ -111,6 +131,11 @@ const taxon: Taxon = {
       tipo: 'aclaracion',
       texto: 'El término Osteichthyes hace referencia a un grupo parafilético, por lo que no es una clasificación válida: hoy se sabe que está formado por las clases Actinopterygii y Sarcopterygii.',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [234, 236], cita: 'a un grupo parafilético por' }],
+    },
+    {
+      tipo: 'discrepancia',
+      texto: 'Según la bibliografía actual, los tetrápodos evolucionaron de peces sarcopterigios, por lo que la sistemática cladística incluye a los vertebrados terrestres dentro de Osteichthyes/Sarcopterygii; el apunte ya advierte que Osteichthyes es parafilético y la aplicación conserva su esquema (clases Actinopterygii y Sarcopterygii).',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Osteichthyes', titulo: 'Osteichthyes - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
     },
   ],
 };

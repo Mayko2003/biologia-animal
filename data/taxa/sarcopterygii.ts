@@ -57,10 +57,50 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [371, 371], cita: 'cerebelo y lóbulos ópticos diferenciados' }],
       },
     ],
+    muscular: [
+    {
+      texto: 'Aletas pares lobuladas (carnosas), con musculatura interna y un solo elemento esquelético basal; su similitud con las extremidades quiridias de los primeros anfibios muestra el parentesco con los vertebrados terrestres.',
+      fuentes: [{ tipo: 'apunte', archivo: 'gnatostomatha.md', lineas: [351, 366], cita: 'aletas pares lobuladas' }],
+    },
+    ],
+    digestivo: [
+    {
+      texto: 'Poseen mandíbulas y dientes con esmalte.',
+      fuentes: [{ tipo: 'apunte', archivo: 'gnatostomatha.md', lineas: [360, 360], cita: 'dientes con esmalte' }],
+    },
+    ],
+    excretor: [
+    {
+      texto: 'Excreción por el aparato renal, como en los demás vertebrados.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    ],
+    sentidos: [
+    {
+      texto: 'Órganos de los sentidos de tipo vertebrado.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    ],
+    reproductor: [
+    {
+      texto: 'Reproducción sexual con sexos separados.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    ],
   },
   estructurasEspeciales: [],
-  reproduccion: [],
-  bioecologia: [],
+  reproduccion: [
+    {
+      texto: 'Reproducción sexual con sexos separados, como en los demás vertebrados; los dipnoos y celacantos actuales son los representantes vivientes del grupo.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Vertebrata', titulo: 'Vertebrata - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }, { tipo: 'web', url: 'https://es.wikipedia.org/wiki/Sarcopterygii', titulo: 'Sarcopterygii - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+  ],
+  bioecologia: [
+    {
+      texto: 'Peces óseos de aletas lobuladas; los vertebrados terrestres descienden de antiguos sarcopterigios, y los pulmones de los dipnoos se usan para respirar (en el celacanto se convirtieron en órganos de flotación).',
+      fuentes: [{ tipo: 'apunte', archivo: 'gnatostomatha.md', lineas: [351, 370], cita: 'los vertebrados terrestres descienden' }],
+    },
+  ],
   ejemplos: [
     {
       nombre: 'dipnoos',

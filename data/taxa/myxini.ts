@@ -77,6 +77,12 @@ const taxon: Taxon = {
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [597, 599], cita: 'ovarios y testículos' }],
       },
     ],
+    muscular: [
+    {
+      texto: 'Las glándulas de moco de la piel son exprimidas por una musculatura separada; el flujo de agua respiratoria se produce por contracción muscular desde la abertura nasal hacia las bolsas branquiales.',
+      fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Myxini', titulo: 'Myxini - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+    },
+    ],
   },
   estructurasEspeciales: [],
   reproduccion: [
