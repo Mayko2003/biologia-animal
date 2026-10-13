@@ -140,6 +140,7 @@ plan/                      # este plan
 | E6 Cierre | T47–T49 | E2E, pulido, verificación final |
 | E7 TP15 | T50–T51 | Contenido del apunte de anfibios y reptiles (TP15) |
 | E8 Móvil | T52–T59 | Diseño móvil: tab bar, bottom sheet, vistas lista, comparador apilado |
+| E9 Diseño visual | T60 | Ficha interactiva: hero, spec cards, iconos, animaciones |
 
 Lista completa:
 
@@ -202,6 +203,7 @@ Lista completa:
 - [T57](tickets/T57-comparador-movil.md) Comparador: tarjetas apiladas en móvil
 - [T58](tickets/T58-pulido-movil.md) Pulido móvil: targets táctiles, popover de fuentes y clases compartidas
 - [T59](tickets/T59-ficha-movil-contenido.md) Ficha de grupo/clase: contenido adaptado a móvil
+- [T60](tickets/T60-ficha-interactiva.md) Ficha de grupo: diseño interactivo y objetos visuales
 
 ## 7. Guías compartidas
 
