@@ -50,7 +50,7 @@ export function ExploradorMapa({
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_380px]">
-      <div className="space-y-3">
+      <div className="min-w-0 space-y-3">
         <SelectorLente />
         {lente && <LeyendaLente criterio={lente} conteo={conteo} />}
         <MapaConceptual mapa={mapa} seleccionado={sel} onSeleccionar={setSel} estiloHoja={estiloHoja} />

@@ -1,7 +1,10 @@
+'use client';
+
 import Link from 'next/link';
 import { CRITERIO_LABEL, VALOR_LABEL } from '@/lib/etiquetas';
 import { CRITERIOS, type EmbriologiaEfectiva } from '@/lib/types';
 import { FuenteBadge } from '@/components/fuentes/fuente-badge';
+import { useFiltroFuentes } from '@/components/fuentes/filtro-fuentes';
 
 export function EmbriologiaTabla({
   embriologia,
@@ -10,6 +13,7 @@ export function EmbriologiaTabla({
   embriologia: EmbriologiaEfectiva;
   nombres: Record<string, string>;
 }) {
+  const { modo } = useFiltroFuentes();
   return (
     <div className="overflow-x-auto rounded-lg border border-zinc-200 dark:border-zinc-800">
       <table className="w-full text-sm">
@@ -39,7 +43,9 @@ export function EmbriologiaTabla({
                       </Link>{' '}
                     </span>
                   )}
-                  {reg?.fuentes.map((f, i) => <FuenteBadge key={i} fuente={f} />)}
+                  {(modo === 'apuntes' ? reg?.fuentes.filter((f) => f.tipo === 'apunte') : reg?.fuentes)?.map((f, i) => (
+                    <FuenteBadge key={i} fuente={f} />
+                  ))}
                 </td>
               </tr>
             );

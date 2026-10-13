@@ -34,7 +34,7 @@ export function ExploradorArbol({ arbol }: { arbol: NodoArbol }) {
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_380px]">
-      <div>
+      <div className="min-w-0">
         {botones}
         {vistaActual === 'lista' ? (
           <ArbolLista arbol={arbol} seleccionado={sel} onSeleccionar={setSel} />

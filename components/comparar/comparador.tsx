@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useMemo, useState } from 'react';
 import { useParametro } from '@/components/navegacion/use-seleccion';
 import { RankBadge } from '@/components/taxon/rank-badge';
@@ -20,6 +21,9 @@ function nombres(t: Taxon) {
 export function Comparador({ taxa, opciones }: { taxa: readonly Taxon[]; opciones: GrupoOpciones[] }) {
   const [a, setA] = useParametro('a');
   const [b, setB] = useParametro('b');
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
   const [soloDiferencias, setSoloDiferencias] = useState(false);
   const consultas = useMemo(() => crearConsultas(taxa), [taxa]);
 
@@ -48,10 +52,11 @@ export function Comparador({ taxa, opciones }: { taxa: readonly Taxon[]; opcione
           type="button"
           aria-label="Intercambiar A y B"
           onClick={() => {
-            const na = b;
-            const nb = a;
-            setA(na);
-            setB(nb);
+            const params = new URLSearchParams(searchParams.toString());
+            if (b) params.set('a', b); else params.delete('a');
+            if (a) params.set('b', a); else params.delete('b');
+            const qs = params.toString();
+            router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
           }}
           className="rounded-md border border-zinc-300 px-3 py-2 text-sm hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
         >

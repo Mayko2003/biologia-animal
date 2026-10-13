@@ -10,7 +10,8 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "cobertura": "vitest run --config vitest.reportes.config.ts"
+    "cobertura": "vitest run --config vitest.reportes.config.ts",
+    "test:e2e": "next build && playwright test"
   },
   "dependencies": {
     "d3-hierarchy": "3.1.2",
@@ -20,6 +21,7 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.63.0",
     "@tailwindcss/turbopack": "^4",
     "@types/d3-hierarchy": "3.1.7",
     "@types/node": "^20",

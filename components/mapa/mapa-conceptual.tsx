@@ -83,7 +83,7 @@ export function MapaConceptual({
       <div className="overflow-auto max-h-[75vh] rounded-lg border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950">
         <div style={{ width: layout.ancho * escala, height: layout.alto * escala }}>
           <div className="relative" style={{ width: layout.ancho, height: layout.alto, transform: `scale(${escala})`, transformOrigin: '0 0' }}>
-            <svg className="absolute inset-0" width={layout.ancho} height={layout.alto} aria-hidden>
+            <svg className="pointer-events-none absolute inset-0" width={layout.ancho} height={layout.alto} aria-hidden>
               {layout.raiz.links().map((l) => {
                 const p = pos(l.source);
                 const h = pos(l.target);

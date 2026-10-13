@@ -1,10 +1,16 @@
+'use client';
+
 import type { Nota } from '@/lib/types';
+import { tieneApunte } from '@/lib/apuntes';
 import { FuenteBadge } from '@/components/fuentes/fuente-badge';
+import { useFiltroFuentes } from '@/components/fuentes/filtro-fuentes';
 
 export function NotaList({ notas }: { notas: Nota[] }) {
+  const { modo } = useFiltroFuentes();
+  const visibles = modo === 'apuntes' ? notas.filter((n) => tieneApunte(n.fuentes)) : notas;
   return (
     <div className="space-y-3">
-      {notas.map((n, i) => {
+      {visibles.map((n, i) => {
         const esDiscrepancia = n.tipo === 'discrepancia';
         return (
           <div
