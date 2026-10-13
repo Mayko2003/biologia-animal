@@ -33,7 +33,7 @@ Funcionalidades:
 | Fuentes externas | Permitidas **solo** en los tickets T41–T46, para completar huecos. Se marcan como "Externo". Nunca reemplazan ni editan datos de los apuntes. |
 | Discrepancias | La clasificación que se muestra es **la de la cátedra**; si la bibliografía actual difiere se agrega una `Nota` de tipo `discrepancia`. |
 | Mapa vs árbol | Mapa = criterios embrionarios (nodos conceptuales + phyla como hojas). Árbol = jerarquía taxonómica por `padre`. |
-| Tetrápodos | No están en los apuntes. Se agregan en el ticket **opcional** T46 (solo si el usuario lo pide). |
+| Tetrápodos | Anfibios y reptiles llegaron con el apunte TP15 (`anfibios, reptiles.md`): se agregan en T50–T51. Aves y mamíferos siguen fuera de los apuntes: solo en el ticket **opcional** T46 (si el usuario lo pide). |
 | Idioma | Toda la UI y el contenido en **español**. Identificadores de dominio en español (`Taxon`, `nivel`, `sistemas`…), exactamente como se definen en T03. |
 | Renderizado | Todo el contenido es estático (datos en TypeScript dentro del repo). No hay base de datos, ni API, ni fetch en runtime. |
 
@@ -138,6 +138,7 @@ plan/                      # este plan
 | E4 Extras | T37–T40 | Buscador y comparador |
 | E5 Web | T41–T46 | Completar huecos con fuentes externas (T46 opcional: tetrápodos) |
 | E6 Cierre | T47–T49 | E2E, pulido, verificación final |
+| E7 TP15 | T50–T51 | Contenido del apunte de anfibios y reptiles (TP15) |
 
 Lista completa:
 
@@ -186,10 +187,12 @@ Lista completa:
 - [T43](tickets/T43-web-ecdisozoos.md) Web: Ecdisozoos
 - [T44](tickets/T44-web-deuterostomados.md) Web: Deuterostomados invertebrados y protocordados
 - [T45](tickets/T45-web-vertebrados.md) Web: Vertebrados (peces)
-- [T46](tickets/T46-web-tetrapodos-opcional.md) (Opcional) Web: Tetrápodos
+- [T46](tickets/T46-web-tetrapodos-opcional.md) (Opcional) Web: Tetrápodos — solo aves y mamíferos; anfibios y reptiles se cubrieron con el TP15 (T50–T51)
 - [T47](tickets/T47-e2e.md) Pruebas E2E con Playwright
 - [T48](tickets/T48-pulido.md) Pulido: 404, metadatos, responsive, accesibilidad
 - [T49](tickets/T49-cierre.md) Cierre: verificación completa y documentación
+- [T50](tickets/T50-contenido-amphibia.md) Contenido: Amphibia y sus órdenes (TP15)
+- [T51](tickets/T51-contenido-reptilia.md) Contenido: Reptilia y sus grupos (TP15)
 
 ## 7. Guías compartidas
 

@@ -3,6 +3,10 @@
 **Épica**: E5 Web · **Depende de**: T45 · **Guía obligatoria**: [guia-fuentes-web.md](../guia-fuentes-web.md)
 
 > **Solo implementar si el usuario lo pide explícitamente.** Los tetrápodos no están en los apuntes de la cátedra.
+>
+> **Estado**: con la llegada del TP15 (`anfibios, reptiles.md`), Amphibia y Reptilia pasaron a
+> tener apunte propio y se implementaron como taxones normales en **T50–T51** (no como externos).
+> Este ticket queda vigente solo para **Aves y Mammalia** si el usuario lo pide.
 
 ## Objetivo
 
