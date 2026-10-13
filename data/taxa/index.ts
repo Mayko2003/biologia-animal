@@ -92,6 +92,13 @@ import amphibia from './amphibia';
 import anura from './anura';
 import caudata from './caudata';
 import gymnophiona from './gymnophiona';
+import reptilia from './reptilia';
+import crocodilia from './crocodilia';
+import chelonia from './chelonia';
+import sauria from './sauria';
+import amphisbaenia from './amphisbaenia';
+import serpentes from './serpentes';
+import sphenodonta from './sphenodonta';
 
 export const TAXA: readonly Taxon[] = [
   animalia,
@@ -187,4 +194,11 @@ export const TAXA: readonly Taxon[] = [
   anura,
   caudata,
   gymnophiona,
+  reptilia,
+  crocodilia,
+  chelonia,
+  sauria,
+  amphisbaenia,
+  serpentes,
+  sphenodonta,
 ];

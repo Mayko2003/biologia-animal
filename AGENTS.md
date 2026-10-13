@@ -26,6 +26,17 @@ pnpm lint && pnpm typecheck && pnpm test && pnpm test:e2e && pnpm cobertura
 - **`animal-data/` no se edita** (son los apuntes originales).
 - Vitest solo corre `tests/unit/**`; los E2E de Playwright viven en `tests/e2e/`.
 
+## Reglas de trabajo con contexto
+ 
+- No leas archivos grandes ni explores el repo en el contexto principal.
+  Delegá la lectura/búsqueda a un subagente y trabajé solo con su resumen.
+- El subagente devuelve notas estructuradas y punteros (paths, líneas,
+  secciones) — nunca el texto completo.
+- Excepción: lecturas triviales (un archivo chico, un grep puntual) se
+  hacen directo; no spawnear subagente para <~100 líneas.
+- Si el texto solo se transforma (no se razona sobre él), escribir un
+  script que lo procese en vez de leerlo.
+
 ### Guías
 
 - `plan/guia-contenido.md` — cómo extraer datos de los apuntes.
