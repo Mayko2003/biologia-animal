@@ -139,6 +139,7 @@ plan/                      # este plan
 | E5 Web | T41–T46 | Completar huecos con fuentes externas (T46 opcional: tetrápodos) |
 | E6 Cierre | T47–T49 | E2E, pulido, verificación final |
 | E7 TP15 | T50–T51 | Contenido del apunte de anfibios y reptiles (TP15) |
+| E8 Móvil | T52–T58 | Diseño móvil: tab bar, bottom sheet, vistas lista, comparador apilado |
 
 Lista completa:
 
@@ -193,6 +194,13 @@ Lista completa:
 - [T49](tickets/T49-cierre.md) Cierre: verificación completa y documentación
 - [T50](tickets/T50-contenido-amphibia.md) Contenido: Amphibia y sus órdenes (TP15)
 - [T51](tickets/T51-contenido-reptilia.md) Contenido: Reptilia y sus grupos (TP15)
+- [T52](tickets/T52-tab-bar-movil.md) Navegación móvil: tab bar inferior y header adaptado
+- [T53](tickets/T53-panel-bottom-sheet.md) Panel de selección como bottom sheet en móvil
+- [T54](tickets/T54-mapa-lista-movil.md) Mapa conceptual: vista lista nativa en móvil
+- [T55](tickets/T55-arbol-movil.md) Árbol: vista lista por defecto en móvil y targets táctiles
+- [T56](tickets/T56-ficha-movil.md) Ficha de grupo: índice móvil sticky y cabecera compacta
+- [T57](tickets/T57-comparador-movil.md) Comparador: tarjetas apiladas en móvil
+- [T58](tickets/T58-pulido-movil.md) Pulido móvil: targets táctiles, popover de fuentes y clases compartidas
 
 ## 7. Guías compartidas
 
