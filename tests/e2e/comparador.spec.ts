@@ -8,7 +8,7 @@ test('comparar annelida y arthropoda muestra el ancestro común', async ({ page 
 
 test('intercambiar A y B invierte la URL', async ({ page }) => {
   await page.goto('/comparar?a=annelida&b=arthropoda');
-  await page.getByRole('button', { name: 'Intercambiar A y B' }).click();
+  await page.getByRole('button', { name: 'Intercambiar A y B' }).first().click();
   await expect(page).toHaveURL(/a=arthropoda&b=annelida/);
 });
 

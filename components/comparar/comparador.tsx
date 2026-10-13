@@ -5,11 +5,13 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useMemo, useState } from 'react';
 import { useParametro } from '@/components/navegacion/use-seleccion';
 import { RankBadge } from '@/components/taxon/rank-badge';
-import { comparar } from '@/lib/comparacion';
+import { useEsEscritorio } from '@/components/ui/use-media';
+import { comparar, type Comparacion, type FilaComparacion } from '@/lib/comparacion';
 import { crearConsultas } from '@/lib/consultas';
 import { NIVEL_LABEL } from '@/lib/etiquetas';
 import type { Taxon } from '@/lib/types';
 import { CeldaView } from './celda';
+import { ComparadorTarjetas } from './comparador-tarjetas';
 import { SelectorTaxon, type GrupoOpciones } from './selector-taxon';
 
 const GRUPOS_SOLO_DIFERENCIAS = new Set(['Desarrollo embrionario', 'Sistemas']);
@@ -25,6 +27,7 @@ export function Comparador({ taxa, opciones }: { taxa: readonly Taxon[]; opcione
   const pathname = usePathname();
   const router = useRouter();
   const [soloDiferencias, setSoloDiferencias] = useState(false);
+  const escritorio = useEsEscritorio();
   const consultas = useMemo(() => crearConsultas(taxa), [taxa]);
 
   const taxonA = a ? consultas.getTaxon(a) : undefined;
@@ -44,6 +47,19 @@ export function Comparador({ taxa, opciones }: { taxa: readonly Taxon[]; opcione
     ? [...new Set(c.filas.map((f) => f.grupo))]
     : [];
 
+  function intercambiar() {
+    const params = new URLSearchParams(searchParams.toString());
+    if (b) params.set('a', b); else params.delete('a');
+    if (a) params.set('b', a); else params.delete('b');
+    const qs = params.toString();
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+  }
+
+  const filasVisibles = (grupo: string) =>
+    (c?.filas ?? []).filter(
+      (f) => f.grupo === grupo && !(soloDiferencias && GRUPOS_SOLO_DIFERENCIAS.has(grupo) && !f.distinto),
+    );
+
   return (
     <div className="space-y-6">
       <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-end">
@@ -51,14 +67,8 @@ export function Comparador({ taxa, opciones }: { taxa: readonly Taxon[]; opcione
         <button
           type="button"
           aria-label="Intercambiar A y B"
-          onClick={() => {
-            const params = new URLSearchParams(searchParams.toString());
-            if (b) params.set('a', b); else params.delete('a');
-            if (a) params.set('b', a); else params.delete('b');
-            const qs = params.toString();
-            router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-          }}
-          className="rounded-md border border-zinc-300 px-3 py-2 text-sm hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
+          onClick={intercambiar}
+          className="min-h-[40px] rounded-md border border-zinc-300 px-3 py-2 text-sm hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
         >
           ⇄ Intercambiar
         </button>
@@ -103,66 +113,33 @@ export function Comparador({ taxa, opciones }: { taxa: readonly Taxon[]; opcione
             )}
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[720px] border-collapse text-left">
-              <caption className="sr-only">
-                Cuadro comparativo entre {c.a.nombre} y {c.b.nombre}
-              </caption>
-              <thead className="sticky top-14 bg-white dark:bg-zinc-950">
-                <tr className="border-b border-zinc-200 dark:border-zinc-800">
-                  <th className="w-44 py-2 pr-3 text-sm font-semibold">Característica</th>
-                  <th className="py-2 pr-3">
-                    <div className="flex items-center gap-2">
-                      <RankBadge nivel={c.a.nivel} />
-                      <Link href={`/grupo/${c.a.slug}`} className="font-semibold hover:text-emerald-700 dark:hover:text-emerald-400">
-                        {c.a.nombre}
-                      </Link>
-                    </div>
-                  </th>
-                  <th className="py-2">
-                    <div className="flex items-center gap-2">
-                      <RankBadge nivel={c.b.nivel} />
-                      <Link href={`/grupo/${c.b.slug}`} className="font-semibold hover:text-emerald-700 dark:hover:text-emerald-400">
-                        {c.b.nombre}
-                      </Link>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {gruposOrdenados.map((g) => {
-                  const filas = c.filas.filter(
-                    (f) => f.grupo === g && !(soloDiferencias && GRUPOS_SOLO_DIFERENCIAS.has(g) && !f.distinto),
-                  );
-                  if (filas.length === 0) return null;
-                  return [
-                    <tr key={`g-${g}`} className="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50">
-                      <th colSpan={3} scope="colgroup" className="px-2 py-1.5 text-xs font-semibold uppercase tracking-wide text-zinc-500">
-                        {g}
-                      </th>
-                    </tr>,
-                    ...filas.map((f) => (
-                      <tr
-                        key={f.id}
-                        className={`border-b border-zinc-100 align-top dark:border-zinc-800/60 ${
-                          f.distinto ? 'bg-amber-50 dark:bg-amber-950/30' : ''
-                        }`}
-                      >
-                        <th scope="row" className="py-2 pr-3 text-sm font-medium">
-                          <span className="flex items-center gap-1.5">
-                            {f.distinto && <span className="h-2 w-2 rounded-full bg-amber-500" aria-label="Difiere" role="img" />}
-                            {f.etiqueta}
-                          </span>
-                        </th>
-                        <td className="py-2 pr-3"><CeldaView celda={f.a} /></td>
-                        <td className="py-2"><CeldaView celda={f.b} /></td>
-                      </tr>
-                    )),
-                  ];
-                })}
-              </tbody>
-            </table>
-          </div>
+          {!escritorio && (
+            <div className="sticky top-0 z-30 -mx-4 flex items-center gap-3 border-b border-zinc-200 bg-white/95 px-4 py-2 text-sm backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95">
+              <span className="min-w-0 truncate">
+                <span className="font-medium text-emerald-700 dark:text-emerald-400">A:</span>{' '}
+                {c.a.nombre}
+              </span>
+              <span aria-hidden className="text-zinc-300 dark:text-zinc-700">·</span>
+              <span className="min-w-0 truncate">
+                <span className="font-medium text-sky-700 dark:text-sky-400">B:</span>{' '}
+                {c.b.nombre}
+              </span>
+              <button
+                type="button"
+                aria-label="Intercambiar A y B"
+                onClick={intercambiar}
+                className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-zinc-300 text-sm hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
+              >
+                ⇄
+              </button>
+            </div>
+          )}
+
+          {escritorio ? (
+            <CuadroTabla c={c} gruposOrdenados={gruposOrdenados} filasVisibles={filasVisibles} />
+          ) : (
+            <ComparadorTarjetas c={c} gruposOrdenados={gruposOrdenados} filasVisibles={filasVisibles} />
+          )}
 
           <p className="text-sm">
             <Link href={`/grupo/${c.a.slug}`} className="text-emerald-700 hover:underline dark:text-emerald-400">
@@ -175,6 +152,77 @@ export function Comparador({ taxa, opciones }: { taxa: readonly Taxon[]; opcione
           </p>
         </>
       )}
+    </div>
+  );
+}
+
+function CuadroTabla({
+  c,
+  gruposOrdenados,
+  filasVisibles,
+}: {
+  c: Comparacion;
+  gruposOrdenados: string[];
+  filasVisibles: (grupo: string) => FilaComparacion[];
+}) {
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full min-w-[720px] border-collapse text-left">
+        <caption className="sr-only">
+          Cuadro comparativo entre {c.a.nombre} y {c.b.nombre}
+        </caption>
+        <thead className="sticky top-14 bg-white dark:bg-zinc-950">
+          <tr className="border-b border-zinc-200 dark:border-zinc-800">
+            <th className="w-44 py-2 pr-3 text-sm font-semibold">Característica</th>
+            <th className="py-2 pr-3">
+              <div className="flex items-center gap-2">
+                <RankBadge nivel={c.a.nivel} />
+                <Link href={`/grupo/${c.a.slug}`} className="font-semibold hover:text-emerald-700 dark:hover:text-emerald-400">
+                  {c.a.nombre}
+                </Link>
+              </div>
+            </th>
+            <th className="py-2">
+              <div className="flex items-center gap-2">
+                <RankBadge nivel={c.b.nivel} />
+                <Link href={`/grupo/${c.b.slug}`} className="font-semibold hover:text-emerald-700 dark:hover:text-emerald-400">
+                  {c.b.nombre}
+                </Link>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {gruposOrdenados.map((g) => {
+            const filas = filasVisibles(g);
+            if (filas.length === 0) return null;
+            return [
+              <tr key={`g-${g}`} className="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50">
+                <th colSpan={3} scope="colgroup" className="px-2 py-1.5 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                  {g}
+                </th>
+              </tr>,
+              ...filas.map((f) => (
+                <tr
+                  key={f.id}
+                  className={`border-b border-zinc-100 align-top dark:border-zinc-800/60 ${
+                    f.distinto ? 'bg-amber-50 dark:bg-amber-950/30' : ''
+                  }`}
+                >
+                  <th scope="row" className="py-2 pr-3 text-sm font-medium">
+                    <span className="flex items-center gap-1.5">
+                      {f.distinto && <span className="h-2 w-2 rounded-full bg-amber-500" aria-label="Difiere" role="img" />}
+                      {f.etiqueta}
+                    </span>
+                  </th>
+                  <td className="py-2 pr-3"><CeldaView celda={f.a} /></td>
+                  <td className="py-2"><CeldaView celda={f.b} /></td>
+                </tr>
+              )),
+            ];
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }
