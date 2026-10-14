@@ -21,8 +21,9 @@ bloques A/B de esa característica.
 ## Pasos
 
 1. `comparar()`: `GrupoFila` pasa a `'Anatomía' | 'Sistemas'`.
-   - `Anatomía`: fila `morfologia` (Morfología externa, `celdaDatos`, `distinto` por set de
-     textos) y fila `especiales` (títulos unidos; `distinto` por set de títulos).
+   - `Anatomía`: fila `morfologia` (Morfología externa, `celdaDatos`, `distinto` = estado
+     distinto — texto a texto siempre difiere y sería ruido) y fila `especiales`
+     (títulos unidos; `distinto` por set de títulos).
    - `Sistemas`: las 10 filas `sistema-*` de siempre (`distinto` = estado distinto).
    - Eliminar filas `nivel`, `ruta`, `phylum`, `emb-*`, `reproduccion`, `bioecologia`,
      `ejemplos`. Resultado: 12 filas.

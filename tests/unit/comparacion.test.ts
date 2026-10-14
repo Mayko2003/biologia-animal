@@ -16,6 +16,9 @@ const c1 = taxonFalso({
   slug: 'c1',
   nivel: 'clase',
   padre: 'p1',
+  estructurasEspeciales: [
+    { titulo: 'Parápodos', datos: [{ texto: 'Parápodos con sedas.', fuentes: [fuenteFalsa] }] },
+  ],
   sistemas: {
     respiratorio: [{ texto: 'Sin órganos respiratorios.', fuentes: [fuenteFalsa], ausente: true }],
   },
@@ -42,13 +45,14 @@ describe('comparar', () => {
     expect(c.rutaB.map((t) => t.slug)).toEqual(['p2']);
   });
 
-  it('fila emb-blastoporo con herencia y distinto', () => {
-    const f = fila(c, 'emb-blastoporo');
+  it('solo compara anatomía y sistemas', () => {
+    expect([...new Set(c.filas.map((f) => f.grupo))]).toEqual(['Anatomía', 'Sistemas']);
+  });
+
+  it('fila especiales: distinto por conjunto de títulos', () => {
+    const f = fila(c, 'especiales');
     expect(f.a.estado).toBe('texto');
-    if (f.a.estado === 'texto') {
-      expect(f.a.texto).toContain('boca');
-      expect(f.a.detalle).toContain('heredado de p1');
-    }
+    expect(f.b.estado).toBe('vacio');
     expect(f.distinto).toBe(true);
   });
 
@@ -71,7 +75,7 @@ describe('comparar', () => {
     for (const f of mismo.filas) expect(f.distinto).toBe(false);
   });
 
-  it('tiene 23 filas', () => {
-    expect(c.filas.length).toBe(23);
+  it('tiene 12 filas (2 de anatomía + 10 sistemas)', () => {
+    expect(c.filas.length).toBe(12);
   });
 });

@@ -11,10 +11,10 @@ import { crearConsultas } from '@/lib/consultas';
 import { NIVEL_LABEL } from '@/lib/etiquetas';
 import type { Taxon } from '@/lib/types';
 import { CeldaView } from './celda';
-import { ComparadorTarjetas } from './comparador-tarjetas';
+import { ComparadorTabs } from './comparador-tabs';
 import { SelectorTaxon, type GrupoOpciones } from './selector-taxon';
 
-const GRUPOS_SOLO_DIFERENCIAS = new Set(['Desarrollo embrionario', 'Sistemas']);
+const GRUPOS_SOLO_DIFERENCIAS = new Set(['Sistemas']);
 
 function nombres(t: Taxon) {
   return t.nombre;
@@ -138,7 +138,7 @@ export function Comparador({ taxa, opciones }: { taxa: readonly Taxon[]; opcione
           {escritorio ? (
             <CuadroTabla c={c} gruposOrdenados={gruposOrdenados} filasVisibles={filasVisibles} />
           ) : (
-            <ComparadorTarjetas c={c} gruposOrdenados={gruposOrdenados} filasVisibles={filasVisibles} />
+            <ComparadorTabs c={c} filasVisibles={filasVisibles} />
           )}
 
           <p className="text-sm">
