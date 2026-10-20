@@ -99,6 +99,9 @@ import sauria from './sauria';
 import amphisbaenia from './amphisbaenia';
 import serpentes from './serpentes';
 import sphenodonta from './sphenodonta';
+import aves from './aves';
+import sauriuria from './sauriuria';
+import ornituria from './ornituria';
 
 export const TAXA: readonly Taxon[] = [
   animalia,
@@ -201,4 +204,7 @@ export const TAXA: readonly Taxon[] = [
   amphisbaenia,
   serpentes,
   sphenodonta,
+  aves,
+  sauriuria,
+  ornituria,
 ];
