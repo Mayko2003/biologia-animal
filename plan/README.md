@@ -33,7 +33,7 @@ Funcionalidades:
 | Fuentes externas | Permitidas **solo** en los tickets T41–T46, para completar huecos. Se marcan como "Externo". Nunca reemplazan ni editan datos de los apuntes. |
 | Discrepancias | La clasificación que se muestra es **la de la cátedra**; si la bibliografía actual difiere se agrega una `Nota` de tipo `discrepancia`. |
 | Mapa vs árbol | Mapa = criterios embrionarios (nodos conceptuales + phyla como hojas). Árbol = jerarquía taxonómica por `padre`. |
-| Tetrápodos | Anfibios y reptiles llegaron con el apunte TP15 (`anfibios, reptiles.md`): se agregan en T50–T51. Aves y mamíferos siguen fuera de los apuntes: solo en el ticket **opcional** T46 (si el usuario lo pide). |
+| Tetrápodos | Anfibios y reptiles llegaron con el apunte TP15 (`anfibios, reptiles.md`): se agregan en T50–T51. Aves y mamíferos llegaron con el apunte TP16 (`aves, mamiferos.md`): Aves se agrega en T62; Mammalia queda para un ticket posterior. |
 | Idioma | Toda la UI y el contenido en **español**. Identificadores de dominio en español (`Taxon`, `nivel`, `sistemas`…), exactamente como se definen en T03. |
 | Renderizado | Todo el contenido es estático (datos en TypeScript dentro del repo). No hay base de datos, ni API, ni fetch en runtime. |
 
@@ -189,7 +189,7 @@ Lista completa:
 - [T43](tickets/T43-web-ecdisozoos.md) Web: Ecdisozoos
 - [T44](tickets/T44-web-deuterostomados.md) Web: Deuterostomados invertebrados y protocordados
 - [T45](tickets/T45-web-vertebrados.md) Web: Vertebrados (peces)
-- [T46](tickets/T46-web-tetrapodos-opcional.md) (Opcional) Web: Tetrápodos — solo aves y mamíferos; anfibios y reptiles se cubrieron con el TP15 (T50–T51)
+- [T46](tickets/T46-web-tetrapodos-opcional.md) (Opcional) Web: Tetrápodos — anfibios y reptiles se cubrieron con el TP15 (T50–T51) y aves con el TP16 (T62)
 - [T47](tickets/T47-e2e.md) Pruebas E2E con Playwright
 - [T48](tickets/T48-pulido.md) Pulido: 404, metadatos, responsive, accesibilidad
 - [T49](tickets/T49-cierre.md) Cierre: verificación completa y documentación
@@ -205,6 +205,7 @@ Lista completa:
 - [T59](tickets/T59-ficha-movil-contenido.md) Ficha de grupo/clase: contenido adaptado a móvil
 - [T60](tickets/T60-ficha-interactiva.md) Ficha de grupo: diseño interactivo y objetos visuales
 - [T61](tickets/T61-comparador-anatomico.md) Comparador: enfoque anatómico y tabs en móvil
+- [T62](tickets/T62-contenido-aves.md) Contenido: Aves y sus subclases (TP16)
 
 ## 7. Guías compartidas
 
