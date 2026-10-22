@@ -102,6 +102,9 @@ import sphenodonta from './sphenodonta';
 import aves from './aves';
 import sauriuria from './sauriuria';
 import ornituria from './ornituria';
+import mammalia from './mammalia';
+import prototheria from './prototheria';
+import theria from './theria';
 
 export const TAXA: readonly Taxon[] = [
   animalia,
@@ -207,4 +210,7 @@ export const TAXA: readonly Taxon[] = [
   aves,
   sauriuria,
   ornituria,
+  mammalia,
+  prototheria,
+  theria,
 ];
