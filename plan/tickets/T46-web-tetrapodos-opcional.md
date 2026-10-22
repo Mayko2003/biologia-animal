@@ -7,7 +7,7 @@
 > **Estado**: con la llegada del TP15 (`anfibios, reptiles.md`), Amphibia y Reptilia pasaron a
 > tener apunte propio y se implementaron como taxones normales en **T50–T51** (no como externos).
 > Con el TP16 (`aves, mamiferos.md`), Aves se implementó como taxón normal en **T62**.
-> Este ticket ya no aplica: Mammalia también tiene apunte (TP16) y se hará como taxón normal.
+> Este ticket ya no aplica: Mammalia también tiene apunte (TP16) y se implementó como taxón normal en **T63**.
 
 ## Objetivo
 

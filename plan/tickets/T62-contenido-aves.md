@@ -72,5 +72,5 @@ SLUGS=aves,sauriuria,ornituria pnpm cobertura
 
 ## Fuera de alcance
 
-- Mammalia (líneas 406–794): ticket posterior.
+- Mammalia (líneas 406–794): ver T63.
 - Fuentes web y notas de discrepancia: este ticket es solo extracción del apunte.
