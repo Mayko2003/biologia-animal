@@ -1,5 +1,6 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import type { Nivel } from '@/lib/types';
+import type { ImagenGrupo, Nivel } from '@/lib/types';
 import { BOTON } from '@/components/ui/clases';
 import { IconoGrilla, IconoLista, IconoTag } from '@/components/ui/iconos-sistemas';
 import { RankBadge } from './rank-badge';
@@ -47,6 +48,7 @@ export function FichaHero({
   selMapa,
   stats,
   acciones,
+  imagen,
 }: {
   nivel: Nivel;
   nombre: string;
@@ -57,10 +59,41 @@ export function FichaHero({
   selMapa: string;
   stats: FichaStats;
   acciones?: React.ReactNode;
+  imagen?: ImagenGrupo;
 }) {
+  // Los collages suelen listar decenas de autores: mostramos solo la licencia
+  // y dejamos el crédito completo en la ficha de Wikimedia Commons.
+  const autorCorto = imagen?.autor && imagen.autor.length <= 60 ? imagen.autor : 'Wikimedia Commons';
+  const credito = [autorCorto, imagen?.licencia].filter(Boolean).join(' · ');
   return (
     <header className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-transparent p-5 sm:p-6 dark:border-emerald-900/50 dark:from-emerald-950/40 dark:via-zinc-950 dark:to-transparent">
       <Motivo />
+      {imagen && (
+        <figure className="-mx-5 -mt-5 mb-5 sm:-mx-6 sm:-mt-6">
+          <div className="relative aspect-[16/9] overflow-hidden bg-zinc-100 sm:aspect-[2/1] dark:bg-zinc-900">
+            <Image
+              src={imagen.src}
+              alt={imagen.alt}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 860px"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 px-5 pt-2 text-[11px] leading-snug text-zinc-500 sm:px-6 dark:text-zinc-400">
+            <span className="min-w-0 flex-1 truncate">{imagen.alt}</span>
+            <a
+              href={imagen.fuente}
+              target="_blank"
+              rel="noreferrer"
+              title="Ver la fuente de la imagen en Wikimedia Commons"
+              className="shrink-0 underline decoration-dotted underline-offset-2 hover:text-emerald-600 dark:hover:text-emerald-400"
+            >
+              Foto: {credito || 'Wikimedia Commons'}
+            </a>
+          </figcaption>
+        </figure>
+      )}
       <div className="relative space-y-3">
         <div className="flex flex-wrap items-center gap-2">
           <RankBadge nivel={nivel} />

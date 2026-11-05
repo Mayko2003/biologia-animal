@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
+import { IMAGENES_GRUPOS } from '@/data/imagenes-grupos';
 import { FiltroFuentesToggle } from '@/components/fuentes/filtro-fuentes';
 import { Breadcrumb } from '@/components/taxon/breadcrumb';
 import { DatoList } from '@/components/taxon/dato-list';
@@ -122,6 +123,7 @@ async function Ficha({ params }: { params: PageProps<'/grupo/[slug]'>['params'] 
             selMapa={selMapa}
             stats={stats}
             acciones={<FiltroFuentesToggle />}
+            imagen={IMAGENES_GRUPOS[slug]}
           />
         </div>
 

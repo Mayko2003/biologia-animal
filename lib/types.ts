@@ -57,6 +57,15 @@ export type Taxon = {
   notas: Nota[];
 };
 
+export type ImagenGrupo = {
+  src: string;
+  alt: string;
+  autor?: string;
+  licencia?: string;
+  licenciaUrl?: string;
+  fuente: string;
+};
+
 export type NodoArbol = {
   slug: string;
   nombre: string;
