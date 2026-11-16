@@ -68,14 +68,14 @@ export function Comparador({ taxa, opciones }: { taxa: readonly Taxon[]; opcione
           type="button"
           aria-label="Intercambiar A y B"
           onClick={intercambiar}
-          className="min-h-[40px] rounded-md border border-zinc-300 px-3 py-2 text-sm hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
+          className="min-h-[40px] rounded-md border border-zinc-300 px-3 py-2 text-sm hover:border-emerald-400 hover:text-emerald-700"
         >
           ⇄ Intercambiar
         </button>
         <SelectorTaxon id="sel-b" label="Grupo B" valor={b} opciones={opciones} onCambiar={setB} />
       </div>
 
-      <label className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+      <label className="flex items-center gap-2 text-sm text-zinc-600">
         <input
           type="checkbox"
           checked={soloDiferencias}
@@ -89,46 +89,46 @@ export function Comparador({ taxa, opciones }: { taxa: readonly Taxon[]; opcione
 
       {c && (
         <>
-          <div className="rounded-lg border border-zinc-200 p-4 text-sm dark:border-zinc-800">
+          <div className="rounded-lg border border-zinc-200 p-4 text-sm">
             <p>
               Ancestro común:{' '}
-              <Link href={`/grupo/${c.ancestroComun.slug}`} className="font-semibold text-emerald-700 hover:underline dark:text-emerald-400">
+              <Link href={`/grupo/${c.ancestroComun.slug}`} className="font-semibold text-emerald-700 hover:underline">
                 {c.ancestroComun.nombre}
               </Link>{' '}
               <span className="text-zinc-500">({NIVEL_LABEL[c.ancestroComun.nivel]})</span>
             </p>
             {c.rutaB.some((t) => t.slug === c.a.slug) ? (
-              <p className="mt-1 text-zinc-600 dark:text-zinc-400">
+              <p className="mt-1 text-zinc-600">
                 {c.a.nombre} incluye a {c.b.nombre} ({c.rutaB.map(nombres).join(' › ')})
               </p>
             ) : c.rutaA.some((t) => t.slug === c.b.slug) ? (
-              <p className="mt-1 text-zinc-600 dark:text-zinc-400">
+              <p className="mt-1 text-zinc-600">
                 {c.b.nombre} incluye a {c.a.nombre} ({c.rutaA.map(nombres).join(' › ')})
               </p>
             ) : (
               <>
-                <p className="mt-1 text-zinc-600 dark:text-zinc-400">A: {c.rutaA.map(nombres).join(' › ') || '—'}</p>
-                <p className="text-zinc-600 dark:text-zinc-400">B: {c.rutaB.map(nombres).join(' › ') || '—'}</p>
+                <p className="mt-1 text-zinc-600">A: {c.rutaA.map(nombres).join(' › ') || '—'}</p>
+                <p className="text-zinc-600">B: {c.rutaB.map(nombres).join(' › ') || '—'}</p>
               </>
             )}
           </div>
 
           {!escritorio && (
-            <div className="sticky top-0 z-30 -mx-4 flex items-center gap-3 border-b border-zinc-200 bg-white/95 px-4 py-2 text-sm backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95">
+            <div className="sticky top-0 z-30 -mx-4 flex items-center gap-3 border-b border-zinc-200 bg-white/95 px-4 py-2 text-sm backdrop-blur">
               <span className="min-w-0 truncate">
-                <span className="font-medium text-emerald-700 dark:text-emerald-400">A:</span>{' '}
+                <span className="font-medium text-emerald-700">A:</span>{' '}
                 {c.a.nombre}
               </span>
-              <span aria-hidden className="text-zinc-300 dark:text-zinc-700">·</span>
+              <span aria-hidden className="text-zinc-300">·</span>
               <span className="min-w-0 truncate">
-                <span className="font-medium text-sky-700 dark:text-sky-400">B:</span>{' '}
+                <span className="font-medium text-sky-700">B:</span>{' '}
                 {c.b.nombre}
               </span>
               <button
                 type="button"
                 aria-label="Intercambiar A y B"
                 onClick={intercambiar}
-                className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-zinc-300 text-sm hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
+                className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-zinc-300 text-sm hover:border-emerald-400 hover:text-emerald-700"
               >
                 ⇄
               </button>
@@ -142,11 +142,11 @@ export function Comparador({ taxa, opciones }: { taxa: readonly Taxon[]; opcione
           )}
 
           <p className="text-sm">
-            <Link href={`/grupo/${c.a.slug}`} className="text-emerald-700 hover:underline dark:text-emerald-400">
+            <Link href={`/grupo/${c.a.slug}`} className="text-emerald-700 hover:underline">
               Ver ficha de {c.a.nombre}
             </Link>
             {' · '}
-            <Link href={`/grupo/${c.b.slug}`} className="text-emerald-700 hover:underline dark:text-emerald-400">
+            <Link href={`/grupo/${c.b.slug}`} className="text-emerald-700 hover:underline">
               Ver ficha de {c.b.nombre}
             </Link>
           </p>
@@ -171,13 +171,13 @@ function CuadroTabla({
         <caption className="sr-only">
           Cuadro comparativo entre {c.a.nombre} y {c.b.nombre}
         </caption>
-        <thead className="sticky top-14 bg-white dark:bg-zinc-950">
-          <tr className="border-b border-zinc-200 dark:border-zinc-800">
+        <thead className="sticky top-14 bg-white">
+          <tr className="border-b border-zinc-200">
             <th className="w-44 py-2 pr-3 text-sm font-semibold">Característica</th>
             <th className="py-2 pr-3">
               <div className="flex items-center gap-2">
                 <RankBadge nivel={c.a.nivel} />
-                <Link href={`/grupo/${c.a.slug}`} className="font-semibold hover:text-emerald-700 dark:hover:text-emerald-400">
+                <Link href={`/grupo/${c.a.slug}`} className="font-semibold hover:text-emerald-700">
                   {c.a.nombre}
                 </Link>
               </div>
@@ -185,7 +185,7 @@ function CuadroTabla({
             <th className="py-2">
               <div className="flex items-center gap-2">
                 <RankBadge nivel={c.b.nivel} />
-                <Link href={`/grupo/${c.b.slug}`} className="font-semibold hover:text-emerald-700 dark:hover:text-emerald-400">
+                <Link href={`/grupo/${c.b.slug}`} className="font-semibold hover:text-emerald-700">
                   {c.b.nombre}
                 </Link>
               </div>
@@ -197,7 +197,7 @@ function CuadroTabla({
             const filas = filasVisibles(g);
             if (filas.length === 0) return null;
             return [
-              <tr key={`g-${g}`} className="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50">
+              <tr key={`g-${g}`} className="border-b border-zinc-200 bg-zinc-50">
                 <th colSpan={3} scope="colgroup" className="px-2 py-1.5 text-xs font-semibold uppercase tracking-wide text-zinc-500">
                   {g}
                 </th>
@@ -205,8 +205,8 @@ function CuadroTabla({
               ...filas.map((f) => (
                 <tr
                   key={f.id}
-                  className={`border-b border-zinc-100 align-top dark:border-zinc-800/60 ${
-                    f.distinto ? 'bg-amber-50 dark:bg-amber-950/30' : ''
+                  className={`border-b border-zinc-100 align-top ${
+                    f.distinto ? 'bg-amber-50' : ''
                   }`}
                 >
                   <th scope="row" className="py-2 pr-3 text-sm font-medium">

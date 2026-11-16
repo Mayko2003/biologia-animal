@@ -58,7 +58,7 @@ export function MapaConceptual({
           type="button"
           aria-label="Alejar"
           onClick={() => setEscala((e) => Math.max(0.6, Math.round((e - 0.1) * 10) / 10))}
-          className="h-10 min-w-10 rounded-md border border-zinc-300 px-2 text-sm dark:border-zinc-700"
+          className="h-10 min-w-10 rounded-md border border-zinc-300 px-2 text-sm"
         >
           −
         </button>
@@ -66,7 +66,7 @@ export function MapaConceptual({
           type="button"
           aria-label="Restablecer zoom"
           onClick={() => setEscala(1)}
-          className="h-10 min-w-10 rounded-md border border-zinc-300 px-2 text-xs dark:border-zinc-700"
+          className="h-10 min-w-10 rounded-md border border-zinc-300 px-2 text-xs"
         >
           100%
         </button>
@@ -74,13 +74,13 @@ export function MapaConceptual({
           type="button"
           aria-label="Acercar"
           onClick={() => setEscala((e) => Math.min(1.4, Math.round((e + 0.1) * 10) / 10))}
-          className="h-10 min-w-10 rounded-md border border-zinc-300 px-2 text-sm dark:border-zinc-700"
+          className="h-10 min-w-10 rounded-md border border-zinc-300 px-2 text-sm"
         >
           +
         </button>
       </div>
 
-      <div className="overflow-auto max-h-[75vh] rounded-lg border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950">
+      <div className="overflow-auto max-h-[75vh] rounded-lg border border-zinc-200 bg-zinc-50">
         <div style={{ width: layout.ancho * escala, height: layout.alto * escala }}>
           <div className="relative" style={{ width: layout.ancho, height: layout.alto, transform: `scale(${escala})`, transformOrigin: '0 0' }}>
             <svg className="pointer-events-none absolute inset-0" width={layout.ancho} height={layout.alto} aria-hidden>
@@ -96,7 +96,7 @@ export function MapaConceptual({
                     key={`${l.source.data.id}-${l.target.data.id}`}
                     d={`M${x0},${y0}C${(x0 + x1) / 2},${y0} ${(x0 + x1) / 2},${y1} ${x1},${y1}`}
                     fill="none"
-                    className="stroke-zinc-300 dark:stroke-zinc-700"
+                    className="stroke-zinc-300"
                   />
                 );
               })}
@@ -119,8 +119,8 @@ export function MapaConceptual({
                   onClick={() => d.taxon && onSeleccionar(d.taxon)}
                   className={`absolute flex flex-col justify-center gap-0.5 rounded-lg px-3 py-2 text-left ${
                     esHoja
-                      ? 'bg-emerald-50 border border-emerald-300 dark:bg-emerald-950 dark:border-emerald-800'
-                      : 'bg-white border border-zinc-300 dark:bg-zinc-900 dark:border-zinc-700'
+                      ? 'bg-emerald-50 border border-emerald-300'
+                      : 'bg-white border border-zinc-300'
                   } ${sel ? 'ring-2 ring-emerald-500' : ''}`}
                   style={{
                     left,
@@ -140,7 +140,7 @@ export function MapaConceptual({
                     />
                   )}
                   {d.criterio && (
-                    <span className="text-[11px] leading-tight text-zinc-500 line-clamp-2 dark:text-zinc-400">
+                    <span className="text-[11px] leading-tight text-zinc-500 line-clamp-2">
                       {d.criterio}
                     </span>
                   )}
@@ -154,7 +154,7 @@ export function MapaConceptual({
                     </span>
                   ) : (
                     d.subtitulo && (
-                      <span className="text-xs text-zinc-500 truncate dark:text-zinc-400">{d.subtitulo}</span>
+                      <span className="text-xs text-zinc-500 truncate">{d.subtitulo}</span>
                     )
                   )}
                 </button>
@@ -163,7 +163,7 @@ export function MapaConceptual({
           </div>
         </div>
       </div>
-      <p className="text-xs text-zinc-500 dark:text-zinc-400">
+      <p className="text-xs text-zinc-500">
         Caja blanca = grupo definido por un criterio embrionario · Caja verde = phylum
       </p>
     </div>

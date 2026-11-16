@@ -26,8 +26,8 @@ function ItemMapa({
         onClick={() => nodo.taxon && onSeleccionar(nodo.taxon)}
         className={`relative flex min-h-[44px] w-full items-center rounded-lg border px-3 py-2 text-left ${
           esHoja
-            ? 'bg-emerald-50 border-emerald-300 dark:bg-emerald-950 dark:border-emerald-800'
-            : 'bg-white border-zinc-300 dark:bg-zinc-900 dark:border-zinc-700'
+            ? 'bg-emerald-50 border-emerald-300'
+            : 'bg-white border-zinc-300'
         } ${sel ? 'ring-2 ring-emerald-500' : ''}`}
         style={
           estilo.color ? { borderColor: estilo.color, backgroundColor: `${estilo.color}22` } : undefined
@@ -42,7 +42,7 @@ function ItemMapa({
         )}
         <span className="min-w-0">
           {nodo.criterio && (
-            <span className="block text-[11px] leading-tight text-zinc-500 dark:text-zinc-400">
+            <span className="block text-[11px] leading-tight text-zinc-500">
               {nodo.criterio}
             </span>
           )}
@@ -56,13 +56,13 @@ function ItemMapa({
             </span>
           ) : (
             nodo.subtitulo && (
-              <span className="block text-xs text-zinc-500 dark:text-zinc-400">{nodo.subtitulo}</span>
+              <span className="block text-xs text-zinc-500">{nodo.subtitulo}</span>
             )
           )}
         </span>
       </button>
       {nodo.hijos.length > 0 && (
-        <ul className="ml-4 mt-1 space-y-1 border-l border-zinc-200 pl-3 dark:border-zinc-800">
+        <ul className="ml-4 mt-1 space-y-1 border-l border-zinc-200 pl-3">
           {nodo.hijos.map((h) => (
             <ItemMapa
               key={h.id}
@@ -99,7 +99,7 @@ export function MapaLista({
           estiloHoja={estiloHoja}
         />
       </ul>
-      <p className="text-xs text-zinc-500 dark:text-zinc-400">
+      <p className="text-xs text-zinc-500">
         Caja blanca = grupo definido por un criterio embrionario · Caja verde = phylum
       </p>
     </div>

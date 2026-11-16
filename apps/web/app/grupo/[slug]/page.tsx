@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps<'/grupo/[slug]'>): 
 
 export default function Page({ params }: PageProps<'/grupo/[slug]'>) {
   return (
-    <Suspense fallback={<div className="h-[60vh] animate-pulse rounded-lg bg-zinc-100 dark:bg-zinc-900" />}>
+    <Suspense fallback={<div className="h-[60vh] animate-pulse rounded-lg bg-zinc-100" />}>
       <Ficha params={params} />
     </Suspense>
   );

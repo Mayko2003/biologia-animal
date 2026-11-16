@@ -12,8 +12,8 @@ const enlaces = [
 ];
 
 const BASE =
-  'text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100';
-const ACTIVO = 'font-medium text-zinc-900 dark:text-zinc-100';
+  'text-sm text-zinc-600 hover:text-zinc-900';
+const ACTIVO = 'font-medium text-zinc-900';
 
 function Links({ activo }: { activo: string | null }) {
   return (

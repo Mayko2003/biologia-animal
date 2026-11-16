@@ -11,19 +11,19 @@ export function EjemploList({ ejemplos, vacio = 'Sin ejemplos.' }: { ejemplos: E
   const visibles = modo === 'apuntes' ? ejemplos.filter((e) => tieneApunte(e.fuentes)) : ejemplos;
 
   if (ejemplos.length === 0) {
-    return <p className="text-sm text-zinc-500 italic dark:text-zinc-400">{vacio}</p>;
+    return <p className="text-sm text-zinc-500 italic">{vacio}</p>;
   }
   if (visibles.length === 0) {
-    return <p className="text-sm text-zinc-500 italic dark:text-zinc-400">Solo hay ejemplos de fuentes externas (ocultos por el filtro).</p>;
+    return <p className="text-sm text-zinc-500 italic">Solo hay ejemplos de fuentes externas (ocultos por el filtro).</p>;
   }
   return (
     <ul className="grid gap-2 sm:grid-cols-2">
       {visibles.map((e, i) => (
         <li
           key={i}
-          className="flex items-start gap-2 rounded-lg border border-zinc-200 bg-white p-3 text-sm leading-relaxed transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+          className="flex items-start gap-2 rounded-lg border border-zinc-200 bg-white p-3 text-sm leading-relaxed transition hover:-translate-y-0.5 hover:shadow-md"
         >
-          <span className="mt-0.5 text-emerald-600 dark:text-emerald-400">
+          <span className="mt-0.5 text-emerald-600">
             <IconoTag className="h-4 w-4" />
           </span>
           <span>

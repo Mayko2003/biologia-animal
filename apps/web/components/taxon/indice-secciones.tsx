@@ -31,8 +31,8 @@ export function IndiceSecciones({ secciones }: { secciones: SeccionRef[] }) {
   const activa = useSeccionActiva(secciones);
   return (
     <nav aria-label="Secciones de la ficha" className="sticky top-20 hidden lg:block">
-      <p className="text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">En esta ficha</p>
-      <ul className="mt-2 space-y-1.5 border-l border-zinc-200 text-sm dark:border-zinc-800">
+      <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">En esta ficha</p>
+      <ul className="mt-2 space-y-1.5 border-l border-zinc-200 text-sm">
         {secciones.map((s) => (
           <li key={s.id}>
             <a
@@ -40,8 +40,8 @@ export function IndiceSecciones({ secciones }: { secciones: SeccionRef[] }) {
               aria-current={activa === s.id ? 'true' : undefined}
               className={`-ml-px inline-block border-l-2 py-0.5 pl-3 transition-colors ${
                 activa === s.id
-                  ? 'border-emerald-500 font-medium text-emerald-700 dark:text-emerald-400'
-                  : 'border-transparent text-zinc-600 hover:border-emerald-300 hover:text-emerald-700 dark:text-zinc-300 dark:hover:border-emerald-700 dark:hover:text-emerald-400'
+                  ? 'border-emerald-500 font-medium text-emerald-700'
+                  : 'border-transparent text-zinc-600 hover:border-emerald-300 hover:text-emerald-700'
               }`}
             >
               {s.titulo}
@@ -72,7 +72,7 @@ export function IndiceSeccionesMovil({ secciones }: { secciones: SeccionRef[] })
   return (
     <nav
       aria-label="Secciones de la ficha"
-      className="sticky top-0 z-30 -mx-4 border-b border-zinc-200 bg-white/95 px-4 py-1 backdrop-blur lg:hidden dark:border-zinc-800 dark:bg-zinc-950/95"
+      className="sticky top-0 z-30 -mx-4 border-b border-zinc-200 bg-white/95 px-4 py-1 backdrop-blur lg:hidden"
     >
       <ul ref={listaRef} className="flex gap-1 overflow-x-auto whitespace-nowrap text-sm">
         {secciones.map((s) => (
@@ -82,8 +82,8 @@ export function IndiceSeccionesMovil({ secciones }: { secciones: SeccionRef[] })
               aria-current={activa === s.id ? 'true' : undefined}
               className={`relative inline-flex min-h-[40px] items-center rounded-md px-3 py-1.5 transition-colors ${
                 activa === s.id
-                  ? 'bg-emerald-100 font-medium text-emerald-800 after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:rounded-full after:bg-emerald-500 dark:bg-emerald-900/40 dark:text-emerald-200'
-                  : 'text-zinc-600 hover:bg-zinc-100 hover:text-emerald-700 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-emerald-400'
+                  ? 'bg-emerald-100 font-medium text-emerald-800 after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:rounded-full after:bg-emerald-500'
+                  : 'text-zinc-600 hover:bg-zinc-100 hover:text-emerald-700'
               }`}
             >
               {s.titulo}

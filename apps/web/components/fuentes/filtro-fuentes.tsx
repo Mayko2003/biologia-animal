@@ -44,7 +44,7 @@ export function FiltroFuentesToggle() {
     { valor: 'apuntes', label: 'Solo apuntes' },
   ];
   return (
-    <div className="inline-flex rounded-md border border-zinc-300 p-0.5 text-sm dark:border-zinc-700" role="group" aria-label="Filtro de fuentes">
+    <div className="inline-flex rounded-md border border-zinc-300 p-0.5 text-sm" role="group" aria-label="Filtro de fuentes">
       {opciones.map((o) => (
         <button
           key={o.valor}

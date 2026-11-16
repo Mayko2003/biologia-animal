@@ -18,13 +18,13 @@ export function NotaList({ notas }: { notas: Nota[] }) {
             key={i}
             className={`rounded-lg border p-3 text-sm ${
               esDiscrepancia
-                ? 'border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/40'
-                : 'border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900'
+                ? 'border-amber-300 bg-amber-50'
+                : 'border-zinc-200 bg-zinc-50'
             }`}
           >
             <p
               className={`flex items-center gap-1.5 font-medium ${
-                esDiscrepancia ? 'text-amber-800 dark:text-amber-300' : 'text-zinc-700 dark:text-zinc-300'
+                esDiscrepancia ? 'text-amber-800' : 'text-zinc-700'
               }`}
             >
               {esDiscrepancia ? <IconoAlerta className="h-4 w-4" /> : <IconoInfo className="h-4 w-4" />}

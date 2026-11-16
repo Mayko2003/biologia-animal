@@ -84,19 +84,19 @@ export function ArbolGrafico({
         <button
           type="button"
           onClick={() => setColapsados(new Set())}
-          className="rounded-md border border-zinc-300 px-2 py-1.5 text-xs hover:border-emerald-400 dark:border-zinc-700"
+          className="rounded-md border border-zinc-300 px-2 py-1.5 text-xs hover:border-emerald-400"
         >
           Expandir todo
         </button>
         <button
           type="button"
           onClick={() => setColapsados(colapsoInicial())}
-          className="rounded-md border border-zinc-300 px-2 py-1.5 text-xs hover:border-emerald-400 dark:border-zinc-700"
+          className="rounded-md border border-zinc-300 px-2 py-1.5 text-xs hover:border-emerald-400"
         >
           Colapsar a phyla
         </button>
       </div>
-      <div className="overflow-auto max-h-[75vh] rounded-lg border border-zinc-200 dark:border-zinc-800">
+      <div className="overflow-auto max-h-[75vh] rounded-lg border border-zinc-200">
         <svg width={layout.ancho} height={layout.alto} role="img" aria-label="Dendrograma taxonómico">
           {layout.raiz.links().map((l) => {
             const x0 = (l.source.y ?? 0) + MARGEN;
@@ -109,7 +109,7 @@ export function ArbolGrafico({
                 key={`${l.source.data.slug}-${l.target.data.slug}`}
                 d={`M${x0},${y0}C${(x0 + x1) / 2},${y0} ${(x0 + x1) / 2},${y1} ${x1},${y1}`}
                 fill="none"
-                className={enRuta ? 'stroke-emerald-500' : 'stroke-zinc-300 dark:stroke-zinc-700'}
+                className={enRuta ? 'stroke-emerald-500' : 'stroke-zinc-300'}
                 strokeWidth={enRuta ? 2 : 1}
               />
             );
@@ -162,7 +162,7 @@ export function ArbolGrafico({
                 <text
                   x={RADIO + 6}
                   dy="0.32em"
-                  className={`fill-zinc-800 dark:fill-zinc-100 text-[12px] cursor-pointer ${sel ? 'font-semibold' : ''}`}
+                  className={`fill-zinc-800 text-[12px] cursor-pointer ${sel ? 'font-semibold' : ''}`}
                   onClick={() => onSeleccionar(d.slug)}
                 >
                   <title>{`${NIVEL_LABEL[d.nivel]} · ${d.nombreComun ?? ''}`}</title>
@@ -173,7 +173,7 @@ export function ArbolGrafico({
           })}
         </svg>
       </div>
-      <ul className="flex flex-wrap gap-3 text-xs text-zinc-600 dark:text-zinc-400">
+      <ul className="flex flex-wrap gap-3 text-xs text-zinc-600">
         {nivelesPresentes.map((n) => (
           <li key={n} className="flex items-center gap-1">
             <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: NIVEL_COLOR_HEX[n] }} />

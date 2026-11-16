@@ -15,16 +15,16 @@ function ItemSubgrupo({ nodo, onSeleccionar }: { nodo: NodoArbol; onSeleccionar:
     <li>
       <div className="flex items-center gap-1.5">
         <RankBadge nivel={nodo.nivel} />
-        <Link href={`/grupo/${nodo.slug}`} className="text-sm font-medium hover:text-emerald-700 hover:underline dark:hover:text-emerald-400">
+        <Link href={`/grupo/${nodo.slug}`} className="text-sm font-medium hover:text-emerald-700 hover:underline">
           {nodo.nombre}
         </Link>
-        {nodo.nombreComun && <span className="text-xs text-zinc-500 dark:text-zinc-400">{nodo.nombreComun}</span>}
+        {nodo.nombreComun && <span className="text-xs text-zinc-500">{nodo.nombreComun}</span>}
         {nodo.hijos.length > 0 && (
           <button
             type="button"
             aria-label={`Ver clases de ${nodo.nombre}`}
             onClick={() => onSeleccionar(nodo.slug)}
-            className="ml-auto min-h-[40px] rounded border border-zinc-300 px-3 py-1 text-xs text-zinc-600 hover:border-emerald-400 dark:border-zinc-700 dark:text-zinc-400"
+            className="ml-auto min-h-[40px] rounded border border-zinc-300 px-3 py-1 text-xs text-zinc-600 hover:border-emerald-400"
           >
             Ver clases
           </button>
@@ -56,12 +56,12 @@ function ContenidoPanel({
         <RankBadge nivel={nodo.nivel} />
         <h2 className="text-xl font-semibold">{nodo.nombre}</h2>
       </div>
-      {nodo.nombreComun && <p className="text-sm text-zinc-500 dark:text-zinc-400">{nodo.nombreComun}</p>}
+      {nodo.nombreComun && <p className="text-sm text-zinc-500">{nodo.nombreComun}</p>}
 
       {(() => {
         const ruta = rutaHasta(arbol, nodo.slug).slice(0, -1);
         return ruta.length > 0 ? (
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">
+          <p className="text-xs text-zinc-500">
             {ruta.map((a, i) => (
               <span key={a.slug}>
                 {i > 0 && ' › '}
@@ -74,7 +74,7 @@ function ContenidoPanel({
         ) : null;
       })()}
 
-      {nodo.resumenCorto && <p className="text-sm text-zinc-600 dark:text-zinc-300">{nodo.resumenCorto}</p>}
+      {nodo.resumenCorto && <p className="text-sm text-zinc-600">{nodo.resumenCorto}</p>}
 
       <Link href={`/grupo/${nodo.slug}`} className={BOTON_PRIMARIO}>
         Ver ficha completa
@@ -102,7 +102,7 @@ function ContenidoPanel({
         </div>
       ) : (
         <div className="space-y-2">
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">Este grupo no tiene clases en el material.</p>
+          <p className="text-sm text-zinc-500">Este grupo no tiene clases en el material.</p>
           {(() => {
             const ruta = rutaHasta(arbol, nodo.slug);
             const padre = ruta[ruta.length - 2];
@@ -142,14 +142,14 @@ function SheetMovil({ onCerrar, children }: { onCerrar: () => void; children: Re
         aria-modal="true"
         aria-label="Grupo seleccionado"
         tabIndex={-1}
-        className="fixed inset-x-0 bottom-0 z-50 max-h-[75dvh] overflow-auto rounded-t-2xl border-t border-zinc-200 bg-white p-4 pb-[max(1rem,env(safe-area-inset-bottom))] dark:border-zinc-800 dark:bg-zinc-950"
+        className="fixed inset-x-0 bottom-0 z-50 max-h-[75dvh] overflow-auto rounded-t-2xl border-t border-zinc-200 bg-white p-4 pb-[max(1rem,env(safe-area-inset-bottom))]"
       >
-        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-10 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-10 rounded-full bg-zinc-300" />
         <button
           type="button"
           aria-label="Cerrar panel"
           onClick={onCerrar}
-          className="absolute right-3 top-3 rounded-md p-2 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+          className="absolute right-3 top-3 rounded-md p-2 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900"
         >
           <IconoCerrar />
         </button>
@@ -175,9 +175,9 @@ export function PanelSeleccion({
     return (
       <aside
         aria-label="Grupo seleccionado"
-        className="rounded-lg border border-zinc-200 p-4 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-auto dark:border-zinc-800"
+        className="rounded-lg border border-zinc-200 p-4 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-auto"
       >
-        <p className="text-sm text-zinc-500 dark:text-zinc-400">
+        <p className="text-sm text-zinc-500">
           Seleccioná un grupo para ver sus clases y acceder a su ficha.
         </p>
       </aside>
@@ -188,7 +188,7 @@ export function PanelSeleccion({
     return (
       <aside
         aria-label="Grupo seleccionado"
-        className="rounded-lg border border-zinc-200 p-4 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-auto dark:border-zinc-800"
+        className="rounded-lg border border-zinc-200 p-4 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-auto"
       >
         <ContenidoPanel arbol={arbol} nodo={nodo} onSeleccionar={onSeleccionar} />
       </aside>

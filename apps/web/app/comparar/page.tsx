@@ -41,11 +41,11 @@ export default function Page() {
     <div className="space-y-6">
       <header className="space-y-2">
         <h1 className="text-2xl font-bold">Comparar grupos</h1>
-        <p className="text-sm text-zinc-600 dark:text-zinc-400">
+        <p className="text-sm text-zinc-600">
           Elegí dos grupos o clases para ver un cuadro comparativo.
         </p>
       </header>
-      <Suspense fallback={<div className="h-96 animate-pulse rounded-lg bg-zinc-100 dark:bg-zinc-900" />}>
+      <Suspense fallback={<div className="h-96 animate-pulse rounded-lg bg-zinc-100" />}>
         <Comparador taxa={todos} opciones={construirOpciones()} />
       </Suspense>
     </div>

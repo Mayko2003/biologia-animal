@@ -14,9 +14,9 @@ export type FichaStats = {
 
 function Stat({ icono, valor, texto }: { icono: React.ReactNode; valor: string; texto: string }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white/70 px-3 py-1 text-xs text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-300">
-      <span className="text-emerald-600 dark:text-emerald-400">{icono}</span>
-      <strong className="font-semibold text-zinc-800 dark:text-zinc-100">{valor}</strong>
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white/70 px-3 py-1 text-xs text-zinc-600">
+      <span className="text-emerald-600">{icono}</span>
+      <strong className="font-semibold text-zinc-800">{valor}</strong>
       {texto}
     </span>
   );
@@ -27,7 +27,7 @@ function Motivo() {
     <svg
       aria-hidden="true"
       viewBox="0 0 200 200"
-      className="motion-safe:animate-breathe pointer-events-none absolute -right-8 -top-10 h-48 w-48 text-emerald-500/30 dark:text-emerald-400/20"
+      className="motion-safe:animate-breathe pointer-events-none absolute -right-8 -top-10 h-48 w-48 text-emerald-500/30"
     >
       <circle cx="100" cy="100" r="86" fill="none" stroke="currentColor" strokeWidth="1.5" />
       <circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
@@ -66,11 +66,11 @@ export function FichaHero({
   const autorCorto = imagen?.autor && imagen.autor.length <= 60 ? imagen.autor : 'Wikimedia Commons';
   const credito = [autorCorto, imagen?.licencia].filter(Boolean).join(' · ');
   return (
-    <header className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-transparent p-5 sm:p-6 dark:border-emerald-900/50 dark:from-emerald-950/40 dark:via-zinc-950 dark:to-transparent">
+    <header className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-transparent p-5 sm:p-6">
       <Motivo />
       {imagen && (
         <figure className="-mx-5 -mt-5 mb-5 sm:-mx-6 sm:-mt-6">
-          <div className="relative aspect-[16/9] overflow-hidden bg-zinc-100 sm:aspect-[2/1] dark:bg-zinc-900">
+          <div className="relative aspect-[16/9] overflow-hidden bg-zinc-100 sm:aspect-[2/1]">
             <Image
               src={imagen.src}
               alt={imagen.alt}
@@ -80,14 +80,14 @@ export function FichaHero({
               className="object-cover"
             />
           </div>
-          <figcaption className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 px-5 pt-2 text-[11px] leading-snug text-zinc-500 sm:px-6 dark:text-zinc-400">
+          <figcaption className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 px-5 pt-2 text-[11px] leading-snug text-zinc-500 sm:px-6">
             <span className="min-w-0 flex-1 truncate">{imagen.alt}</span>
             <a
               href={imagen.fuente}
               target="_blank"
               rel="noreferrer"
               title="Ver la fuente de la imagen en Wikimedia Commons"
-              className="shrink-0 underline decoration-dotted underline-offset-2 hover:text-emerald-600 dark:hover:text-emerald-400"
+              className="shrink-0 underline decoration-dotted underline-offset-2 hover:text-emerald-600"
             >
               Foto: {credito || 'Wikimedia Commons'}
             </a>
@@ -99,14 +99,14 @@ export function FichaHero({
           <RankBadge nivel={nivel} />
           <h1 className="text-2xl font-bold sm:text-3xl">{nombre}</h1>
           {externo && (
-            <span className="rounded px-2 py-0.5 text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">
+            <span className="rounded px-2 py-0.5 text-xs font-medium bg-amber-100 text-amber-800">
               Grupo no incluido en los apuntes
             </span>
           )}
         </div>
-        {nombreComun && <p className="text-lg text-zinc-500 dark:text-zinc-400">{nombreComun}</p>}
+        {nombreComun && <p className="text-lg text-zinc-500">{nombreComun}</p>}
         {sinonimos && sinonimos.length > 0 && (
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">También: {sinonimos.join(', ')}</p>
+          <p className="text-sm text-zinc-500">También: {sinonimos.join(', ')}</p>
         )}
         <div className="flex flex-wrap gap-2 pt-1">
           <Stat icono={<IconoLista className="h-3.5 w-3.5" />} valor={String(stats.datos)} texto={stats.datos === 1 ? 'dato' : 'datos'} />

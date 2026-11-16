@@ -25,15 +25,15 @@ export const NIVEL_LABEL: Record<Nivel, string> = {
 };
 
 export const NIVEL_CLASES: Record<Nivel, string> = {
-  reino: 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800/60 dark:text-zinc-200',
-  subreino: 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800/60 dark:text-zinc-200',
-  rama: 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800/60 dark:text-zinc-200',
-  clado: 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800/60 dark:text-zinc-200',
-  phylum: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200',
-  subphylum: 'bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-200',
-  superclase: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-200',
-  clase: 'bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-200',
-  subclase: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-200',
+  reino: 'bg-zinc-100 text-zinc-800',
+  subreino: 'bg-zinc-100 text-zinc-800',
+  rama: 'bg-zinc-100 text-zinc-800',
+  clado: 'bg-zinc-100 text-zinc-800',
+  phylum: 'bg-emerald-100 text-emerald-800',
+  subphylum: 'bg-teal-100 text-teal-800',
+  superclase: 'bg-cyan-100 text-cyan-800',
+  clase: 'bg-sky-100 text-sky-800',
+  subclase: 'bg-indigo-100 text-indigo-800',
 };
 
 export const NIVEL_COLOR_HEX: Record<Nivel, string> = {

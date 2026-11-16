@@ -29,7 +29,7 @@ export function Subgrupos({ nivel, arbol }: { nivel: Nivel; arbol: NodoArbol }) 
                 <li key={n.slug}>
                   <Link
                     href={`/grupo/${n.slug}`}
-                    className="inline-flex min-h-[36px] items-center rounded px-2 text-sm text-zinc-500 hover:text-emerald-700 hover:underline dark:text-zinc-400 dark:hover:text-emerald-400"
+                    className="inline-flex min-h-[36px] items-center rounded px-2 text-sm text-zinc-500 hover:text-emerald-700 hover:underline"
                   >
                     {n.nombre}
                   </Link>

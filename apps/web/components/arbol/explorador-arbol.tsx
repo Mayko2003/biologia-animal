@@ -13,7 +13,7 @@ export function ExploradorArbol({ arbol }: { arbol: NodoArbol }) {
   const vistaActual = vista === 'grafico' ? 'grafico' : 'lista';
 
   const botones = (
-    <div className="mb-3 inline-flex rounded-md border border-zinc-300 p-0.5 text-sm dark:border-zinc-700" role="group" aria-label="Vista del árbol">
+    <div className="mb-3 inline-flex rounded-md border border-zinc-300 p-0.5 text-sm" role="group" aria-label="Vista del árbol">
       <button
         type="button"
         aria-pressed={vistaActual === 'lista'}

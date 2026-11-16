@@ -73,12 +73,12 @@ export function SistemasTabs({
 
   return (
     <div>
-      <div className="mb-3 flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
+      <div className="mb-3 flex items-center gap-3 text-xs text-zinc-500">
         <span className="whitespace-nowrap">
-          <strong className="font-semibold text-zinc-700 dark:text-zinc-200">{conDatos}/{SISTEMAS.length}</strong>{' '}
+          <strong className="font-semibold text-zinc-700">{conDatos}/{SISTEMAS.length}</strong>{' '}
           sistemas con datos
         </span>
-        <div className="h-1.5 grow overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800">
+        <div className="h-1.5 grow overflow-hidden rounded-full bg-zinc-200">
           <div
             className="h-full rounded-full bg-emerald-500 transition-[width] duration-500"
             style={{ width: `${(conDatos / SISTEMAS.length) * 100}%` }}
@@ -107,15 +107,15 @@ export function SistemasTabs({
               activa === p.id
                 ? 'bg-emerald-600 text-white shadow-sm'
                 : p.datos.length === 0
-                  ? 'text-zinc-400 hover:bg-zinc-100 dark:text-zinc-500 dark:hover:bg-zinc-800'
-                  : 'text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'
+                  ? 'text-zinc-400 hover:bg-zinc-100'
+                  : 'text-zinc-700 hover:bg-zinc-100'
             }`}
           >
             {p.icono}
             {p.label}
             <span
               className={`rounded-full px-1.5 py-0.5 text-[11px] leading-none ${
-                activa === p.id ? 'bg-white/20 text-white' : 'bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400'
+                activa === p.id ? 'bg-white/20 text-white' : 'bg-zinc-100 text-zinc-500'
               }`}
             >
               {p.datos.length}
@@ -128,7 +128,7 @@ export function SistemasTabs({
         id={`panel-${pestanaActiva.id}`}
         role="tabpanel"
         aria-labelledby={pestanaActiva.id}
-        className="motion-reduce:animate-none animate-fade-up mt-3 rounded-lg border border-zinc-200 p-4 dark:border-zinc-800"
+        className="motion-reduce:animate-none animate-fade-up mt-3 rounded-lg border border-zinc-200 p-4"
       >
         <DatoList datos={pestanaActiva.datos} />
       </div>

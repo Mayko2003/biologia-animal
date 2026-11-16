@@ -10,7 +10,7 @@ export function LeyendaLente({
 }) {
   const orden = VALORES_CRITERIO[criterio] as readonly string[];
   return (
-    <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-600 dark:text-zinc-400">
+    <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-600">
       {orden
         .filter((v) => conteo[v])
         .map((v) => (

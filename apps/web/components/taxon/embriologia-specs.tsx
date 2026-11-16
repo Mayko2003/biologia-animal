@@ -22,7 +22,7 @@ function Detalle({ reg, nombres, fuentes }: { reg: Reg; nombres: Record<string, 
       {reg?.heredadoDe && (
         <span>
           Heredado de{' '}
-          <Link href={`/grupo/${reg.heredadoDe}`} className="text-emerald-700 underline dark:text-emerald-400">
+          <Link href={`/grupo/${reg.heredadoDe}`} className="text-emerald-700 underline">
             {nombres[reg.heredadoDe] ?? reg.heredadoDe}
           </Link>{' '}
         </span>
@@ -55,29 +55,29 @@ export function EmbriologiaSpecs({
         return (
           <div
             key={c}
-            className="rounded-lg border border-zinc-200 bg-white p-3 transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+            className="rounded-lg border border-zinc-200 bg-white p-3 transition hover:-translate-y-0.5 hover:shadow-md"
           >
-            <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
-              <span className="text-emerald-600 dark:text-emerald-400">
+            <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-zinc-500">
+              <span className="text-emerald-600">
                 <IconoCriterio id={c} className="h-4 w-4" />
               </span>
               {CRITERIO_LABEL[c]}
             </div>
             <div className="mt-2">
               {reg ? (
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-2.5 py-1 text-sm font-medium text-zinc-800 dark:bg-zinc-800 dark:text-zinc-100">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-2.5 py-1 text-sm font-medium text-zinc-800">
                   <span aria-hidden className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />
                   {VALOR_LABEL[reg.valor]}
                 </span>
               ) : (
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-zinc-400 dark:bg-zinc-800 dark:text-zinc-500">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-zinc-400">
                   <span aria-hidden className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />
                   Sin datos
                 </span>
               )}
             </div>
             {tieneDetalle && (
-              <div className="mt-2 text-xs leading-relaxed text-zinc-600 dark:text-zinc-300">
+              <div className="mt-2 text-xs leading-relaxed text-zinc-600">
                 <Detalle reg={reg} nombres={nombres} fuentes={fuentes} />
               </div>
             )}

@@ -59,7 +59,7 @@ export function Buscador({ docs }: { docs: DocBusqueda[] }) {
           aplicar(texto);
         }}
       >
-        <label htmlFor="buscar-q" className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+        <label htmlFor="buscar-q" className="mb-1.5 block text-sm font-medium text-zinc-700">
           Buscar en todos los grupos
         </label>
         <input
@@ -71,7 +71,7 @@ export function Buscador({ docs }: { docs: DocBusqueda[] }) {
           value={texto}
           onChange={(e) => programar(e.target.value)}
           placeholder="Ej.: nefridios, notocorda, larva trocófora…"
-          className="w-full max-w-xl rounded-md border border-zinc-300 bg-transparent px-3 py-2 text-sm placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none dark:border-zinc-700"
+          className="w-full max-w-xl rounded-md border border-zinc-300 bg-transparent px-3 py-2 text-sm placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none"
         />
       </form>
 
@@ -83,7 +83,7 @@ export function Buscador({ docs }: { docs: DocBusqueda[] }) {
               key={s}
               type="button"
               onClick={() => aplicar(s)}
-              className="min-h-[40px] rounded-md border border-zinc-300 px-3 py-1.5 hover:border-emerald-400 hover:text-emerald-700 dark:border-zinc-700 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
+              className="min-h-[40px] rounded-md border border-zinc-300 px-3 py-1.5 hover:border-emerald-400 hover:text-emerald-700"
             >
               {s}
             </button>
@@ -101,10 +101,10 @@ export function Buscador({ docs }: { docs: DocBusqueda[] }) {
 
       <ul className="space-y-4">
         {resultadosVisibles.map((r) => (
-          <li key={r.slug} className="rounded-lg border border-zinc-200 p-4 dark:border-zinc-800">
+          <li key={r.slug} className="rounded-lg border border-zinc-200 p-4">
             <div className="flex items-center gap-2">
               <RankBadge nivel={r.nivel} />
-              <Link href={`/grupo/${r.slug}`} className="font-semibold hover:text-emerald-700 dark:hover:text-emerald-400">
+              <Link href={`/grupo/${r.slug}`} className="font-semibold hover:text-emerald-700">
                 {r.taxonNombre}
               </Link>
             </div>
@@ -113,17 +113,17 @@ export function Buscador({ docs }: { docs: DocBusqueda[] }) {
                 <li key={c.id}>
                   <Link
                     href={`/grupo/${r.slug}${c.ancla ? `#${c.ancla}` : ''}`}
-                    className="block rounded px-2.5 py-2 text-sm hover:bg-zinc-50 dark:hover:bg-zinc-900"
+                    className="block rounded px-2.5 py-2 text-sm hover:bg-zinc-50"
                   >
                     <span className="font-semibold">{c.seccionLabel}</span>
                     {c.soloExterno && (
-                      <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-[11px] font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">
+                      <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-[11px] font-medium text-amber-800">
                         Externo
                       </span>
                     )}
-                    <span className="mt-0.5 block text-zinc-600 dark:text-zinc-400">
+                    <span className="mt-0.5 block text-zinc-600">
                       {resaltar(fragmento(c.texto, q ?? ''), q ?? '').map((s, i) =>
-                        s.marcado ? <mark key={i} className="bg-emerald-200/70 dark:bg-emerald-800/60">{s.texto}</mark> : s.texto,
+                        s.marcado ? <mark key={i} className="bg-emerald-200/70">{s.texto}</mark> : s.texto,
                       )}
                     </span>
                   </Link>

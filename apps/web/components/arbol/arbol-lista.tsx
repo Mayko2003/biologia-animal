@@ -97,13 +97,13 @@ export function ArbolLista({
           else filas.current.delete(nodo.slug);
         }}
       >
-        <div className={`flex items-center gap-1.5 rounded px-1 py-0.5 ${sel ? 'bg-emerald-50 dark:bg-emerald-900/30' : ''}`}>
+        <div className={`flex items-center gap-1.5 rounded px-1 py-0.5 ${sel ? 'bg-emerald-50' : ''}`}>
           {tieneHijos ? (
             <button
               type="button"
               aria-label={abierto ? `Colapsar ${nodo.nombre}` : `Expandir ${nodo.nombre}`}
               onClick={() => toggle(nodo.slug)}
-              className="flex h-10 w-10 shrink-0 items-center justify-center text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200"
+              className="flex h-10 w-10 shrink-0 items-center justify-center text-zinc-500 hover:text-zinc-800"
             >
               {abierto ? '▾' : '▸'}
             </button>
@@ -114,17 +114,17 @@ export function ArbolLista({
           <button
             type="button"
             onClick={() => onSeleccionar(nodo.slug)}
-            className="min-h-[40px] text-sm font-medium hover:text-emerald-700 hover:underline dark:hover:text-emerald-400"
+            className="min-h-[40px] text-sm font-medium hover:text-emerald-700 hover:underline"
           >
             {resaltar(nodo.nombre, filtro)}
           </button>
           {nodo.nombreComun && (
-            <span className="hidden text-xs text-zinc-500 sm:inline dark:text-zinc-400">{nodo.nombreComun}</span>
+            <span className="hidden text-xs text-zinc-500 sm:inline">{nodo.nombreComun}</span>
           )}
-          {tieneHijos && <span className="text-xs text-zinc-400 dark:text-zinc-500">({nodo.hijos.length})</span>}
+          {tieneHijos && <span className="text-xs text-zinc-400">({nodo.hijos.length})</span>}
         </div>
         {tieneHijos && abierto && (
-          <ul role="group" className="ml-2 border-l border-zinc-200 pl-2 dark:border-zinc-800">
+          <ul role="group" className="ml-2 border-l border-zinc-200 pl-2">
             {nodo.hijos.map(fila)}
           </ul>
         )}
@@ -142,17 +142,17 @@ export function ArbolLista({
           value={filtro}
           onChange={(e) => setFiltro(e.target.value)}
           placeholder="Ej.: Insecta, anélidos, Myxini…"
-          className="w-full sm:w-64 rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+          className="w-full sm:w-64 rounded-md border border-zinc-300 px-3 py-2 text-sm"
         />
-        <button type="button" onClick={expandirTodo} className="min-h-[40px] rounded-md border border-zinc-300 px-3 py-2 text-sm hover:border-emerald-400 dark:border-zinc-700">
+        <button type="button" onClick={expandirTodo} className="min-h-[40px] rounded-md border border-zinc-300 px-3 py-2 text-sm hover:border-emerald-400">
           Expandir todo
         </button>
-        <button type="button" onClick={colapsarTodo} className="min-h-[40px] rounded-md border border-zinc-300 px-3 py-2 text-sm hover:border-emerald-400 dark:border-zinc-700">
+        <button type="button" onClick={colapsarTodo} className="min-h-[40px] rounded-md border border-zinc-300 px-3 py-2 text-sm hover:border-emerald-400">
           Colapsar todo
         </button>
       </div>
       {visibles && visibles.size === 0 ? (
-        <p className="text-sm text-zinc-500 dark:text-zinc-400">Sin coincidencias para «{filtro}».</p>
+        <p className="text-sm text-zinc-500">Sin coincidencias para «{filtro}».</p>
       ) : (
         <ul role="tree" aria-label="Árbol taxonómico" className="space-y-0.5">
           {fila(arbol)}

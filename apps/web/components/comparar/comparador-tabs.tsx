@@ -97,7 +97,7 @@ export function ComparadorTabs({
             className={`inline-flex min-h-[40px] shrink-0 items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
               activa === p.id
                 ? 'bg-emerald-600 text-white shadow-sm'
-                : 'text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800'
+                : 'text-zinc-700 hover:bg-zinc-100'
             }`}
           >
             {p.icono}
@@ -121,24 +121,24 @@ export function ComparadorTabs({
             key={f.id}
             className={`overflow-hidden rounded-lg border ${
               f.distinto
-                ? 'border-amber-200 bg-amber-50 dark:border-amber-900/50 dark:bg-amber-950/30'
-                : 'border-zinc-200 dark:border-zinc-800'
+                ? 'border-amber-200 bg-amber-50'
+                : 'border-zinc-200'
             }`}
           >
-            <p className="flex items-center gap-1.5 border-b border-zinc-100 px-3 py-2 text-sm font-medium dark:border-zinc-800/60">
+            <p className="flex items-center gap-1.5 border-b border-zinc-100 px-3 py-2 text-sm font-medium">
               {f.distinto && (
                 <span className="h-2 w-2 rounded-full bg-amber-500" aria-label="Difiere" role="img" />
               )}
               {f.etiqueta}
             </p>
             <div className="border-l-2 border-emerald-500 px-3 py-2">
-              <p className="text-xs font-medium text-emerald-700 dark:text-emerald-400">
+              <p className="text-xs font-medium text-emerald-700">
                 A: {c.a.nombre}
               </p>
               <CeldaView celda={f.a} />
             </div>
             <div className="border-l-2 border-sky-500 px-3 py-2">
-              <p className="text-xs font-medium text-sky-700 dark:text-sky-400">B: {c.b.nombre}</p>
+              <p className="text-xs font-medium text-sky-700">B: {c.b.nombre}</p>
               <CeldaView celda={f.b} />
             </div>
           </section>
