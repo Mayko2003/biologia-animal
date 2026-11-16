@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { APUNTES, dominioPermitido, etiquetaFuente, type ArchivoApunte } from '@/lib/apuntes';
+import { DIR_APUNTES } from './verificar-fuentes';
 
 describe('apuntes', () => {
   it('dominioPermitido acepta dominios de la lista y subdominios', () => {
@@ -23,7 +24,7 @@ describe('apuntes', () => {
 
   it('cada clave de APUNTES existe como archivo', () => {
     for (const archivo of Object.keys(APUNTES) as ArchivoApunte[]) {
-      expect(existsSync(path.join(process.cwd(), 'animal-data', archivo)), archivo).toBe(true);
+      expect(existsSync(path.join(DIR_APUNTES, archivo)), archivo).toBe(true);
     }
   });
 });

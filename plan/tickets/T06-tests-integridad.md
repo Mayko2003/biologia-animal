@@ -18,7 +18,7 @@ líneas indicadas (evita datos inventados). Además, un reporte de cobertura que
 
 Usar `TAXA` (`@/data/taxa`), `recorrerItems` (`@/lib/recorrer`), `NIVEL_ORDEN`, `VALORES_CRITERIO`, `APUNTES`,
 `dominioPermitido`, `normalizarEspacios`. Leer cada archivo de apunte **una sola vez** con
-`readFileSync(path.join(process.cwd(), 'animal-data', archivo), 'utf8').split('\n')` y cachearlo en un `Map`.
+`readFileSync(path.join(process.cwd(), 'apuntes-data', archivo), 'utf8').split('\n')` y cachearlo en un `Map`.
 
 Tests (un `describe('integridad de datos')` con un `it` por regla; los mensajes de error deben indicar
 **slug + sección + texto (primeros 60 caracteres)** para que sea fácil encontrar el problema):

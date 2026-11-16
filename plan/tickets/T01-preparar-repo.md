@@ -19,7 +19,7 @@ layout raíz en español con encabezado de navegación y páginas provisorias pa
 1. Leé `AGENTS.md` y `node_modules/next/dist/docs/01-app/01-getting-started/03-layouts-and-pages.md`.
 2. Commit inicial de los apuntes y el plan (todavía no están versionados):
    ```bash
-   git add animal-data plan
+   git add apuntes-data plan
    git commit -m "T01: agregar apuntes y plan"
    ```
 3. Borrá los 5 SVG de `public/` listados arriba (son del template y no se usan).
@@ -65,7 +65,7 @@ layout raíz en español con encabezado de navegación y páginas provisorias pa
 
 ## Criterios de aceptación
 
-- [ ] `animal-data/` y `plan/` están commiteados.
+- [ ] `apuntes-data/` y `plan/` están commiteados.
 - [ ] No queda ningún rastro del template (logos de Next/Vercel, textos "To get started…").
 - [ ] `<html lang="es">` y título por defecto "Biología Animal".
 - [ ] El encabezado aparece en todas las páginas y los 5 links navegan sin 404.

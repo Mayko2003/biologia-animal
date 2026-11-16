@@ -6,7 +6,7 @@ Cada ticket se implementa en orden, de a uno, y termina con un commit.
 ## 1. Qué es la app
 
 Una app web (Next.js 16.4 + React 19.3 + Tailwind 4, ya inicializada en este repo) para estudiar
-Biología Animal a partir de los apuntes de la cátedra (`animal-data/*.md`).
+Biología Animal a partir de los apuntes de la cátedra (`apuntes-data/*.md`).
 
 Funcionalidades:
 
@@ -29,7 +29,7 @@ Funcionalidades:
 
 | Tema | Decisión |
 |---|---|
-| Fuente principal | Los apuntes de `animal-data/`. Cada dato lleva su fuente (archivo + líneas + cita literal). |
+| Fuente principal | Los apuntes de `apuntes-data/`. Cada dato lleva su fuente (archivo + líneas + cita literal). |
 | Fuentes externas | Permitidas **solo** en los tickets T41–T46, para completar huecos. Se marcan como "Externo". Nunca reemplazan ni editan datos de los apuntes. |
 | Discrepancias | La clasificación que se muestra es **la de la cátedra**; si la bibliografía actual difiere se agrega una `Nota` de tipo `discrepancia`. |
 | Mapa vs árbol | Mapa = criterios embrionarios (nodos conceptuales + phyla como hojas). Árbol = jerarquía taxonómica por `padre`. |
@@ -54,10 +54,10 @@ Funcionalidades:
 3. **No agregar dependencias** que no estén indicadas en un ticket. Las versiones están fijadas en los tickets
    (todas publicadas hace más de 7 días). Usar `pnpm add` con la versión exacta.
 4. **No modificar** `next.config.ts`, `pnpm-workspace.yaml`, `.npmrc` ni configuración de seguridad.
-5. **No editar los archivos de `animal-data/`**. Son la fuente de verdad.
+5. **No editar los archivos de `apuntes-data/`**. Son la fuente de verdad.
 6. No agregar comentarios innecesarios en el código. Código compacto, sin abstracciones de más.
-7. Estilos con clases de Tailwind (v4, ya configurado en `app/globals.css`). No instalar librerías de UI.
-   Soportar modo oscuro con variantes `dark:` (el proyecto usa `prefers-color-scheme`).
+7. Estilos con clases de Tailwind (v4, ya configurado en `apps/web/app/globals.css`). No instalar librerías de UI.
+   La app es solo modo claro: no usar variantes `dark:`.
 8. Accesibilidad básica: botones reales (`<button>`), `aria-*` donde se indique, foco visible, contraste suficiente.
 9. **Lint de React hooks** (`eslint-config-next` 16 incluye las reglas nuevas de `react-hooks`): no llamar `setState`
    de forma sincrónica dentro de `useEffect`. Alternativas: estado derivado calculado en el render, actualizar el estado
@@ -98,32 +98,34 @@ No hacer push. No usar `--no-verify`.
 ## 5. Estructura final esperada
 
 ```
-app/
-  layout.tsx               # layout raíz (header, nav, buscador)
-  page.tsx                 # inicio
-  not-found.tsx
-  mapa/page.tsx
-  arbol/page.tsx
-  grupo/[slug]/page.tsx
-  comparar/page.tsx
-  buscar/page.tsx
-components/
-  layout/…  taxon/…  fuentes/…  navegacion/…  arbol/…  mapa/…  busqueda/…  comparar/…
-data/
-  taxa/<slug>.ts           # un archivo por grupo
-  taxa/index.ts            # registro de todos los grupos
-  mapa-embrionario.ts      # estructura del mapa conceptual
-lib/
-  types.ts  apuntes.ts  etiquetas.ts  texto.ts          # puros (T03)
-  consultas.ts  arbol.ts  recorrer.ts                   # puros (T05)
-  taxa.ts                                               # CON datos: solo servidor/tests (T05)
-  cobertura.ts  estadisticas.ts                         # puros (T06, T17)
-  busqueda.ts  comparacion.ts                           # puros (T37, T39)
-tests/
-  unit/…                   # Vitest
-  reportes/cobertura.test.ts
-  e2e/…                    # Playwright
-animal-data/               # apuntes (NO editar)
+apps/web/                  # app Next.js (monorepo pnpm: apps/*, packages/*)
+  app/
+    layout.tsx               # layout raíz (header, nav, buscador)
+    page.tsx                 # inicio
+    not-found.tsx
+    mapa/page.tsx
+    arbol/page.tsx
+    grupo/[slug]/page.tsx
+    comparar/page.tsx
+    buscar/page.tsx
+  components/
+    layout/…  taxon/…  fuentes/…  navegacion/…  arbol/…  mapa/…  busqueda/…  comparar/…
+  data/
+    taxa/<slug>.ts           # un archivo por grupo
+    taxa/index.ts            # registro de todos los grupos
+    mapa-embrionario.ts      # estructura del mapa conceptual
+  lib/
+    types.ts  apuntes.ts  etiquetas.ts  texto.ts          # puros (T03)
+    consultas.ts  arbol.ts  recorrer.ts                   # puros (T05)
+    taxa.ts                                               # CON datos: solo servidor/tests (T05)
+    cobertura.ts  estadisticas.ts                         # puros (T06, T17)
+    busqueda.ts  comparacion.ts                           # puros (T37, T39)
+  tests/
+    unit/…                   # Vitest
+    reportes/cobertura.test.ts
+    e2e/…                    # Playwright
+apuntes-data/              # apuntes (NO editar)
+models/                    # fuentes Blender de los modelos 3D
 plan/                      # este plan
 ```
 

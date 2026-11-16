@@ -24,7 +24,7 @@ Obligatoria para los tickets **T41–T46**. Requiere acceso a búsqueda web y a 
 }
 ```
 
-- `url` con `https://` y de un dominio permitido (lista en `DOMINIOS_PERMITIDOS`, `lib/apuntes.ts`).
+- `url` con `https://` y de un dominio permitido (lista en `DOMINIOS_PERMITIDOS`, `apps/web/lib/apuntes.ts`).
   El test de integridad rechaza otros dominios.
 - Preferencia de fuentes (de mayor a menor):
   1. Artículos científicos revisados por pares (`nature.com`, `cell.com`, `academic.oup.com`, `link.springer.com`,

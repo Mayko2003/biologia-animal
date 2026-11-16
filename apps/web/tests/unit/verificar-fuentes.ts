@@ -1,14 +1,17 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { dominioPermitido, type ArchivoApunte } from '@/lib/apuntes';
 import { normalizarEspacios } from '@/lib/texto';
 import type { Fuente, FuenteApunte } from '@/lib/types';
+
+export const DIR_APUNTES = fileURLToPath(new URL('../../../../apuntes-data/', import.meta.url));
 
 const cacheLineas = new Map<ArchivoApunte, string[]>();
 function lineasDe(archivo: ArchivoApunte): string[] {
   let l = cacheLineas.get(archivo);
   if (!l) {
-    l = readFileSync(path.join(process.cwd(), 'animal-data', archivo), 'utf8').split('\n');
+    l = readFileSync(path.join(DIR_APUNTES, archivo), 'utf8').split('\n');
     cacheLineas.set(archivo, l);
   }
   return l;

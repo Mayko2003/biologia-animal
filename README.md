@@ -17,7 +17,10 @@ Aplicación de estudio de biología animal basada en los apuntes de la cátedra,
 
 ## Comandos
 
+Se corren desde la raíz del monorepo:
+
 ```bash
+pnpm install      # instala todo el workspace
 pnpm dev          # desarrollo
 pnpm build        # build de producción
 pnpm start        # servidor de producción
@@ -30,25 +33,31 @@ pnpm cobertura    # reporte de cobertura de contenido por taxón
 
 ## Estructura
 
+Monorepo con pnpm workspaces. Cada app vive en `apps/` y el código compartido irá en `packages/`.
+
 ```
-app/                  # rutas: inicio, mapa, arbol, grupo/[slug], comparar, buscar, not-found
-components/           # layout/ taxon/ fuentes/ navegacion/ arbol/ mapa/ busqueda/ comparar/
-data/
-  taxa/<slug>.ts      # un archivo por grupo taxonómico
-  taxa/index.ts       # registro de todos los grupos
-  mapa-embrionario.ts # estructura del mapa conceptual
-lib/                  # lógica pura (types, consultas, arbol, busqueda, comparacion, etiquetas…)
-tests/
-  unit/               # Vitest (incluye integridad de citas y del árbol)
-  reportes/           # reporte de cobertura
-  e2e/                # Playwright
-animal-data/          # apuntes de la cátedra (NO editar)
-plan/                 # plan de tickets y guías de contenido
+apps/
+  web/                  # app Next.js (@biologia-animal/web)
+    app/                # rutas: inicio, mapa, arbol, grupo/[slug], comparar, buscar, not-found
+    components/         # layout/ taxon/ fuentes/ navegacion/ arbol/ mapa/ busqueda/ comparar/ inicio/
+    data/
+      taxa/<slug>.ts    # un archivo por grupo taxonómico
+      taxa/index.ts     # registro de todos los grupos
+      mapa-embrionario.ts
+    lib/                # lógica pura (types, consultas, arbol, busqueda, comparacion, etiquetas…)
+    public/             # imágenes de grupos, logo (brand/) y modelos 3D (models/*.glb)
+    tests/
+      unit/             # Vitest (incluye integridad de citas y del árbol)
+      reportes/         # reporte de cobertura
+      e2e/              # Playwright
+apuntes-data/           # apuntes de la cátedra (NO editar)
+models/                 # fuentes Blender de los modelos 3D y scripts de exportación
+plan/                   # plan de tickets y guías de contenido
 ```
 
 ## Agregar o corregir contenido
 
-1. Editar `data/taxa/<slug>.ts` siguiendo `plan/guia-contenido.md`.
+1. Editar `apps/web/data/taxa/<slug>.ts` siguiendo `plan/guia-contenido.md`.
 2. Cada dato lleva su fuente: los apuntes se citan con `archivo`, `lineas` y `cita` literal; las fuentes web con `tipo: 'web'` y URL.
 3. `pnpm test` verifica que cada cita de apunte exista literalmente en las líneas indicadas — un dato sin respaldo hace fallar los tests.
 4. Si una fuente externa contradice al apunte, no se reemplaza: se agrega una `nota` de discrepancia (ver `plan/guia-fuentes-web.md`).

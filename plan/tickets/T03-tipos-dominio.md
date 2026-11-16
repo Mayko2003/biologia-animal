@@ -182,7 +182,7 @@ export function truncar(s: string, max: number): string
   - `dominioPermitido('https://animaldiversity.org/x')` → true; `'https://es.wikipedia.org/wiki/X'` → true;
     `'https://evil-animaldiversity.org'` → false; `'https://example.com'` → false.
   - `etiquetaFuente` para una fuente apunte de `annelidos.md` líneas [36, 38] → `'TP6 · L36–38'`.
-  - Cada clave de `APUNTES` existe como archivo en `animal-data/` (usar `node:fs` `existsSync` + `path.join(process.cwd(), 'animal-data', archivo)`).
+  - Cada clave de `APUNTES` existe como archivo en `apuntes-data/` (usar `node:fs` `existsSync` + `path.join(process.cwd(), 'apuntes-data', archivo)`).
 
 ## Criterios de aceptación
 

@@ -32,7 +32,7 @@ Verificar todo de punta a punta, revisar la calidad del contenido y documentar c
    - Comandos de verificación (los de la definición de terminado).
    - Reglas clave: datos con fuente obligatoria y citas verificadas por test; Client Components sin imports de `data/`
      ni `lib/taxa.ts`; nada de `dynamic`/`dynamicParams` (Cache Components); `useSearchParams` dentro de `Suspense`;
-     no editar `animal-data/`.
+     no editar `apuntes-data/`.
    - Ubicación de las guías (`plan/guia-contenido.md`, `plan/guia-fuentes-web.md`).
 6. Commit final: `git commit -m "T49: verificación final y documentación"`.
 

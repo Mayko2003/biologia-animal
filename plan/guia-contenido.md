@@ -21,7 +21,7 @@ Obligatoria para los tickets **T07, T08 y T18–T36**. Leela completa antes de c
 
 ## 3. Dónde va cada cosa (mapeo a campos del `Taxon`)
 
-El tipo `Taxon` está en `lib/types.ts` (T03). Cada dato es un `Dato` = `{ texto, fuentes, ausente? }`.
+El tipo `Taxon` está en `apps/web/lib/types.ts` (T03). Cada dato es un `Dato` = `{ texto, fuentes, ausente? }`.
 
 | Campo | Qué poner |
 |---|---|
@@ -71,7 +71,7 @@ Cada `Dato`, `Ejemplo`, `Nota` y registro de `embriologia` lleva al menos una fu
 { tipo: 'apunte', archivo: 'annelidos.md', lineas: [36, 38], cita: 'El sistema circulatorio es cerrado' }
 ```
 
-- `archivo`: nombre exacto del archivo en `animal-data/` (el tipo `ArchivoApunte` lo autocompleta).
+- `archivo`: nombre exacto del archivo en `apuntes-data/` (el tipo `ArchivoApunte` lo autocompleta).
 - `lineas`: `[inicio, fin]`, 1-based e inclusivo, tal como las muestra la herramienta de lectura. Rango **ajustado**
   al fragmento usado (ideal ≤ 15 líneas; el test rechaza rangos de más de 120).
 - `cita`: un fragmento **literal** de 3 a 25 palabras copiado de esas líneas. El test une las líneas del rango,
@@ -84,7 +84,7 @@ Cada `Dato`, `Ejemplo`, `Nota` y registro de `embriologia` lleva al menos una fu
 
 ## 6. Embriología (cuándo y cómo)
 
-Los criterios y valores válidos están en `VALORES_CRITERIO` (`lib/types.ts`):
+Los criterios y valores válidos están en `VALORES_CRITERIO` (`apps/web/lib/types.ts`):
 
 | Criterio | Valores |
 |---|---|
@@ -180,7 +180,7 @@ export default taxon;
 
 1. Leé esta guía y el ticket.
 2. Leé **todas** las líneas indicadas en el ticket con la herramienta de lectura (en bloques de ~150 líneas).
-3. Para cada slug del ticket, abrí `data/taxa/<slug>.ts` y completá los campos.
+3. Para cada slug del ticket, abrí `apps/web/data/taxa/<slug>.ts` y completá los campos.
 4. Ejecutá `pnpm test`. Si falla una cita, corregí `cita` o `lineas` (no el `texto`).
 5. Ejecutá `pnpm cobertura` y revisá la fila de cada slug del ticket: que tenga `resumen` y la mayor cantidad
    posible de sistemas **que el apunte describe**. No es un error que queden sistemas vacíos.
