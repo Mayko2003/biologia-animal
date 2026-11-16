@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -10,10 +11,21 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-bricolage);
 }
 
 @theme {
-  --animate-fade-up: fade-up 0.4s ease-out both;
+  --color-tinta: #162a38;
+  --color-helecho: #3e684a;
+  --color-ocre: #c48c34;
+  --color-oxido: #b0543a;
+  --color-salvia: #eef3ec;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@theme {
+  --animate-fade-up: fade-up 0.4s var(--ease-out) both;
   --animate-breathe: breathe 7s ease-in-out infinite;
 
   @keyframes fade-up {
@@ -40,13 +52,6 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -56,4 +61,94 @@ body {
 :focus-visible {
   outline: 2px solid #059669;
   outline-offset: 2px;
+}
+
+@layer components {
+  @keyframes landing-entrar {
+    from {
+      opacity: 0;
+      transform: translate(var(--dx, 0), var(--dy, 12px));
+    }
+  }
+
+  @keyframes landing-aparecer {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @keyframes landing-iris {
+    from {
+      opacity: 0;
+      clip-path: circle(28% at 50% 50%);
+      transform: scale(0.96);
+    }
+    to {
+      clip-path: circle(72% at 50% 50%);
+    }
+  }
+
+  @keyframes landing-trazo-x {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+  }
+
+  @keyframes landing-trazo-y {
+    from {
+      clip-path: inset(0 0 100% 0);
+    }
+  }
+
+  .landing-entrada {
+    animation: landing-entrar var(--dur, 600ms) var(--ease-out) var(--delay, 0ms) both;
+  }
+
+  .landing-logo {
+    animation: landing-iris 800ms var(--ease-out) both;
+  }
+
+  @media (scripting: enabled) {
+    [data-al-ver]:not([data-visto]) :is(.landing-escalon, .landing-trazo-x, .landing-trazo-y) {
+      opacity: 0;
+    }
+  }
+
+  [data-visto] .landing-escalon {
+    animation: landing-entrar var(--dur, 500ms) var(--ease-out) var(--delay, 0ms) both;
+  }
+
+  [data-visto] .landing-trazo-x {
+    animation: landing-trazo-x var(--dur, 600ms) var(--ease-out) var(--delay, 0ms) both;
+  }
+
+  [data-visto] .landing-trazo-y {
+    animation: landing-trazo-y var(--dur, 800ms) var(--ease-out) var(--delay, 0ms) both;
+  }
+
+  .landing-presion {
+    transition-property: color, background-color, border-color, transform;
+    transition-duration: 160ms;
+    transition-timing-function: var(--ease-out);
+  }
+
+  .landing-presion:active {
+    transform: scale(var(--presion, 0.97));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .landing-entrada,
+    .landing-logo,
+    [data-visto] .landing-escalon {
+      animation: landing-aparecer 300ms ease both;
+    }
+
+    [data-visto] :is(.landing-trazo-x, .landing-trazo-y) {
+      animation: landing-aparecer 300ms ease both;
+    }
+
+    .landing-presion:active {
+      transform: none;
+    }
+  }
 }
