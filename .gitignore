@@ -44,3 +44,8 @@ next-env.d.ts
 test-results/
 playwright-report/
 blob-report/
+
+# fuentes Blender (se regeneran con models/*/scripts)
+models/**/*.blend
+models/**/*.blend1
+models/**/*_render.png
