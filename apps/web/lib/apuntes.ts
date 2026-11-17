@@ -1,6 +1,7 @@
 import type { Fuente } from './types';
 
-export type InfoApunte = { tp: number; titulo: string };
+/** `presentacion`: diapositivas de la cátedra pasadas a texto (apuntes-data/presentaciones). */
+export type InfoApunte = { tp: number; titulo: string; presentacion?: true };
 
 export const APUNTES = {
   'porifera y cnidarios.md': { tp: 4, titulo: 'Poríferos y Cnidarios' },
@@ -16,6 +17,20 @@ export const APUNTES = {
   'gnatostomatha.md': { tp: 14, titulo: 'Osteichthyes y Chondrichthyes' },
   'anfibios, reptiles.md': { tp: 15, titulo: 'Anfibios y Reptiles' },
   'aves, mamiferos.md': { tp: 16, titulo: 'Aves y Mamíferos' },
+  'presentaciones/tp04-poriferos-y-celenterados.md': { tp: 4, titulo: 'Poríferos y Celenterados', presentacion: true },
+  'presentaciones/tp05-lofotrocozoos-1.md': { tp: 5, titulo: 'Protostomos Lofotrocozoos I', presentacion: true },
+  'presentaciones/tp06-anelidos.md': { tp: 6, titulo: 'Protostomos Lofotrocozoos II: Anélidos', presentacion: true },
+  'presentaciones/tp07-lofotrocozoos-3.md': { tp: 7, titulo: 'Protostomos Lofotrocozoos III', presentacion: true },
+  'presentaciones/tp08-nemata.md': { tp: 8, titulo: 'Nemata', presentacion: true },
+  'presentaciones/artropodos.md': { tp: 9, titulo: 'Phylum Arthropoda', presentacion: true },
+  'presentaciones/tp09-reproduccion-artropodos.md': { tp: 9, titulo: 'Reproducción en artrópodos', presentacion: true },
+  'presentaciones/tp12-equinodermos.md': { tp: 12, titulo: 'Equinodermos', presentacion: true },
+  'presentaciones/tp13-chordata.md': { tp: 13, titulo: 'Chordata', presentacion: true },
+  'presentaciones/tp14-peces.md': { tp: 14, titulo: 'Peces óseos y cartilaginosos', presentacion: true },
+  'presentaciones/tp15-aves.md': { tp: 15, titulo: 'Aves', presentacion: true },
+  'presentaciones/tp16-mamiferos.md': { tp: 16, titulo: 'Mamíferos', presentacion: true },
+  'presentaciones/tp17-anfibios.md': { tp: 17, titulo: 'Anfibios', presentacion: true },
+  'presentaciones/tp18-reptiles.md': { tp: 18, titulo: 'Reptiles', presentacion: true },
 } as const satisfies Record<string, InfoApunte>;
 
 export type ArchivoApunte = keyof typeof APUNTES;

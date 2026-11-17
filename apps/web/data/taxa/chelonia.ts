@@ -1,6 +1,7 @@
 import type { Taxon } from '@/lib/types';
 
 const A = 'anfibios, reptiles.md' as const;
+const P = 'presentaciones/tp18-reptiles.md' as const;
 
 const taxon: Taxon = {
   slug: 'chelonia',
@@ -38,6 +39,10 @@ const taxon: Taxon = {
       {
         texto: 'En la cloaca de las tortugas acuáticas hay unos sacos vasculares que funcionan como branquias cloacales y ayudan a respirar al animal cuando está sumergido.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [458, 459], cita: 'sacos vasculares que funcionan como branquias' }],
+      },
+      {
+        texto: 'La presentación indica respiración faríngea y cloacal en algunas tortugas acuáticas.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [23, 24], cita: 'respiración faríngea y cloacal en algunas' }],
       },
     ],
     excretor: [

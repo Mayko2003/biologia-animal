@@ -1,6 +1,7 @@
 import type { Taxon } from '@/lib/types';
 
 const A = 'equidodermos.md' as const;
+const P = 'presentaciones/tp12-equinodermos.md' as const;
 
 const taxon: Taxon = {
   slug: 'holothuroidea',
@@ -50,6 +51,10 @@ const taxon: Taxon = {
         texto: 'Desde la cloaca se dirigen hacia el interior del celoma dos tubos muy ramificados, los árboles respiratorios; el agua impulsada dentro o fuera de ellos por la cloaca sirve para la respiración y la excreción, y mantiene el celoma turgente.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [371, 375], cita: 'los árboles respiratorios' }],
       },
+      {
+        texto: 'El amplio celoma está ocupado por un intestino grande y sinuoso, una gónada y los árboles respiratorios, conectados con la cloaca, que sirven para la respiración y la excreción.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [255, 257], cita: 'gónada y árboles respiratorios' }, { tipo: 'apunte', archivo: P, lineas: [273, 273], cita: 'Respiración y Excreción por árboles respiratorios conectados con la cloaca' }],
+      },
     ],
     circulatorio: [
       {
@@ -90,6 +95,10 @@ const taxon: Taxon = {
         texto: 'Carecen de órganos excretores diferenciados.',
         ausente: true,
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [56, 56], cita: 'órganos excretores diferenciados' }],
+      },
+      {
+        texto: 'Aunque no hay órganos excretores diferenciados, la presentación indica que la excreción, junto con la respiración, se realiza por los árboles respiratorios conectados con la cloaca.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [273, 273], cita: 'Respiración y Excreción por árboles respiratorios' }],
       },
     ],
     sentidos: [

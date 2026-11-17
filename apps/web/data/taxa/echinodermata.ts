@@ -1,6 +1,7 @@
 import type { Taxon } from '@/lib/types';
 
 const A = 'equidodermos.md' as const;
+const P = 'presentaciones/tp12-equinodermos.md' as const;
 
 const taxon: Taxon = {
   slug: 'echinodermata',
@@ -53,6 +54,10 @@ const taxon: Taxon = {
         texto: 'Celoma amplio en cuyo interior se halla el tubo digestivo bien desarrollado.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [55, 56], cita: 'celoma amplio en cuyo' }],
       },
+      {
+        texto: 'Tubo digestivo simple; algunos carecen de ano.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [34, 34], cita: 'Tubo digestivo simple (algunos carecen de ano)' }],
+      },
     ],
     excretor: [
       {
@@ -65,6 +70,10 @@ const taxon: Taxon = {
       {
         texto: 'El intercambio gaseoso se realiza en estructuras que varían mucho de un grupo a otro y que parecen haberse desarrollado independientemente en las diferentes clases.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [57, 58], cita: 'intercambio gaseoso se realiza' }],
+      },
+      {
+        texto: 'Respiración por diminutas branquias o pápulas protráctiles en el celoma, por los pies ambulacrales y, en las holoturias, por árboles respiratorios cloacales.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [31, 33], cita: 'Respiración por diminutas branquias o pápulas' }, { tipo: 'apunte', archivo: P, lineas: [33, 33], cita: 'por árboles respiratorios cloacales' }],
       },
     ],
     reproductor: [
@@ -101,6 +110,10 @@ const taxon: Taxon = {
       {
         texto: 'El sistema hemal acompaña al vascular acuífero; el fluido de la cavidad corporal distribuye el oxígeno y los nutrientes.',
         fuentes: [{ tipo: 'web', url: 'https://es.wikipedia.org/wiki/Asteroidea', titulo: 'Asteroidea - Wikipedia en español', sitio: 'Wikipedia', consultado: '2026-10-13' }],
+      },
+      {
+        texto: 'Sistema circulatorio (hemal) radial pero reducido.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [35, 35], cita: 'Sistema circulatorio (hemal) radial pero reducido' }],
       },
     ],
     nervioso: [

@@ -1,6 +1,7 @@
 import type { Taxon } from '@/lib/types';
 
 const A = 'gnatostomatha.md' as const;
+const P = 'presentaciones/tp14-peces.md' as const;
 
 const taxon: Taxon = {
   slug: 'osteichthyes',
@@ -56,6 +57,10 @@ const taxon: Taxon = {
         texto: 'En la perca hay cuatro pares de branquias, cada una soportada por un arco branquial y ventilada con ayuda del opérculo; un flujo constante de agua rica en oxígeno fluye sobre los filamentos en sentido contrario al flujo sanguíneo (flujo contracorriente), maximizando el intercambio gaseoso.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [309, 315], cita: 'se denomina flujo contracorriente' }],
       },
+      {
+        texto: 'Respiración por branquias pares situadas sobre arcos branquiales óseos y cubiertas por un opérculo.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [168, 169], cita: 'Respiración por branquias pares situadas sobre arcos branquiales óseos' }],
+      },
     ],
     circulatorio: [
       {
@@ -99,6 +104,31 @@ const taxon: Taxon = {
         {
           texto: 'Debajo de cada opérculo hay 4 branquias pectinadas; el opérculo está implicado en la ventilación.',
           fuentes: [{ tipo: 'apunte', archivo: A, lineas: [243, 310], cita: 'hay 4 branquias pectinadas' }],
+        },
+      ],
+    },
+    {
+      titulo: 'Vejiga natatoria',
+      datos: [
+        {
+          texto: 'Poseen vejiga natatoria, algunos con ella conectada con la faringe; funciona como órgano hidrostático para ajustar el peso específico del cuerpo al del agua.',
+          fuentes: [{ tipo: 'apunte', archivo: P, lineas: [170, 170], cita: 'Poseen vejiga natatoria, algunos conectados con la faringe' }, { tipo: 'apunte', archivo: P, lineas: [201, 203], cita: 'Con vejiga natatoria como órgano hidrostático' }],
+        },
+        {
+          texto: 'Es una bolsa de paredes flexibles llena de gas, ubicada en el celoma justo bajo la columna vertebral; como los peces óseos tienen un peso específico ligeramente por encima del agua, la vejiga controla su flotabilidad neutral sin necesidad de esfuerzo muscular.',
+          fuentes: [{ tipo: 'apunte', archivo: P, lineas: [251, 253], cita: 'Es una bolsa de paredes flexibles llena de gas' }, { tipo: 'apunte', archivo: P, lineas: [253, 253], cita: 'controla la flotabilidad neutral del pez en el agua' }],
+        },
+        {
+          texto: 'Fisóstomos: muchos peces que viven cerca de la superficie suben a ella y tragan aire para cargar la vejiga, y para descargarla "eructan" el aire, gracias a un conducto neumático que conecta la vejiga con el esófago (por ejemplo, truchas y salmónidos).',
+          fuentes: [{ tipo: 'apunte', archivo: P, lineas: [254, 259], cita: 'un conducto neumático que conecta la vejiga con' }],
+        },
+        {
+          texto: 'Fisoclistos: no tienen conducto neumático y ajustan el volumen de la vejiga por intercambio de gases con la sangre, en la glándula de gas (donde se agrega gas) y en una zona de reabsorción, el oval (donde el gas pasa a la sangre); la glándula de gas contiene una red de capilares llamada rete mirabilis, cuyo contraflujo entre venas y arterias previene la pérdida de oxígeno.',
+          fuentes: [{ tipo: 'apunte', archivo: P, lineas: [261, 266], cita: 'Fisoclistos: No tienen el conducto neumático y' }, { tipo: 'apunte', archivo: P, lineas: [267, 271], cita: 'llamados rete mirabilis' }],
+        },
+        {
+          texto: 'En los peces marinos la vejiga ocupa un 5 % del volumen total del pez, y en los de agua dulce un 7 %.',
+          fuentes: [{ tipo: 'apunte', archivo: P, lineas: [273, 275], cita: 'En peces marinos la vejiga ocupa un 5% del volumen' }],
         },
       ],
     },

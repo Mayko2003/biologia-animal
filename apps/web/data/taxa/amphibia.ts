@@ -1,6 +1,7 @@
 import type { Taxon } from '@/lib/types';
 
 const A = 'anfibios, reptiles.md' as const;
+const P = 'presentaciones/tp17-anfibios.md' as const;
 
 const taxon: Taxon = {
   slug: 'amphibia',
@@ -64,11 +65,39 @@ const taxon: Taxon = {
         texto: 'La coloración de muchas salamandras y sapos es brillante y variada —verde, amarilla, roja, parda o negra—; en la mayor parte de las especies los dibujos son constantes, pero los sapos arborícolas experimentan grandes cambios de color según las condiciones ambientales.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [38, 40], cita: 'experimentan grandes cambios de color' }],
       },
+      {
+        texto: 'La piel de todos los anfibios contiene numerosos vasos sanguíneos que contribuyen a la aireación y suele ser muy húmeda para permitir el intercambio gaseoso; la respiración a través de la piel representa aproximadamente entre un 40 y un 70 %, según los hábitos de cada especie.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [121, 126], cita: 'La piel de todos los anfibios contiene' }, { tipo: 'apunte', archivo: P, lineas: [136, 139], cita: 'través de la piel entre un 40 a 70 %' }],
+      },
+    ],
+    esqueleto: [
+      {
+        texto: 'Esqueleto óseo con un número variable de vértebras; las costillas, si existen, no se articulan con el esternón. Cráneo con 2 cóndilos occipitales, dientes fijos en la mandíbula superior y renovables, y urostilo (vértebras coccígeas fusionadas).',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [160, 162], cita: 'Cráneo con 2 cóndilos occipitales' }, { tipo: 'apunte', archivo: P, lineas: [162, 162], cita: 'Urostilo (vertebras coccígeas fusionadas)' }],
+      },
+    ],
+    digestivo: [
+      {
+        texto: 'Sistema digestivo con páncreas, hígado y vesícula biliar.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [151, 152], cita: 'Sistema digestivo con páncreas, hígado y vesícula biliar' }],
+      },
     ],
     respiratorio: [
       {
         texto: 'Respiración por branquias, pulmones, cutánea o por la mucosa de la boca, separadamente o en combinación; en algunas fases de la vida existen branquias, y en los sapos y las ranas hay cuerdas vocales.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [46, 48], cita: 'Respiración por branquias, pulmones, cutánea' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'Circulación doble cerrada, con un corazón tricameral: dos aurículas y un ventrículo.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [144, 146], cita: 'Circulación con un corazón tricameral, dos aurículas y un ventrículo.' }],
+      },
+    ],
+    nervioso: [
+      {
+        texto: 'Encéfalo con 10 pares de nervios craneales, con cerebelo y médula espinal.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [148, 149], cita: 'Encéfalo con 10 pares de nervios craneales' }],
       },
     ],
   },

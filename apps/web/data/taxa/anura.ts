@@ -1,6 +1,7 @@
 import type { Taxon } from '@/lib/types';
 
 const A = 'anfibios, reptiles.md' as const;
+const P = 'presentaciones/tp17-anfibios.md' as const;
 
 const taxon: Taxon = {
   slug: 'anura',
@@ -49,11 +50,19 @@ const taxon: Taxon = {
         texto: 'La piel es húmeda y fina en ranas, con tubérculos y verrugas en sapos; posee numerosas glándulas mucosas que segregan el líquido acuoso e incoloro que la mantiene húmeda, brillante y pegajosa, y también glándulas venenosas que secretan una sustancia blanquecina, espesa y ardiente que protege al animal de sus enemigos.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [94, 97], cita: 'La piel es húmeda y fina en ranas' }],
       },
+      {
+        texto: 'Piel permeable al agua.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [92, 92], cita: 'Piel permeable al agua' }],
+      },
     ],
     esqueleto: [
       {
         texto: 'El esqueleto es en gran parte óseo y comprende un cráneo continuado por la columna vertebral formada por 9 vértebras; existe una cintura anterior o escapular en la que articulan los miembros anteriores y una cintura posterior o pélvica que articula los miembros posteriores; carecen de costillas.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [114, 117], cita: 'columna vertebral formada por 9 vértebras' }],
+      },
+      {
+        texto: 'Mucho cartílago en el esqueleto.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [101, 101], cita: 'Mucho cartílago en el esqueleto' }],
       },
     ],
     digestivo: [
@@ -80,6 +89,10 @@ const taxon: Taxon = {
       {
         texto: 'Los órganos respiratorios de la rana adulta son los pulmones, la piel y la mucosa bucal, todos con superficies húmedas y abundantes vasos debajo; el oxígeno del aire se disuelve en la humedad superficial y se difunde hacia la sangre mientras el anhídrido carbónico pasa en dirección opuesta; en las formas juveniles (renacuajos) la respiración se realiza por branquias.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [156, 162], cita: 'órganos respiratorios de la rana adulta son' }],
+      },
+      {
+        texto: 'Respiran a través de la boca, la piel y los pulmones; presentan cuerdas vocales en ambos sexos.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [96, 96], cita: 'Respiran a través de boca, piel y pulmones' }, { tipo: 'apunte', archivo: P, lineas: [103, 103], cita: 'Presentan cuerdas vocales en ambos sexos' }],
       },
     ],
     excretor: [
@@ -122,6 +135,15 @@ const taxon: Taxon = {
         {
           texto: 'En el "cuello" existe la glándula tiroides, cuya hormona tiroxina regula el metabolismo en general; el páncreas segrega además la insulina, que regula el metabolismo de los glúcidos; y a lo largo de la superficie ventral de los riñones existen las cápsulas suprarrenales, que producen epinefrina (adrenalina), que aumenta la presión sanguínea y determina la contracción del pigmento oscuro de la piel.',
           fuentes: [{ tipo: 'apunte', archivo: A, lineas: [176, 181], cita: 'cápsulas suprarrenales que producen epinefrina' }],
+        },
+      ],
+    },
+    {
+      titulo: 'Saco vocal',
+      datos: [
+        {
+          texto: 'La membrana que poseen los sapos para realizar su canto en época de reproducción se llama saco bucal o saco vocal: son expansiones membranosas del tegumento ubicadas a los costados y por detrás de la boca, cuya función es ampliar los sonidos que producen al croar llamando a la hembra.',
+          fuentes: [{ tipo: 'apunte', archivo: P, lineas: [166, 172], cita: 'expansiones membranosas del tegumento ubicadas' }],
         },
       ],
     },

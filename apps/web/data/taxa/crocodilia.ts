@@ -1,6 +1,7 @@
 import type { Taxon } from '@/lib/types';
 
 const A = 'anfibios, reptiles.md' as const;
+const P = 'presentaciones/tp18-reptiles.md' as const;
 
 const taxon: Taxon = {
   slug: 'crocodilia',
@@ -68,6 +69,10 @@ const taxon: Taxon = {
       {
         texto: 'El corazón está formado por un seno venoso, dos aurículas y dos ventrículos; los ventrículos están perfectamente separados en los cocodrilos, pero no en los otros reptiles; la sangre circula por un sistema de arterias, venas y capilares sanguíneos hacia todas las regiones del cuerpo.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [402, 405], cita: 'un seno venoso, dos aurículas' }],
+      },
+      {
+        texto: 'Corazón tetracameral: en los cocodrilos el corazón está dividido, a diferencia del resto de los reptiles.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [345, 349], cita: 'cuatro dedos ⚫ Corazón tetracameral' }, { tipo: 'apunte', archivo: P, lineas: [21, 22], cita: 'ventrículo parcialmente dividido (dividido en cocodrilos)' }],
       },
     ],
     respiratorio: [

@@ -1,6 +1,7 @@
 import type { Taxon } from '@/lib/types';
 
 const A = 'anfibios, reptiles.md' as const;
+const P = 'presentaciones/tp17-anfibios.md' as const;
 
 const taxon: Taxon = {
   slug: 'gymnophiona',
@@ -24,16 +25,36 @@ const taxon: Taxon = {
   ],
   embriologia: {},
   sistemas: {
+    tegumento: [
+      {
+        texto: 'Piel lisa; algunas con pequeñas escamas en la piel.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [52, 52], cita: 'Piel lisa, algunas con pequeñas escamas en la piel' }],
+      },
+    ],
     esqueleto: [
       {
         texto: 'Esqueleto similar al de los vertebrados largos, con numerosas vértebras y costillas —algunas cecilias poseen más de 200—; carecen de cinturas, ya que no tienen extremidades.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [297, 299], cita: 'esqueleto similar al de los vertebrados largos' }],
+      },
+      {
+        texto: 'Cuerpo alargado y delgado, sin extremidades ni cintura pélvica; cráneo compacto, muchas vértebras y costillas largas.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [49, 51], cita: 'sin extremidades ni cintura pélvica' }, { tipo: 'apunte', archivo: P, lineas: [55, 55], cita: 'Cráneo compacto, muchas vertebras, costillas largas' }],
+      },
+    ],
+    sentidos: [
+      {
+        texto: 'Ojos pequeños y sin párpados (muchas son ciegas de adultas); poseen tentáculos sensoriales en el hocico.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [56, 57], cita: 'Ojos pequeños, muchos son ciegas de adulto, sin' }, { tipo: 'apunte', archivo: P, lineas: [58, 58], cita: 'Poseen tentáculos sensoriales en el hocico' }],
       },
     ],
     reproductor: [
       {
         texto: 'Fecundación interna; el macho posee un órgano copulador eyectable.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [302, 302], cita: 'un órgano copulador eyectable' }],
+      },
+      {
+        texto: 'Fecundación interna, con órgano copulador protráctil.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [59, 62], cita: 'Órgano copulador protráctil' }],
       },
     ],
   },

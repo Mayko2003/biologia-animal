@@ -1,6 +1,7 @@
 import type { Taxon } from '@/lib/types';
 
 const A = 'anfibios, reptiles.md' as const;
+const P = 'presentaciones/tp17-anfibios.md' as const;
 
 const taxon: Taxon = {
   slug: 'caudata',
@@ -33,11 +34,19 @@ const taxon: Taxon = {
         texto: 'El esqueleto es semejante al de los vertebrados largos, ya que posee muchas vértebras —hasta cien en Amphiuma—; existen costillas (como en las cecilias y algunos sapos) y la cintura pélvica es corta.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [271, 273], cita: 'hasta cien en Amphiuma' }],
       },
+      {
+        texto: 'Las cinturas pélvicas son en su mayor parte cartilaginosas.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [72, 72], cita: 'Las cinturas pélvicas son en su mayor parte cartilaginosas' }],
+      },
     ],
     digestivo: [
       {
         texto: 'La mayor parte de los anfibios poseen finos dientes en la mandíbula superior y en la bóveda de la boca; algunas salamandras poseen dientes en ambas maxilas, pero los sapos en general carecen de dientes; los dientes son algo cónicos, fijos sobre la superficie de los huesos y son reemplazados por un nuevo diente cuando se pierde el viejo.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [275, 278], cita: 'los sapos en general carecen de dientes' }],
+      },
+      {
+        texto: 'Las larvas se parecen a los adultos en la forma y tienen dientes en las dos mandíbulas.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [73, 74], cita: 'Las Larvas se parecen a los adultos en la forma' }],
       },
     ],
     muscular: [
@@ -51,6 +60,10 @@ const taxon: Taxon = {
         texto: 'En los embriones y en las larvas existen tres pares de branquias externas que solo persisten en los adultos de algunas salamandras exclusivamente acuáticas; en las salamandras terrestres americanas faltan los pulmones.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [284, 286], cita: 'tres pares de branquias externas' }],
       },
+      {
+        texto: 'Respiración por branquias, pulmones o piel.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [78, 78], cita: 'Respiración por branquias, pulmones o piel' }],
+      },
     ],
   },
   estructurasEspeciales: [],
@@ -58,6 +71,10 @@ const taxon: Taxon = {
     {
       texto: 'Las salamandras ambystómidas producen larvas perennes que alcanzan el tamaño adulto e incluso crían conservando las branquias y otros caracteres larvarios; este fenómeno se conoce como neotenia.',
       fuentes: [{ tipo: 'apunte', archivo: A, lineas: [288, 290], cita: 'este fenómeno se conoce como neotenia' }],
+    },
+    {
+      texto: 'Fecundación interna: el macho monta a la hembra o deja uno o más espermatóforos gelatinosos, que la hembra almacena en el receptáculo seminal para que los huevos sean fecundados internamente antes de la puesta.',
+      fuentes: [{ tipo: 'apunte', archivo: P, lineas: [79, 82], cita: 'almacena en el receptáculo seminal para ser fecundados' }],
     },
   ],
   bioecologia: [

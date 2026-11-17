@@ -10,7 +10,7 @@ export function FuenteBadge({ fuente }: { fuente: Fuente }) {
     return (
       <details className="relative inline-block align-middle">
         <summary className={`${BASE_SUMMARY} bg-sky-100 text-sky-800`}>
-          Apunte · {etiquetaFuente(fuente)}
+          {'presentacion' in info ? 'Presentación' : 'Apunte'} · {etiquetaFuente(fuente)}
         </summary>
         <div className="absolute z-20 mt-1 w-72 rounded-md border border-zinc-200 bg-white p-3 text-xs shadow-lg max-sm:fixed max-sm:inset-x-3 max-sm:bottom-3 max-sm:z-50 max-sm:mt-0 max-sm:max-h-[60dvh] max-sm:w-auto max-sm:overflow-auto">
           <p className="font-medium">TP{info.tp} — {info.titulo}</p>

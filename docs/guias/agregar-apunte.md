@@ -44,3 +44,7 @@ con `titulo` y `subtitulo` iguales al `nombre` y `nombreComun` del taxón. `mapa
 1. `pnpm lint && pnpm typecheck && pnpm test && pnpm test:e2e && pnpm cobertura`.
 2. Actualizá los números y la lista de apuntes en [`docs/estado.md`](../estado.md) y agregá una entrada en
    [`docs/registro.md`](../registro.md).
+
+## Presentaciones de la cátedra
+
+Las diapositivas en PDF se pasan a texto con `pdftotext` a `apuntes-data/presentaciones/<tp>-<tema>.md`, con un encabezado `## Diapositiva N` por página, y se registran en `apps/web/lib/apuntes.ts` con `presentacion: true`. Una vez generado, el archivo no se edita: las citas apuntan a sus números de línea. Los PDF originales no se suben al repo.

@@ -1,6 +1,7 @@
 import type { Taxon } from '@/lib/types';
 
 const A = 'anfibios, reptiles.md' as const;
+const P = 'presentaciones/tp18-reptiles.md' as const;
 
 const taxon: Taxon = {
   slug: 'serpentes',
@@ -35,6 +36,10 @@ const taxon: Taxon = {
         texto: 'El cráneo es delicado y algunos de los huesos pueden moverse, para permitir una mayor apertura mandibular y digerir presas más grandes que su cuerpo; las costillas son libres.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [509, 511], cita: 'una mayor apertura mandibular' }],
       },
+      {
+        texto: 'Vértebras más cortas y anchas, que les permiten rápidas ondulaciones; cráneo cinético y con gran amplitud mandibular.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [111, 113], cita: 'Con vertebras mas cortas y anchas que les permiten' }, { tipo: 'apunte', archivo: P, lineas: [113, 113], cita: 'Cráneo cinético y con gran amplitud mandibular' }],
+      },
     ],
     muscular: [
       {
@@ -59,12 +64,36 @@ const taxon: Taxon = {
         texto: 'Los dientes están inclinados hacia atrás y existen diferentes tipos de dentición; las serpientes venenosas poseen un par de dientes especializados o colmillos que se conectan con la glándula del veneno, que es inyectado a las presas, a las cuales paralizan antes de engullirlas enteras.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [511, 514], cita: 'colmillos que se conectan con' }],
       },
+      {
+        texto: 'Ingieren presas enteras gracias a: la unión de las mandíbulas inferiores por un tejido elástico, la articulación del hueso cuadrado con el cráneo y la mandíbula, el movimiento de los huesos del paladar, la ubicación anterior de la glotis (que puede proyectarse durante la deglución), dientes delgados e inclinados hacia atrás, ausencia de esternón y costillas libres, piel blanda y elástica, y paredes del esófago y del estómago finas y extensibles.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [125, 138], cita: 'Ingieren presas enteras gracias a' }],
+      },
+      {
+        texto: 'Tubo digestivo recto, con órganos alargados.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [154, 154], cita: 'Tubo digestivo recto con órganos alargado' }],
+      },
+    ],
+    respiratorio: [
+      {
+        texto: 'Pulmón izquierdo vestigial.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [156, 156], cita: 'Pulmón izquierdo vestigial' }],
+      },
+    ],
+    circulatorio: [
+      {
+        texto: 'En la disección de un ofidio la presentación señala un corazón tricameral, con la tiroides próxima a su base.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [166, 168], cita: 'DE HEMIPENES CORAZÓN TRICAMERAL' }, { tipo: 'apunte', archivo: P, lineas: [161, 162], cita: 'LOCALIZACIÓN DEL TIROIDES PRÓXIMO A LA' }],
+      },
     ],
     excretor: [
       {
         texto: 'Carecen de vejiga de la orina.',
         ausente: true,
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [504, 505], cita: 'vejiga de la orina' }],
+      },
+      {
+        texto: 'En la disección de un ofidio se señala un riñón lobulado.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [168, 170], cita: 'CORAZÓN TRICAMERAL RIÑÓN LOBULADO' }],
       },
     ],
     sentidos: [
@@ -75,6 +104,14 @@ const taxon: Taxon = {
       {
         texto: 'Algunas serpientes presentan fosetas loreales termosensitivas, ubicadas en la cabeza entre las narinas y los ojos —la mayoría de las especies venenosas las presentan—; están inervadas por un gran paquete de terminaciones nerviosas libres del quinto nervio craneal; responden a la energía radiante del infrarrojo y son sensitivas al calor emitido por los cuerpos calientes de los mamíferos y aves, que son sus principales presas.',
         fuentes: [{ tipo: 'apunte', archivo: A, lineas: [519, 523], cita: 'fosetas loreal, termosensitivas' }],
+      },
+      {
+        texto: 'Vista y oído poco desarrollados, pero presentan órganos olfativos especializados, como los órganos de Jacobson (cámaras sensoriales ubicadas en el paladar), y termosensitivos, como las fosetas loreales.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [114, 116], cita: 'Vista y oido poco desarrollados, pero presentan' }, { tipo: 'apunte', archivo: P, lineas: [142, 144], cita: 'cámaras sensoriales ubicadas en el paladar' }],
+      },
+      {
+        texto: 'La foseta loreal es una fosa con terminaciones del V par craneano, ubicada entre cada ojo y la fosa nasal correspondiente (zona loreal), que capta radiaciones infrarrojas y permite a la víbora detectar animales de sangre caliente, como los roedores; es el único rasgo morfológico que permite diferenciar categóricamente a las víboras de las culebras.',
+        fuentes: [{ tipo: 'apunte', archivo: P, lineas: [219, 223], cita: 'posee terminaciones del V par craneano' }, { tipo: 'apunte', archivo: P, lineas: [217, 218], cita: 'EL ÚNICO RASGO MORFOLÓGICO QUE PERMITE DIFERENCIAR' }],
       },
     ],
     reproductor: [

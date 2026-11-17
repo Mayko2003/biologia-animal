@@ -1,6 +1,7 @@
 import type { Taxon } from '@/lib/types';
 
 const A = 'anfibios, reptiles.md' as const;
+const P = 'presentaciones/tp18-reptiles.md' as const;
 
 const taxon: Taxon = {
   slug: 'sauria',
@@ -50,7 +51,28 @@ const taxon: Taxon = {
   estructurasEspeciales: [],
   reproduccion: [],
   bioecologia: [],
-  ejemplos: [],
+  ejemplos: [
+    {
+      nombre: 'Gecos o salamanquesas',
+      descripcion: 'pequeñas, nocturnas y con discos adhesivos en los dedos',
+      fuentes: [{ tipo: 'apunte', archivo: P, lineas: [78, 79], cita: 'Geco o salamanquesas, pequeñas criaturas' }],
+    },
+    {
+      nombre: 'Iguanas',
+      descripcion: 'de colores brillantes y crestas ornamentales',
+      fuentes: [{ tipo: 'apunte', archivo: P, lineas: [80, 81], cita: 'Iguanas: de colores brillantes y crestas' }],
+    },
+    {
+      nombre: 'Eslizones o escincos',
+      descripcion: 'de cuerpos alargados y extremidades reducidas',
+      fuentes: [{ tipo: 'apunte', archivo: P, lineas: [82, 83], cita: 'Eslizones o escincos: de cuerpos alargados' }],
+    },
+    {
+      nombre: 'Camaleones',
+      descripcion: 'lagartos arborícolas',
+      fuentes: [{ tipo: 'apunte', archivo: P, lineas: [84, 84], cita: 'Camaleones: lagartos arborícolas' }],
+    },
+  ],
   notas: [],
 };
 
