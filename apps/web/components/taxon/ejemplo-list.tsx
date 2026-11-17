@@ -14,21 +14,20 @@ export function EjemploList({ ejemplos, vacio = 'Sin ejemplos.' }: { ejemplos: E
     return <p className="text-sm text-zinc-500 italic">{vacio}</p>;
   }
   if (visibles.length === 0) {
-    return <p className="text-sm text-zinc-500 italic">Solo hay ejemplos de fuentes externas (ocultos por el filtro).</p>;
+    return (
+      <p className="text-sm text-zinc-500 italic">Solo hay ejemplos de fuentes externas (ocultos por el filtro).</p>
+    );
   }
   return (
-    <ul className="grid gap-2 sm:grid-cols-2">
+    <ul className="space-y-2.5">
       {visibles.map((e, i) => (
-        <li
-          key={i}
-          className="flex items-start gap-2 rounded-lg border border-zinc-200 bg-white p-3 text-sm leading-relaxed transition hover:-translate-y-0.5 hover:shadow-md"
-        >
-          <span className="mt-0.5 text-emerald-600">
-            <IconoTag className="h-4 w-4" />
+        <li key={i} className="flex items-start gap-2 leading-relaxed text-zinc-800">
+          <span className="mt-1 shrink-0 text-helecho">
+            <IconoTag className="h-3.5 w-3.5" />
           </span>
           <span>
             <em className="font-medium">{e.nombre}</em>
-            {e.descripcion ? ` — ${e.descripcion}` : ''}{' '}
+            {e.descripcion ? `: ${e.descripcion}` : ''}{' '}
             {e.fuentes.map((f, j) => (
               <FuenteBadge key={j} fuente={f} />
             ))}

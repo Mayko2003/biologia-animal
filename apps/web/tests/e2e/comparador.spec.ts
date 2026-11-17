@@ -24,8 +24,9 @@ test('en móvil las comparaciones se navegan con tabs', async ({ page, isMobile 
   await expect(page.getByRole('tabpanel')).toContainText('B: Arthropoda');
 });
 
-test('desde una ficha el selector A trae el grupo', async ({ page }) => {
+test('desde una ficha el selector A trae el grupo', async ({ page, isMobile }) => {
   await page.goto('/grupo/mollusca');
+  if (isMobile) await page.getByRole('button', { name: 'Abrir el menú' }).click();
   await page.getByRole('link', { name: 'Comparar con…' }).click();
   await expect(page.getByLabel('Grupo A')).toHaveValue('mollusca');
 });

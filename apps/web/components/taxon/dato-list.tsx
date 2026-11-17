@@ -6,7 +6,13 @@ import { FuenteBadge } from '@/components/fuentes/fuente-badge';
 import { useFiltroFuentes } from '@/components/fuentes/filtro-fuentes';
 import { IconoAlerta } from '@/components/ui/iconos-sistemas';
 
-export function DatoList({ datos, vacio = 'Sin datos en los apuntes ni en las fuentes consultadas.' }: { datos: Dato[]; vacio?: string }) {
+export function DatoList({
+  datos,
+  vacio = 'Sin datos en los apuntes ni en las fuentes consultadas.',
+}: {
+  datos: Dato[];
+  vacio?: string;
+}) {
   const { modo } = useFiltroFuentes();
   const visibles = modo === 'apuntes' ? datos.filter((d) => tieneApunte(d.fuentes)) : datos;
 
@@ -17,14 +23,14 @@ export function DatoList({ datos, vacio = 'Sin datos en los apuntes ni en las fu
     return <p className="text-sm text-zinc-500 italic">Solo hay datos de fuentes externas (ocultos por el filtro).</p>;
   }
   return (
-    <ul className="grid gap-2">
+    <div className="space-y-4">
       {visibles.map((d, i) => (
-        <li
+        <div
           key={i}
-          className="rounded-lg border border-zinc-200 border-l-2 border-l-emerald-500/70 bg-white p-3 text-sm leading-relaxed transition hover:-translate-y-0.5 hover:shadow-md"
+          className={`leading-relaxed text-zinc-800 ${tieneApunte(d.fuentes) ? '' : 'border-l-2 border-ocre/60 pl-3'}`}
         >
           {d.ausente && (
-            <span className="mr-1 inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-medium bg-rose-100 text-rose-800">
+            <span className="mr-1.5 inline-flex items-center gap-1 rounded-full bg-oxido/10 px-2 py-0.5 align-[1px] text-[11px] font-medium text-oxido">
               <IconoAlerta className="h-3 w-3" />
               Ausente
             </span>
@@ -33,8 +39,8 @@ export function DatoList({ datos, vacio = 'Sin datos en los apuntes ni en las fu
           {d.fuentes.map((f, j) => (
             <FuenteBadge key={j} fuente={f} />
           ))}
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }

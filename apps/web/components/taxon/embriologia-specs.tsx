@@ -1,12 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import {
-  COLOR_SIN_DATO,
-  COLOR_VALOR,
-  CRITERIO_LABEL,
-  VALOR_LABEL,
-} from '@/lib/etiquetas';
+import { COLOR_SIN_DATO, COLOR_VALOR, CRITERIO_LABEL, VALOR_LABEL } from '@/lib/etiquetas';
 import { CRITERIOS, type CriterioId, type EmbriologiaEfectiva } from '@/lib/types';
 import type { Fuente } from '@/lib/types';
 import { FuenteBadge } from '@/components/fuentes/fuente-badge';
@@ -22,7 +17,7 @@ function Detalle({ reg, nombres, fuentes }: { reg: Reg; nombres: Record<string, 
       {reg?.heredadoDe && (
         <span>
           Heredado de{' '}
-          <Link href={`/grupo/${reg.heredadoDe}`} className="text-emerald-700 underline">
+          <Link href={`/grupo/${reg.heredadoDe}`} className="text-helecho underline">
             {nombres[reg.heredadoDe] ?? reg.heredadoDe}
           </Link>{' '}
         </span>
@@ -46,44 +41,36 @@ export function EmbriologiaSpecs({
     (modo === 'apuntes' ? reg?.fuentes.filter((f) => f.tipo === 'apunte') : reg?.fuentes) ?? [];
 
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <dl className="divide-y divide-zinc-100">
       {CRITERIOS.map((c) => {
         const reg = embriologia[c];
         const fuentes = fuentesDe(reg);
         const tieneDetalle = Boolean(reg?.nota || reg?.heredadoDe || fuentes.length > 0);
         const color = reg ? COLOR_VALOR[reg.valor] : COLOR_SIN_DATO;
         return (
-          <div
-            key={c}
-            className="rounded-lg border border-zinc-200 bg-white p-3 transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-zinc-500">
-              <span className="text-emerald-600">
+          <div key={c} className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1.5 py-2.5">
+            <dt className="flex items-center gap-2 text-sm text-zinc-600">
+              <span className="text-helecho">
                 <IconoCriterio id={c} className="h-4 w-4" />
               </span>
               {CRITERIO_LABEL[c]}
-            </div>
-            <div className="mt-2">
-              {reg ? (
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-2.5 py-1 text-sm font-medium text-zinc-800">
-                  <span aria-hidden className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />
-                  {VALOR_LABEL[reg.valor]}
-                </span>
-              ) : (
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-zinc-400">
-                  <span aria-hidden className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />
-                  Sin datos
-                </span>
-              )}
-            </div>
+            </dt>
+            <dd
+              className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-sm ${
+                reg ? 'bg-salvia font-medium text-tinta' : 'bg-zinc-100 text-zinc-400'
+              }`}
+            >
+              <span aria-hidden className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />
+              {reg ? VALOR_LABEL[reg.valor] : 'Sin datos'}
+            </dd>
             {tieneDetalle && (
-              <div className="mt-2 text-xs leading-relaxed text-zinc-600">
+              <dd className="w-full text-xs leading-relaxed text-zinc-500">
                 <Detalle reg={reg} nombres={nombres} fuentes={fuentes} />
-              </div>
+              </dd>
             )}
           </div>
         );
       })}
-    </div>
+    </dl>
   );
 }

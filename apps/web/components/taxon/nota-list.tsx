@@ -16,21 +16,15 @@ export function NotaList({ notas }: { notas: Nota[] }) {
         return (
           <div
             key={i}
-            className={`rounded-lg border p-3 text-sm ${
-              esDiscrepancia
-                ? 'border-amber-300 bg-amber-50'
-                : 'border-zinc-200 bg-zinc-50'
-            }`}
+            className={`rounded-r-lg border-l-2 py-2 pl-3 pr-2 ${esDiscrepancia ? 'border-ocre bg-ocre/10' : 'border-zinc-300 bg-zinc-50'}`}
           >
             <p
-              className={`flex items-center gap-1.5 font-medium ${
-                esDiscrepancia ? 'text-amber-800' : 'text-zinc-700'
-              }`}
+              className={`flex items-center gap-1.5 text-sm font-medium ${esDiscrepancia ? 'text-amber-900' : 'text-zinc-700'}`}
             >
               {esDiscrepancia ? <IconoAlerta className="h-4 w-4" /> : <IconoInfo className="h-4 w-4" />}
               {esDiscrepancia ? 'Discrepancia' : 'Aclaración'}
             </p>
-            <div className="mt-1 leading-relaxed">
+            <div className="mt-1 leading-relaxed text-zinc-800">
               {n.texto}{' '}
               {n.fuentes.map((f, j) => (
                 <FuenteBadge key={j} fuente={f} />

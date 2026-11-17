@@ -21,19 +21,27 @@ function Base({ className = 'h-5 w-5', children }: Props & { children: ReactNode
 }
 
 const TRAZOS_SISTEMA: Record<SistemaId, ReactNode> = {
-  tegumento: <path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" />,
+  tegumento: (
+    <>
+      <path d="M3 10c3-2 6 2 9 0s6-2 9 0" />
+      <path d="M3 15h18" />
+      <path d="M3 20h18" />
+      <path d="M8 9V4M16 9V4" />
+    </>
+  ),
   esqueleto: (
     <>
-      <circle cx="5" cy="5" r="2" />
-      <circle cx="19" cy="19" r="2" />
-      <path d="M6.4 6.4 17.6 17.6" />
+      <circle cx="6" cy="4.6" r="2" />
+      <circle cx="4.6" cy="6" r="2" />
+      <circle cx="18" cy="19.4" r="2" />
+      <circle cx="19.4" cy="18" r="2" />
+      <path d="M6.8 6.8 17.2 17.2" />
     </>
   ),
   muscular: (
     <>
-      <path d="M3 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0" />
-      <path d="M3 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0" />
-      <path d="M3 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0" />
+      <path d="M3 12c3-6.5 15-6.5 18 0-3 6.5-15 6.5-18 0z" />
+      <path d="M8 9.2v5.6M12 8.2v7.6M16 9.2v5.6" />
     </>
   ),
   digestivo: <path d="M4 7h10a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h12" />,
@@ -45,7 +53,12 @@ const TRAZOS_SISTEMA: Record<SistemaId, ReactNode> = {
     </>
   ),
   circulatorio: <path d="M19.5 12.6 12 20l-7.5-7.4A5 5 0 1 1 12 6.3a5 5 0 1 1 7.5 6.3z" />,
-  excretor: <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z" />,
+  excretor: (
+    <>
+      <path d="M15.5 3.5c-4 0-7.5 3.5-7.5 8.5s3.5 8.5 7.5 8.5c2.8 0 4.2-2.6 2.8-5-.9-1.6-2.6-2-2.6-3.5s1.7-1.9 2.6-3.5c1.4-2.4 0-5-2.8-5z" />
+      <path d="M11 12H7.5A2.5 2.5 0 0 0 5 14.5V21" />
+    </>
+  ),
   nervioso: (
     <>
       <circle cx="12" cy="12" r="2.5" />
@@ -64,8 +77,10 @@ const TRAZOS_SISTEMA: Record<SistemaId, ReactNode> = {
   ),
   reproductor: (
     <>
-      <circle cx="9" cy="12" r="5" />
-      <circle cx="17" cy="12" r="3" />
+      <ellipse cx="9" cy="13" rx="5.5" ry="6.5" />
+      <circle cx="9" cy="13" r="1.6" />
+      <circle cx="17.5" cy="6.5" r="2" />
+      <path d="M18.9 8c1.4 1.6-.4 3 1 4.6s.4 3.2-.7 4.4" />
     </>
   ),
 };
@@ -138,26 +153,6 @@ export function IconoInfo({ className }: Props) {
       <circle cx="12" cy="12" r="9" />
       <path d="M12 11v5" />
       <path d="M12 8h.01" />
-    </Base>
-  );
-}
-
-export function IconoLista({ className }: Props) {
-  return (
-    <Base className={className}>
-      <path d="M5 4h14v16H5z" />
-      <path d="M9 9h6M9 13h6M9 17h4" />
-    </Base>
-  );
-}
-
-export function IconoGrilla({ className }: Props) {
-  return (
-    <Base className={className}>
-      <rect x="4" y="4" width="6" height="6" rx="1" />
-      <rect x="14" y="4" width="6" height="6" rx="1" />
-      <rect x="4" y="14" width="6" height="6" rx="1" />
-      <rect x="14" y="14" width="6" height="6" rx="1" />
     </Base>
   );
 }

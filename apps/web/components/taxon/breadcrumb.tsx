@@ -10,7 +10,9 @@ export function Breadcrumb({ ruta }: { ruta: { slug: string; nombre: string }[] 
             <li key={paso.slug} className="flex shrink-0 items-center gap-1">
               {i > 0 && <span aria-hidden>›</span>}
               {ultimo ? (
-                <span aria-current="page" className="text-zinc-800">{paso.nombre}</span>
+                <span aria-current="page" className="text-zinc-800">
+                  {paso.nombre}
+                </span>
               ) : (
                 <Link href={`/grupo/${paso.slug}`} className="hover:text-emerald-700 hover:underline">
                   {paso.nombre}
