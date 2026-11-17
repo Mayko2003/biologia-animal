@@ -2,12 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { IconoComparar, IconoInicio, IconoRed } from '@/components/ui/iconos';
+import { IconoComparar, IconoEvolucion, IconoInicio, IconoRed } from '@/components/ui/iconos';
 
 const destinos = [
   { href: '/', label: 'Inicio', Icono: IconoInicio },
   { href: '/buscar', label: 'Explorar', Icono: IconoRed },
   { href: '/comparar', label: 'Comparar', Icono: IconoComparar },
+  { href: '/evolucion', label: 'Evolución', Icono: IconoEvolucion },
 ];
 
 function Tabs({ activo }: { activo: string | null }) {

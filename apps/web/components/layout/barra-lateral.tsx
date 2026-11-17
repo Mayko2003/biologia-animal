@@ -2,12 +2,13 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { IconoCerrar, IconoComparar, IconoInicio, IconoMenu, IconoRed } from '@/components/ui/iconos';
+import { IconoCerrar, IconoComparar, IconoEvolucion, IconoInicio, IconoMenu, IconoRed } from '@/components/ui/iconos';
 
 const ENLACES = [
   { href: '/', label: 'Inicio', Icono: IconoInicio, id: 'inicio' },
   { href: '/buscar', label: 'Explorar', Icono: IconoRed, id: 'explorar' },
   { href: '/comparar', label: 'Comparar', Icono: IconoComparar, id: 'comparar' },
+  { href: '/evolucion', label: 'Evolución', Icono: IconoEvolucion, id: 'evolucion' },
 ] as const;
 
 export const BOTON_RIEL =
@@ -79,7 +80,7 @@ export function BarraLateral({
           </button>
         </header>
 
-        <nav aria-label="Principal" className="flex gap-1 border-b border-zinc-100 px-3 py-2 text-sm">
+        <nav aria-label="Principal" className="flex flex-wrap gap-1 border-b border-zinc-100 px-3 py-2 text-sm">
           {ENLACES.map(({ href, label, Icono, id: clave }) =>
             clave === actual ? (
               <span

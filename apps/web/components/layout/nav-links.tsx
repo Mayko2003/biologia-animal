@@ -7,6 +7,7 @@ const enlaces = [
   { href: '/', label: 'Inicio' },
   { href: '/buscar', label: 'Explorar' },
   { href: '/comparar', label: 'Comparar' },
+  { href: '/evolucion', label: 'Evolución' },
 ];
 
 const BASE =

@@ -1,4 +1,5 @@
-import type { Dato, SistemaId, Taxon } from '@/lib/types';
+import type { Dato, SistemaId } from '@/lib/types';
+import { dato } from './buscar-dato';
 import porifera from './taxa/porifera';
 
 export type PuntoAnatomico = {
@@ -19,23 +20,6 @@ export type Modelo3D = {
   puntos: PuntoAnatomico[];
 };
 
-function datosDe(t: Taxon): Dato[] {
-  return [
-    ...t.resumen,
-    ...t.morfologiaExterna,
-    ...Object.values(t.sistemas).flatMap((d) => d ?? []),
-    ...t.estructurasEspeciales.flatMap((e) => e.datos),
-    ...t.reproduccion,
-    ...t.bioecologia,
-  ];
-}
-
-function dato(t: Taxon, fragmento: string): Dato {
-  const d = datosDe(t).find((x) => x.texto.includes(fragmento));
-  if (!d) throw new Error(`Modelo 3D de ${t.slug}: no hay un dato que contenga «${fragmento}»`);
-  return d;
-}
-
 export const MODELOS_3D: Readonly<Record<string, Modelo3D>> = {
   porifera: {
     src: '/models/porifera-corte.glb',
@@ -44,14 +28,73 @@ export const MODELOS_3D: Readonly<Record<string, Modelo3D>> = {
     especie: 'Aplysina fistularis (esponja tubular amarilla)',
     credito: 'Modelo propio generado con Blender (models/porifera/scripts)',
     puntos: [
-      { id: 'osculo', nombre: 'Ósculo', grupo: 'agua', posicion: [-0.01, 0.1789, -0.13], normal: [0, 1, 0], datos: [dato(porifera, 'sale por los ósculos')] },
-      { id: 'espongocele', nombre: 'Espongocele (atrio)', grupo: 'agua', posicion: [0.022, 0.2712, -0.0373], normal: [0.5136, 0.4487, 0.7314], datos: [dato(porifera, 'va del exterior al espongocele')] },
-      { id: 'ostiolos', nombre: 'Ostíolos y porocitos', grupo: 'agua', posicion: [-0.08, 0.18, 0.0096], normal: [-0.2219, 0.1823, 0.9579], datos: [dato(porifera, 'Cada poro está formado por un porocito')] },
-      { id: 'pinacodermo', nombre: 'Pinacodermo', grupo: 'tegumento', posicion: [-0.12, 0.3, -0.0022], normal: [0.3154, 0.344, 0.8844], datos: [dato(porifera, 'La pared del cuerpo está constituida'), dato(porifera, 'células epiteliales aplanadas que forman el pinacodermo')] },
-      { id: 'mesohilo', nombre: 'Mesohilo (corte longitudinal)', grupo: 'tegumento', posicion: [0.07, 0.2126, 0.0192], normal: [-0.4069, -0.3168, 0.8568], datos: [dato(porifera, 'Debajo del pinacodermo está el mesohilo')] },
-      { id: 'espongina', nombre: 'Esqueleto de espongina', grupo: 'esqueleto', posicion: [0.085, 0.37, -0.06], normal: [0, 1, 0], datos: [dato(porifera, 'fibras de espongina proteínica')] },
-      { id: 'coanocitos', nombre: 'Coanocitos (corte transversal)', grupo: 'digestivo', posicion: [0.21, 0.3699, -0.06], normal: [0, 1, 0], datos: [dato(porifera, 'Coanocitos: capa de células')] },
-      { id: 'base', nombre: 'Base de fijación', grupo: 'tegumento', posicion: [0, 0.05, 0.0731], normal: [-0.2024, -0.5882, 0.7829], datos: [dato(porifera, 'los basales segregan el material que fija')] },
+      {
+        id: 'osculo',
+        nombre: 'Ósculo',
+        grupo: 'agua',
+        posicion: [-0.01, 0.1789, -0.13],
+        normal: [0, 1, 0],
+        datos: [dato(porifera, 'sale por los ósculos')],
+      },
+      {
+        id: 'espongocele',
+        nombre: 'Espongocele (atrio)',
+        grupo: 'agua',
+        posicion: [0.022, 0.2712, -0.0373],
+        normal: [0.5136, 0.4487, 0.7314],
+        datos: [dato(porifera, 'va del exterior al espongocele')],
+      },
+      {
+        id: 'ostiolos',
+        nombre: 'Ostíolos y porocitos',
+        grupo: 'agua',
+        posicion: [-0.08, 0.18, 0.0096],
+        normal: [-0.2219, 0.1823, 0.9579],
+        datos: [dato(porifera, 'Cada poro está formado por un porocito')],
+      },
+      {
+        id: 'pinacodermo',
+        nombre: 'Pinacodermo',
+        grupo: 'tegumento',
+        posicion: [-0.12, 0.3, -0.0022],
+        normal: [0.3154, 0.344, 0.8844],
+        datos: [
+          dato(porifera, 'La pared del cuerpo está constituida'),
+          dato(porifera, 'células epiteliales aplanadas que forman el pinacodermo'),
+        ],
+      },
+      {
+        id: 'mesohilo',
+        nombre: 'Mesohilo (corte longitudinal)',
+        grupo: 'tegumento',
+        posicion: [0.07, 0.2126, 0.0192],
+        normal: [-0.4069, -0.3168, 0.8568],
+        datos: [dato(porifera, 'Debajo del pinacodermo está el mesohilo')],
+      },
+      {
+        id: 'espongina',
+        nombre: 'Esqueleto de espongina',
+        grupo: 'esqueleto',
+        posicion: [0.085, 0.37, -0.06],
+        normal: [0, 1, 0],
+        datos: [dato(porifera, 'fibras de espongina proteínica')],
+      },
+      {
+        id: 'coanocitos',
+        nombre: 'Coanocitos (corte transversal)',
+        grupo: 'digestivo',
+        posicion: [0.21, 0.3699, -0.06],
+        normal: [0, 1, 0],
+        datos: [dato(porifera, 'Coanocitos: capa de células')],
+      },
+      {
+        id: 'base',
+        nombre: 'Base de fijación',
+        grupo: 'tegumento',
+        posicion: [0, 0.05, 0.0731],
+        normal: [-0.2024, -0.5882, 0.7829],
+        datos: [dato(porifera, 'los basales segregan el material que fija')],
+      },
     ],
   },
 };

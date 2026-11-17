@@ -47,6 +47,13 @@ insignia con su fuente (archivo, líneas y cita literal del apunte, o el enlace 
   cada ficha, cuántos sistemas difieren y "Mostrar solo los sistemas que difieren".
 - "Difieren" significa que cambia el estado (uno tiene datos y el otro no o está ausente), no el contenido.
 
+### Evolución (`/evolucion`)
+
+- Línea de tiempo horizontal con 20 grupos fijos: Porifera, Cnidaria, Platyhelminthes, Annelida, Mollusca, Nemata, artrópodos (Chelicerata, Myriapoda, Crustacea, Insecta), Echinodermata y cordados (Chondrichthyes, Osteichthyes, Amphibia, reptiles separados en Chelonia, Sauria, Serpentes y Crocodilia, Aves, Mammalia).
+- Cada parada muestra la innovación del sistema en ese grupo; al elegirla se leen los datos que la respaldan, con fuente, y hay un enlace a la ficha. Se navega con las flechas.
+- Solo está cargado el sistema digestivo. Los reptiles van por subclase porque los apuntes describen sus sistemas en organismos concretos (el cocodrilo, las serpientes) y no para la clase entera.
+- Estado en la URL: `?sistema=digestivo&grupo=mollusca`.
+
 ### Explorador (`/buscar`)
 
 - **Árbol radial ordenado.** Sin filtros, los 106 grupos forman un árbol radial fijo: Animalia en el centro y cada

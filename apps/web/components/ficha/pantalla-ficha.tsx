@@ -20,7 +20,7 @@ export function PantallaFicha({
 }: {
   lateral: React.ReactNode;
   arriba: React.ReactNode;
-  actual?: 'comparar';
+  actual?: 'comparar' | 'evolucion';
   abrirMenu?: boolean;
   children: React.ReactNode;
 }) {

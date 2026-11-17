@@ -52,6 +52,18 @@ export function IconoComparar({ className }: Props) {
   );
 }
 
+export function IconoEvolucion({ className }: Props) {
+  return (
+    <Base className={className}>
+      <path d="M3 12h18" />
+      <circle cx="6" cy="12" r="2" />
+      <circle cx="12" cy="12" r="2" />
+      <circle cx="18" cy="12" r="2" />
+      <path d="M12 10V5M18 14v5" />
+    </Base>
+  );
+}
+
 export function IconoBuscar({ className }: Props) {
   return (
     <Base className={className}>

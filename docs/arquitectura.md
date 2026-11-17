@@ -108,6 +108,10 @@ construye en el servidor y la pasa por props.
 
 `Presentacion` es genérica: recibe el contenido del círculo central, los textos y el contenido de la diapositiva principal, y por cada sistema su detalle, resumen, estado, si está destacado y el texto para cuando no hay datos. La usan la ficha y el comparador.
 
+### Evolución
+
+`data/evolucion.ts` define las etapas fijas (`ETAPAS_EVOLUCION`) y, por sistema, la innovación de cada grupo (`INNOVACIONES`): un título corto y los datos que la respaldan, tomados de las fichas con `dato(taxon, fragmento)` de `data/buscar-dato.ts` (falla al cargar si el fragmento no existe). `app/evolucion/page.tsx` arma las paradas y las pasa a `components/evolucion/linea-evolutiva.tsx`. Cada etapa puede tener `bloque` (Artrópodos, Cordados) y `subbloque` (Reptiles, dentro de Cordados). Para sumar un sistema: agregar su clave en `INNOVACIONES` con todas las etapas (un test lo exige).
+
 ### Comparador
 
 `components/comparar/comparador.tsx` es un Client Component (lee `a` y `b` con `useSearchParams`, como pide la regla de no leer `searchParams` en las páginas). Recibe todos los taxones e imágenes por props y arma la comparación con `lib/comparacion.ts`; la tabla embrionaria usa `getEmbriologiaEfectiva` de `crearConsultas`. Cambiar A o B usa `useActualizarParametros` (sin pedir la página al servidor).
