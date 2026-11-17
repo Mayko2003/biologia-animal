@@ -7,6 +7,8 @@ import { FiguraGrupo } from '@/components/ficha/figura-grupo';
 import { PantallaFicha } from '@/components/ficha/pantalla-ficha';
 import { Presentacion, type DiapositivaSistema } from '@/components/ficha/presentacion';
 import { SeccionLateral } from '@/components/ficha/seccion-lateral';
+import { ContenidoFicha, SelectorVista } from '@/components/ficha/vista-3d';
+import { MODELOS_3D } from '@/data/modelos-3d';
 import { FiltroFuentesToggle } from '@/components/fuentes/filtro-fuentes';
 import { Breadcrumb } from '@/components/taxon/breadcrumb';
 import { DatoList } from '@/components/taxon/dato-list';
@@ -196,29 +198,47 @@ async function Ficha({ params }: { params: PageProps<'/grupo/[slug]'>['params'] 
   );
 
   return (
-    <PantallaFicha lateral={lateral} arriba={<FiltroFuentesToggle />}>
-      <Presentacion
-        centro={{
-          etiqueta: `Abrir resumen y desarrollo embrionario de ${taxon.nombre}`,
-          contenido: (
-            <CentroGrupo
-              nivel={NIVEL_LABEL[taxon.nivel]}
-              nombre={taxon.nombre}
-              nombreComun={taxon.nombreComun}
-              imagen={imagen}
-              invitacion="Resumen y desarrollo embrionario"
-            />
-          ),
-        }}
-        principal={{
-          antetitulo: NIVEL_LABEL[taxon.nivel],
-          titulo: taxon.nombre,
-          subtitulo: taxon.nombreComun ?? 'Resumen y desarrollo embrionario',
-          contenido: principal,
-        }}
-        antetituloSistema={taxon.nombre}
-        sistemas={sistemas}
-        enlaces={enlaces}
+    <PantallaFicha
+      lateral={lateral}
+      arriba={
+        MODELOS_3D[slug] ? (
+          <div className="flex items-center gap-1">
+            <SelectorVista />
+            <span aria-hidden="true" className="h-4 w-px bg-zinc-200" />
+            <FiltroFuentesToggle />
+          </div>
+        ) : (
+          <FiltroFuentesToggle />
+        )
+      }
+    >
+      <ContenidoFicha
+        modelo={MODELOS_3D[slug]}
+        esquema={
+          <Presentacion
+            centro={{
+              etiqueta: `Abrir resumen y desarrollo embrionario de ${taxon.nombre}`,
+              contenido: (
+                <CentroGrupo
+                  nivel={NIVEL_LABEL[taxon.nivel]}
+                  nombre={taxon.nombre}
+                  nombreComun={taxon.nombreComun}
+                  imagen={imagen}
+                  invitacion="Resumen y desarrollo embrionario"
+                />
+              ),
+            }}
+            principal={{
+              antetitulo: NIVEL_LABEL[taxon.nivel],
+              titulo: taxon.nombre,
+              subtitulo: taxon.nombreComun ?? 'Resumen y desarrollo embrionario',
+              contenido: principal,
+            }}
+            antetituloSistema={taxon.nombre}
+            sistemas={sistemas}
+            enlaces={enlaces}
+          />
+        }
       />
     </PantallaFicha>
   );

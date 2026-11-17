@@ -93,7 +93,7 @@ Detalle en [diseno.md](diseno.md).
 
 | Modelo | Archivo web | Fuentes | Uso en la app |
 |---|---|---|---|
-| Porifera (*Aplysina fistularis*, esponja tubular amarilla) | `apps/web/public/models/porifera.glb` (8 MB) | `models/porifera/scripts/` | Todavía ninguno: no hay visor 3D |
+| Porifera (*Aplysina fistularis*, esponja tubular amarilla) | `porifera-corte.glb` (7,4 MB, con cortes) y `porifera.glb` (8 MB, entera) | `models/porifera/scripts/` (`corte.py` para los cortes) | Vista 3D de la ficha (`?vista=3d`) con 8 estructuras señaladas |
 
 ## Pendiente o en evaluación
 

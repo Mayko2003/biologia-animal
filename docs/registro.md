@@ -4,6 +4,8 @@ Lo más reciente primero. Cada entrada: fecha, qué cambió y por qué, y qué d
 
 ## 2026-11-16
 
+- **Vista 3D sin WebGL**: si el navegador tiene WebGL desactivado (por ejemplo, Chrome sin aceleración por hardware), la vista 3D muestra una imagen del modelo con los cortes (`porifera-corte.webp`) y cómo activarlo, en lugar del error de three.js. La misma imagen es la portada mientras carga el modelo.
+- **Vista 3D en la ficha**: selector Esquema/3D (solo en grupos con modelo; hoy Porifera). Mitad izquierda: lista de estructuras agrupadas por sistema, conectada con el modelo; mitad derecha: `<model-viewer>` (dependencia nueva, con `three`) con puntos sobre el modelo. Modelo `porifera-corte.glb` con corte longitudinal y transversal (`models/porifera/scripts/corte.py`); puntos y textos en `data/modelos-3d.ts`, que reutiliza datos citados de la ficha. Docs: estado.
 - **Deploy en Vercel**: el build fallaba con `NEXT_NO_VERSION` desde el paso a monorepo porque el proyecto construía desde la raíz. Se configuró el Root Directory en `apps/web`. Docs: arquitectura.
 - **Filtro de fuentes más chico**: "Todas las fuentes / Solo apuntes" pasó a píldoras compactas (texto de 12 px, 30 px de alto) con el activo en tinta. Se borró `components/ui/clases.ts`, que quedó sin uso.
 - **Selectores del comparador**: el desplegable nativo de "Grupo B" se abría y se cerraba solo, eligiendo el grupo que

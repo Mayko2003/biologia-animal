@@ -59,7 +59,9 @@ def bake(hi, lo, nt, texs):
     t.image.pack(); texs['color'].image.pack()
 
 prev=sc.render.engine; sc.render.engine='CYCLES'; sc.cycles.samples=4
-hi=dup_join(['Tubo_izq','Tubo_centro','Tubo_der','Tubo_frente','Base_esponja'],'Esponja_hi')
+TUBOS=globals().get('TUBOS',['Tubo_izq','Tubo_centro','Tubo_der','Tubo_frente','Base_esponja'])
+SALIDA=globals().get('SALIDA','porifera.glb')
+hi=dup_join(TUBOS,'Esponja_hi')
 lo=low_copy(hi,'Esponja',0.22); bake(hi,lo,*glb_mat(lo,'Esponja_GLB',2048,0.75))
 rh=dup_join(['Roca_base'],'Roca_hi')
 rl=low_copy(rh,'Roca',0.12); bake(rh,rl,*glb_mat(rl,'Roca_GLB',1024,0.9))
@@ -68,9 +70,10 @@ for o in (hi,rh): bpy.data.objects.remove(o,do_unlink=True)
 for d in [d for d in bpy.data.meshes if d.users==0]: bpy.data.meshes.remove(d)
 
 base=bpy.path.abspath('//') or '/home/mayko/orca/biologia-animal/models/porifera/'
-out=os.path.join(base,'..','..','apps','web','public','models','porifera.glb')
+out=os.path.join(base,'..','..','apps','web','public','models',SALIDA)
 os.makedirs(os.path.dirname(out), exist_ok=True)
-bpy.ops.object.select_all(action='DESELECT'); lo.select_set(True); rl.select_set(True)
+for o in bpy.context.view_layer.objects: o.select_set(False)
+lo.select_set(True); rl.select_set(True)
 bpy.ops.export_scene.gltf(filepath=os.path.normpath(out), export_format='GLB', use_selection=True,
     export_cameras=False, export_lights=False, export_apply=True, export_image_format='JPEG', export_jpeg_quality=88)
 print('exportado', os.path.normpath(out))
