@@ -51,7 +51,7 @@ insignia con su fuente (archivo, líneas y cita literal del apunte, o el enlace 
 
 - Línea de tiempo horizontal con 20 grupos fijos: Porifera, Cnidaria, Platyhelminthes, Annelida, Mollusca, Nemata, artrópodos (Chelicerata, Myriapoda, Crustacea, Insecta), Echinodermata y cordados (Chondrichthyes, Osteichthyes, Amphibia, reptiles separados en Chelonia, Sauria, Serpentes y Crocodilia, Aves, Mammalia).
 - Cada parada muestra la innovación del sistema en ese grupo; al elegirla se leen los datos que la respaldan, con fuente, y hay un enlace a la ficha. Se navega con las flechas.
-- Solo está cargado el sistema digestivo. Los reptiles van por subclase porque los apuntes describen sus sistemas en organismos concretos (el cocodrilo, las serpientes) y no para la clase entera.
+- Están cargados los 10 sistemas. Las paradas sin cambios relevantes, o sin datos, llevan la etiqueta "Sin innovación nueva" y muestran igual sus datos. Los reptiles van por subclase porque los apuntes describen sus sistemas en organismos concretos (el cocodrilo, las serpientes) y no para la clase entera.
 - Estado en la URL: `?sistema=digestivo&grupo=mollusca`.
 
 ### Explorador (`/buscar`)
@@ -73,7 +73,10 @@ insignia con su fuente (archivo, líneas y cita literal del apunte, o el enlace 
 - Todo el estado vive en la URL (`q`, `sel`, `f`, `color`): se puede compartir una vista.
 - `/mapa` y `/arbol` ya no existen (dan 404).
 
-## Contenido cargado
+## Contenido
+
+Fuentes de la cátedra: los apuntes (`apuntes-data/*.md`) y 14 presentaciones de los TP pasadas a texto (`apuntes-data/presentaciones/`). Los datos de las presentaciones se citan igual (archivo, líneas y cita literal) y se muestran como "Presentación · TP…".
+ cargado
 
 | Qué | Cantidad |
 |---|---|

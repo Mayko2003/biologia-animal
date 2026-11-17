@@ -131,10 +131,10 @@ export function LineaEvolutiva({ lineas }: { lineas: Record<string, Parada[]> })
           <span className="mt-2 font-display text-[15px] font-semibold text-tinta">{p.nombre}</span>
           <span
             className={`mt-1 line-clamp-2 min-h-[2.5em] text-xs leading-tight ${
-              p.innovacion ? (activa ? 'font-medium text-helecho' : 'text-zinc-600') : 'italic text-zinc-400'
+              p.innovacion?.titulo ? (activa ? 'font-medium text-helecho' : 'text-zinc-600') : 'italic text-zinc-400'
             }`}
           >
-            {p.innovacion?.titulo ?? 'Sin datos en los apuntes'}
+            {p.innovacion?.titulo ?? 'Sin innovación nueva'}
           </span>
         </button>
       </li>
@@ -210,15 +210,17 @@ export function LineaEvolutiva({ lineas }: { lineas: Record<string, Parada[]> })
               <span className="ml-2 text-base font-normal text-zinc-500">{parada.nombreComun}</span>
             )}
           </h3>
+          <p
+            className={`mt-3 inline-flex rounded-full px-3 py-1 text-sm font-medium ${
+              parada.innovacion?.titulo ? 'bg-salvia text-helecho' : 'bg-zinc-100 text-zinc-600'
+            }`}
+          >
+            {parada.innovacion?.titulo ? `Innovación: ${parada.innovacion.titulo}` : 'Sin innovación nueva'}
+          </p>
           {parada.innovacion ? (
-            <>
-              <p className="mt-3 inline-flex rounded-full bg-salvia px-3 py-1 text-sm font-medium text-helecho">
-                Innovación: {parada.innovacion.titulo}
-              </p>
-              <div className="mt-5 max-w-[68ch] text-[17px]">
-                <DatoList datos={parada.innovacion.datos} />
-              </div>
-            </>
+            <div className="mt-5 max-w-[68ch] text-[17px]">
+              <DatoList datos={parada.innovacion.datos} />
+            </div>
           ) : (
             <p className="mt-4 text-[17px] text-zinc-600">
               Los apuntes no describen el sistema {SISTEMA_LABEL[sistema].toLowerCase()} de {parada.nombre}.

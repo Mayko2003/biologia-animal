@@ -20,3 +20,25 @@ test('los reptiles se separan en subclases dentro de cordados', async ({ page })
     page.getByRole('region', { name: /Serpentes/ }).getByText('Innovación: Mandíbulas que tragan presas enteras'),
   ).toBeVisible();
 });
+
+test('se cambia al sistema tegumentario desde la barra lateral', async ({ page, isMobile }) => {
+  await page.goto('/evolucion');
+  if (isMobile) await page.getByRole('button', { name: 'Abrir el menú' }).click();
+  await page.getByRole('button', { name: /Tegumento y pared del cuerpo/ }).click();
+  await expect(page).toHaveURL(/sistema=tegumento/);
+  if (isMobile) await page.getByRole('button', { name: 'Contraer el menú' }).click();
+  await page
+    .getByRole('list', { name: /tegumento/ })
+    .getByRole('button', { name: /Aves/ })
+    .click();
+  await expect(page.getByRole('region', { name: /Aves/ }).getByText('Innovación: Plumas')).toBeVisible();
+});
+
+test('esqueleto: distingue "sin innovación" de "sin datos"', async ({ page }) => {
+  await page.goto('/evolucion?sistema=esqueleto&grupo=myriapoda');
+  await expect(
+    page.getByRole('region', { name: /Myriapoda/ }).getByText('Sin innovación nueva', { exact: true }),
+  ).toBeVisible();
+  await page.goto('/evolucion?sistema=esqueleto&grupo=sauria');
+  await expect(page.getByText('Los apuntes no describen el sistema esqueleto y sostén de Sauria.')).toBeVisible();
+});
