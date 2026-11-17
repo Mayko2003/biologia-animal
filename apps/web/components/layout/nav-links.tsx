@@ -5,10 +5,8 @@ import { usePathname } from 'next/navigation';
 
 const enlaces = [
   { href: '/', label: 'Inicio' },
-  { href: '/mapa', label: 'Mapa conceptual' },
-  { href: '/arbol', label: 'Árbol' },
+  { href: '/buscar', label: 'Explorar' },
   { href: '/comparar', label: 'Comparar' },
-  { href: '/buscar', label: 'Buscar' },
 ];
 
 const BASE =

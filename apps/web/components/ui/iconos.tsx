@@ -29,25 +29,14 @@ export function IconoInicio({ className }: Props) {
   );
 }
 
-export function IconoMapa({ className }: Props) {
+export function IconoRed({ className }: Props) {
   return (
     <Base className={className}>
-      <path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z" />
-      <path d="M9 4v14" />
-      <path d="M15 6v14" />
-    </Base>
-  );
-}
-
-export function IconoArbol({ className }: Props) {
-  return (
-    <Base className={className}>
-      <circle cx="12" cy="4.5" r="2" />
-      <circle cx="5" cy="19.5" r="2" />
-      <circle cx="19" cy="19.5" r="2" />
-      <path d="M12 6.5V11" />
-      <path d="M12 11c0 3-7 2.5-7 6.5" />
-      <path d="M12 11c0 3 7 2.5 7 6.5" />
+      <circle cx="12" cy="5" r="2.2" />
+      <circle cx="5" cy="17" r="2.2" />
+      <circle cx="19" cy="15" r="2.2" />
+      <circle cx="11" cy="13" r="1.4" />
+      <path d="M11.4 7.1 11.1 11.6M9.8 13.8 6.9 15.9M12.4 13.4l4.5 1.2M13.6 6.4l4.4 6.8" />
     </Base>
   );
 }

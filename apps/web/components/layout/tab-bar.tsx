@@ -2,20 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  IconoArbol,
-  IconoBuscar,
-  IconoComparar,
-  IconoInicio,
-  IconoMapa,
-} from '@/components/ui/iconos';
+import { IconoComparar, IconoInicio, IconoRed } from '@/components/ui/iconos';
 
 const destinos = [
   { href: '/', label: 'Inicio', Icono: IconoInicio },
-  { href: '/mapa', label: 'Mapa', Icono: IconoMapa },
-  { href: '/arbol', label: 'Árbol', Icono: IconoArbol },
+  { href: '/buscar', label: 'Explorar', Icono: IconoRed },
   { href: '/comparar', label: 'Comparar', Icono: IconoComparar },
-  { href: '/buscar', label: 'Buscar', Icono: IconoBuscar },
 ];
 
 function Tabs({ activo }: { activo: string | null }) {
@@ -24,7 +16,7 @@ function Tabs({ activo }: { activo: string | null }) {
       aria-label="Navegación principal"
       className="fixed inset-x-0 bottom-0 z-40 border-t border-zinc-200 bg-white/95 backdrop-blur lg:hidden"
     >
-      <div className="grid grid-cols-5 pb-[env(safe-area-inset-bottom)]">
+      <div className="grid grid-cols-3 pb-[env(safe-area-inset-bottom)]">
         {destinos.map(({ href, label, Icono }) => {
           const esActual = href === '/' ? activo === '/' : activo?.startsWith(href);
           return (

@@ -2,14 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FuenteBadge } from '@/components/fuentes/fuente-badge';
 import { AlVer } from '@/components/inicio/al-ver';
-import { IconoArbol, IconoBuscar, IconoComparar, IconoMapa } from '@/components/ui/iconos';
+import { IconoBuscar, IconoComparar, IconoRed } from '@/components/ui/iconos';
 import { calcularEstadisticas } from '@/lib/estadisticas';
 import { getPhylaIncluidos, getTaxon, todos } from '@/lib/taxa';
 
 const LINAJES = ['parazoa', 'radiata', 'lophotrochozoa', 'ecdysozoa', 'deuterostomia'];
 const RETRASO_LINAJE = [200, 340, 470, 580, 670];
 const RETRASO_USO = [80, 140, 190];
-const RETRASO_HERRAMIENTA = [70, 120, 160, 190];
+const RETRASO_HERRAMIENTA = [70, 120, 160];
 
 function tiempo(delay: number, extra: Record<string, string> = {}) {
   return { '--delay': `${delay}ms`, ...extra } as React.CSSProperties;
@@ -38,29 +38,24 @@ const USOS = [
 
 const HERRAMIENTAS = [
   {
-    href: '/mapa',
-    titulo: 'Mapa conceptual embrionario',
+    href: '/buscar',
+    titulo: 'Red de la diversidad animal',
     texto:
-      'Seguí la clasificación desde Parazoa y Eumetazoa hasta protostomados y deuterostomados, criterio por criterio.',
-    Icono: IconoMapa,
+      'Todos los grupos conectados por su clasificación y por sus rasgos embrionarios. Filtrá por linaje, nivel o criterio y mirá cómo se agrupan.',
+    Icono: IconoRed,
   },
   {
-    href: '/arbol',
-    titulo: 'Árbol taxonómico',
-    texto: 'Bajá de reino a subclase y abrí la ficha de cualquier grupo.',
-    Icono: IconoArbol,
+    href: '/buscar?q=nefridios',
+    titulo: 'Buscador',
+    texto:
+      'Escribí un término, como nefridios o celoma. Si aparece en un solo grupo, la red te lleva a él; si son varios, deja solo esos.',
+    Icono: IconoBuscar,
   },
   {
     href: '/comparar',
     titulo: 'Comparar grupos',
     texto: 'Elegí dos grupos y armá un cuadro comparativo fila por fila, ideal para repasar antes del parcial.',
     Icono: IconoComparar,
-  },
-  {
-    href: '/buscar',
-    titulo: 'Buscar',
-    texto: 'Escribí un término, como nefridios o celoma, y encontrá en qué grupos y sistemas aparece.',
-    Icono: IconoBuscar,
   },
 ];
 
@@ -89,16 +84,16 @@ export default function Page() {
             className="landing-entrada mt-8 flex flex-wrap gap-3"
           >
             <Link
-              href="/mapa"
+              href="/buscar"
               className="landing-presion inline-flex min-h-[44px] items-center rounded-full bg-tinta px-5 py-2.5 text-sm font-medium text-white hover:bg-helecho"
             >
-              Abrir el mapa conceptual embrionario
+              Explorar la red de grupos
             </Link>
             <Link
-              href="/arbol"
+              href="/comparar"
               className="landing-presion inline-flex min-h-[44px] items-center rounded-full border border-tinta/30 px-5 py-2.5 text-sm font-medium text-tinta hover:border-helecho hover:text-helecho"
             >
-              Ver el árbol taxonómico
+              Comparar dos grupos
             </Link>
           </div>
           <p
@@ -148,9 +143,9 @@ export default function Page() {
             id="herramientas"
             className="landing-escalon font-display text-3xl font-semibold tracking-tight text-tinta sm:text-4xl"
           >
-            Cuatro formas de recorrer la materia
+            Tres formas de recorrer la materia
           </h2>
-          <ul className="grid gap-x-12 md:grid-cols-2">
+          <ul className="grid gap-x-10 lg:grid-cols-3">
             {HERRAMIENTAS.map(({ href, titulo, texto, Icono }, i) => (
               <li
                 key={href}

@@ -24,6 +24,19 @@ export function useParametro(nombre: string): [string | null, (valor: string | n
   return [valor, setValor];
 }
 
-export function useSeleccion(): [string | null, (slug: string | null) => void] {
-  return useParametro('sel');
+export function useActualizarParametros(): (cambios: Record<string, string | null>) => void {
+  const pathname = usePathname();
+
+  return useCallback(
+    (cambios: Record<string, string | null>) => {
+      const params = new URLSearchParams(window.location.search);
+      for (const [nombre, v] of Object.entries(cambios)) {
+        if (v === null) params.delete(nombre);
+        else params.set(nombre, v);
+      }
+      const qs = params.toString();
+      window.history.replaceState(null, '', qs ? `${pathname}?${qs}` : pathname);
+    },
+    [pathname],
+  );
 }

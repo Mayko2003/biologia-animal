@@ -1,19 +1,22 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
-import { Buscador } from '@/components/busqueda/buscador';
+import { Explorador } from '@/components/explorar/explorador';
+import { MAPA_EMBRIONARIO } from '@/data/mapa-embrionario';
 import { construirDocumentos } from '@/lib/busqueda';
-import { todos } from '@/lib/taxa';
+import { construirRed } from '@/lib/red';
+import { getEmbriologiaEfectiva, todos } from '@/lib/taxa';
 
-export const metadata: Metadata = { title: 'Buscar' };
+export const metadata: Metadata = {
+  title: 'Explorar',
+  description: 'Red interactiva de los grupos animales: buscá, filtrá por linaje, nivel o criterio embrionario y abrí su ficha.',
+};
 
 export default function Page() {
+  const red = construirRed(todos, MAPA_EMBRIONARIO, getEmbriologiaEfectiva);
   const docs = construirDocumentos(todos);
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Buscar</h1>
-      <Suspense fallback={<div className="h-64 animate-pulse rounded-lg bg-zinc-100" />}>
-        <Buscador docs={docs} />
-      </Suspense>
-    </div>
+    <Suspense fallback={<div className="explorar-fondo fixed inset-0" />}>
+      <Explorador red={red} docs={docs} />
+    </Suspense>
   );
 }
