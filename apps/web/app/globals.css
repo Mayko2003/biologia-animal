@@ -24,21 +24,6 @@
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-@theme {
-  --animate-fade-up: fade-up 0.4s var(--ease-out) both;
-
-  @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);

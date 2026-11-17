@@ -4,6 +4,14 @@ Lo más reciente primero. Cada entrada: fecha, qué cambió y por qué, y qué d
 
 ## 2026-11-16
 
+- **Selectores del comparador**: el desplegable nativo de "Grupo B" se abría y se cerraba solo, eligiendo el grupo que
+  quedaba bajo el mouse. Se reemplazó por un combobox propio (`components/comparar/selector-taxon.tsx`) con búsqueda,
+  teclado y la lista siempre debajo del campo. Docs: estado y calidad.
+- **Comparador como presentación**: igual que la ficha, a pantalla completa con barra lateral. El centro dice "A vs B"
+  con las dos imágenes y el ancestro común; cada sistema abre una tabla comparativa en dos columnas y marca si
+  difieren. La principal compara el desarrollo embrionario en una tabla y el resumen, la morfología y las estructuras
+  especiales lado a lado. `Presentacion` pasó a ser genérica para servir a los dos. Se borraron las pestañas móviles del
+  comparador anterior. Docs: estado, arquitectura, calidad y diseño.
 - **Diapositivas cómodas para leer**: las diapositivas circulares desperdiciaban espacio y las tarjetas cortaban la
   lectura. Ahora el círculo se abre en una hoja rectangular con texto corrido (17 px, renglones de hasta 68
   caracteres), encabezado con el origen de los datos, mini anillo para saltar entre sistemas, deslizar en el celular y

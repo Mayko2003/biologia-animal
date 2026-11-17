@@ -55,8 +55,6 @@ Siguen la filosofía de Emil Kowalski (skills `animate` y `choreograph`): **solo
 
 | Ficha | El zoom entre vista general y diapositivas es una transición de `transform` (700 ms, `--ease-in-out`), y el resto del lienzo se atenúa. Cuando la cámara casi llegó, el círculo se abre en la hoja con un `clip-path` de círculo a rectángulo (420 ms, `--ease-out`, tras 500 ms) y después aparece el texto (220 ms). Con movimiento reducido no hay zoom y la hoja solo se funde. |
 
-El `fade-up` de las pestañas del comparador es anterior y usa la misma curva.
-
 ## Móvil
 
 El corte es `lg` (1024 px):
@@ -96,4 +94,13 @@ viñeta salvia y puntos tenues) y nodos como **células**.
 | Lectura | Texto de 17 px, interlineado holgado y renglones de hasta 68 caracteres. Cada dato es un párrafo (sin tarjetas), con la fuente como insignia al final; "Ausente" como marca al inicio; los datos externos llevan una línea ocre a la izquierda. El mismo estilo se usa en la barra lateral, a 15 px. |
 | Principal | Dos columnas cuando la hoja es ancha (container query `@3xl`): imagen y criterios embrionarios como lista con chips; resumen al lado. |
 | Íconos | `components/ui/iconos-sistemas.tsx`: capas de piel con pelos (tegumento), hueso (esqueleto), fibra fusiforme (muscular), tubo (digestivo), pulmones (respiratorio), corazón (circulatorio), riñón con uréter (excretor), neurona con conexiones (nervioso), ojo (sentidos), óvulo y espermatozoide (reproductor). |
+
+## Comparador
+
+| Elemento | Cómo se ve |
+|---|---|
+| Círculo central | Las dos imágenes partidas al medio con una línea blanca, "A vs B" en Bricolage y el ancestro común. |
+| Colores de A y B | A en helecho (`#3e684a`), B en óxido (`#b0543a`): puntos junto a cada nombre en columnas, barra lateral y rutas. |
+| Sistemas que difieren | Punto ocre en el círculo y texto "Difieren" en ocre. |
+| Tablas | Embriología como tabla real (criterio, A, B) con chips y la marca "Difiere"; el resto en dos columnas separadas por una línea fina (container query `@2xl`), apiladas en pantallas angostas. |
 

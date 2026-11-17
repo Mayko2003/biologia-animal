@@ -11,7 +11,7 @@ El contenido es estático (datos en TypeScript dentro del repo): no hay base de 
 |---|---|
 | `/` | Landing: qué es la app y para qué sirve, accesos a las herramientas, phyla por linaje y cómo leer las fuentes. |
 | `/grupo/[slug]` | **Ficha como presentación** (estilo Prezi), a pantalla completa con barra lateral (ver abajo). |
-| `/comparar?a=…&b=…` | Comparador anatómico de dos grupos: 12 filas (morfología, estructuras especiales y 10 sistemas), ancestro común y filtro "solo diferencias". En móvil, por pestañas. |
+| `/comparar?a=…&b=…` | **Comparador como presentación**, igual que la ficha (ver abajo). |
 | `/buscar` | **Explorador**: red interactiva a pantalla completa que une el antiguo mapa embrionario, el árbol taxonómico y el buscador (ver abajo). |
 
 En todas las fichas, el filtro **"Solo apuntes"** oculta los datos de fuentes externas. Cada dato muestra una
@@ -33,6 +33,19 @@ insignia con su fuente (archivo, líneas y cita literal del apunte, o el enlace 
 - **Grupos superiores** (reino a clado): no tienen sistemas; alrededor del círculo central aparecen sus phyla, que
   llevan a cada ficha.
 - El filtro "Solo apuntes" queda arriba a la derecha.
+
+### Comparador (`/comparar`)
+
+- **Vista general**: el círculo central dice "Porifera vs Cnidaria", con las dos imágenes partidas al medio y el
+  ancestro común. Alrededor, los 10 sistemas: cada uno indica "Difieren" (con un punto ocre), "Ambos con datos",
+  "Ausente en ambos" o "Sin datos en ambos".
+- **Diapositiva principal**: las dos imágenes, una tabla de desarrollo embrionario (criterio, A y B, con los criterios
+  que difieren marcados) y el resumen, la morfología externa y las estructuras especiales en dos columnas.
+- **Diapositiva de cada sistema**: tabla comparativa en dos columnas (A a la izquierda en verde, B a la derecha en
+  óxido); en el celular se apilan.
+- **Barra lateral**: selectores de A y B (buscables: se escribe parte del nombre y se elige con el mouse o con las flechas y Enter), intercambiar, ancestro común, ruta de cada grupo desde el ancestro, enlace a
+  cada ficha, cuántos sistemas difieren y "Mostrar solo los sistemas que difieren".
+- "Difieren" significa que cambia el estado (uno tiene datos y el otro no o está ausente), no el contenido.
 
 ### Explorador (`/buscar`)
 

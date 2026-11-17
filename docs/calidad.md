@@ -61,7 +61,7 @@ no hay caja de búsqueda. El canvas de la red no se inspecciona: los tests actú
 | `explorar` | Inicio → red; búsqueda con un resultado (selecciona y abre el panel) y con varios (lista y "Ubicar"); filtro de linaje y embrionario por URL; colorear por; "Ver en la red" desde una ficha y navegar subgrupos; `/mapa` y `/arbol` dan 404 |
 | `ficha` | Vista general con los 10 sistemas; diapositiva principal (resumen y embriología heredada); hash abre un sistema y el teclado navega; secciones laterales desde el hash; filtro "Solo apuntes"; insignia con cita; phyla enlazados en grupos superiores; ruta y accesos en la barra; 404 |
 | `busqueda` | Búsqueda desde el encabezado; resultado que abre la pestaña del sistema; búsqueda aproximada ("anelidos" encuentra Annelida) |
-| `comparador` | Ancestro común; intercambiar A y B; pestañas en móvil; abrir desde una ficha |
+| `comparador` | "A vs B" y sistemas que difieren en la vista general; tabla embrionaria en la principal; dos columnas por sistema; ancestro común; intercambiar; "solo los que difieren"; aviso sin selección; elegir un grupo escribiendo y con el mouse; abrir desde una ficha |
 
 Los textos que buscan los E2E (por ejemplo "Explorar la red de grupos" en la landing o "Abrir el menú" en el explorador) y los ids `seccion-*` /
 `sistema-*` son parte del contrato: si cambian, hay que actualizar los specs.

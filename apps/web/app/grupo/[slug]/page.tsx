@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
+import { CentroGrupo } from '@/components/ficha/centro';
 import { FiguraGrupo } from '@/components/ficha/figura-grupo';
 import { PantallaFicha } from '@/components/ficha/pantalla-ficha';
 import { Presentacion, type DiapositivaSistema } from '@/components/ficha/presentacion';
@@ -19,10 +20,21 @@ import { tieneApunte } from '@/lib/apuntes';
 import { esGrupoSuperior, phylaDe } from '@/lib/arbol';
 import { NIVEL_LABEL, SISTEMA_LABEL } from '@/lib/etiquetas';
 import { getAncestros, getArbol, getEmbriologiaEfectiva, getTaxon, todos } from '@/lib/taxa';
-import { SISTEMAS } from '@/lib/types';
+import { SISTEMAS, type Dato } from '@/lib/types';
 
 const BOTON =
   'landing-presion inline-flex min-h-[40px] items-center rounded-full border border-tinta/25 px-4 py-2 text-sm font-medium text-tinta hover:border-helecho hover:text-helecho';
+
+const cantidadDatos = (n: number) => `${n} ${n === 1 ? 'dato' : 'datos'}`;
+
+function resumenFuentes(datos: Dato[]) {
+  if (datos.length === 0) return 'Sin datos';
+  const apuntes = datos.filter((d) => tieneApunte(d.fuentes)).length;
+  const externos = datos.length - apuntes;
+  if (externos === 0) return `${cantidadDatos(datos.length)}, todos de los apuntes`;
+  if (apuntes === 0) return `${cantidadDatos(datos.length)}, todos de fuentes externas`;
+  return `${cantidadDatos(datos.length)}: ${apuntes} de los apuntes y ${externos} de fuentes externas`;
+}
 
 export function generateStaticParams() {
   return todos.map((t) => ({ slug: t.slug }));
@@ -62,9 +74,10 @@ async function Ficha({ params }: { params: PageProps<'/grupo/[slug]'>['params'] 
         return {
           sistema: s,
           titulo: SISTEMA_LABEL[s],
-          cantidad: datos.length,
-          apuntes: datos.filter((d) => tieneApunte(d.fuentes)).length,
-          externos: datos.filter((d) => !tieneApunte(d.fuentes)).length,
+          detalle:
+            datos.length === 0 ? 'Sin datos' : datos.every((d) => d.ausente) ? 'Ausente' : cantidadDatos(datos.length),
+          resumen: resumenFuentes(datos),
+          vacio: `No hay datos sobre «${SISTEMA_LABEL[s]}» de ${taxon.nombre} en los apuntes ni en las fuentes consultadas.`,
           estado: datos.length === 0 ? 'vacio' : datos.every((d) => d.ausente) ? 'ausente' : 'datos',
           contenido: <DatoList datos={datos} />,
         };
@@ -185,11 +198,25 @@ async function Ficha({ params }: { params: PageProps<'/grupo/[slug]'>['params'] 
   return (
     <PantallaFicha lateral={lateral} arriba={<FiltroFuentesToggle />}>
       <Presentacion
-        nombre={taxon.nombre}
-        nombreComun={taxon.nombreComun}
-        nivel={NIVEL_LABEL[taxon.nivel]}
-        imagen={imagen ? { src: imagen.src, alt: imagen.alt } : undefined}
-        principal={principal}
+        centro={{
+          etiqueta: `Abrir resumen y desarrollo embrionario de ${taxon.nombre}`,
+          contenido: (
+            <CentroGrupo
+              nivel={NIVEL_LABEL[taxon.nivel]}
+              nombre={taxon.nombre}
+              nombreComun={taxon.nombreComun}
+              imagen={imagen}
+              invitacion="Resumen y desarrollo embrionario"
+            />
+          ),
+        }}
+        principal={{
+          antetitulo: NIVEL_LABEL[taxon.nivel],
+          titulo: taxon.nombre,
+          subtitulo: taxon.nombreComun ?? 'Resumen y desarrollo embrionario',
+          contenido: principal,
+        }}
+        antetituloSistema={taxon.nombre}
         sistemas={sistemas}
         enlaces={enlaces}
       />

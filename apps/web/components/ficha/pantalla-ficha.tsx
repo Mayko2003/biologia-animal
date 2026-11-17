@@ -14,10 +14,14 @@ const PRESENTACION = /^(sistema-|seccion-resumen$|seccion-embriologia$|principal
 export function PantallaFicha({
   lateral,
   arriba,
+  actual,
+  abrirMenu = false,
   children,
 }: {
   lateral: React.ReactNode;
   arriba: React.ReactNode;
+  actual?: 'comparar';
+  abrirMenu?: boolean;
   children: React.ReactNode;
 }) {
   const escritorio = useEsEscritorio();
@@ -28,7 +32,7 @@ export function PantallaFicha({
     () => '',
   );
   const enLateral = hash !== '' && !PRESENTACION.test(hash);
-  const menuAbierto = abierto ?? (escritorio || enLateral);
+  const menuAbierto = abierto ?? (escritorio || enLateral || abrirMenu);
 
   useEffect(() => {
     if (!enLateral || !menuAbierto) return;
@@ -41,7 +45,7 @@ export function PantallaFicha({
 
   return (
     <div className="fixed inset-0 flex overflow-hidden bg-white">
-      <BarraLateral id="menu-ficha" abierto={menuAbierto} onAlternar={setAbierto}>
+      <BarraLateral id="menu-ficha" abierto={menuAbierto} onAlternar={setAbierto} actual={actual}>
         {lateral}
       </BarraLateral>
       <div className="relative min-w-0 flex-1">

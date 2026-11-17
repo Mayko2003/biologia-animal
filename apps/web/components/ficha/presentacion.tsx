@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { IconoSistema } from '@/components/ui/iconos-sistemas';
@@ -10,10 +9,11 @@ import type { SistemaId } from '@/lib/types';
 export type DiapositivaSistema = {
   sistema: SistemaId;
   titulo: string;
-  cantidad: number;
-  apuntes: number;
-  externos: number;
+  detalle: string;
+  resumen: string;
   estado: 'datos' | 'ausente' | 'vacio';
+  destacado?: boolean;
+  vacio?: string;
   contenido: React.ReactNode;
 };
 
@@ -73,16 +73,6 @@ function conector(a: Circulo, b: Circulo, i: number) {
   return [p0, c, p1].map((p, i) => `${['M', ' Q', ' '][i]}${redondear(p.x)},${redondear(p.y)}`).join('');
 }
 
-const ESTADO_TEXTO = { datos: '', ausente: 'Ausente', vacio: 'Sin datos' } as const;
-
-function resumenFuentes(s: DiapositivaSistema) {
-  if (s.cantidad === 0) return 'Sin datos';
-  const total = `${s.cantidad} ${s.cantidad === 1 ? 'dato' : 'datos'}`;
-  if (s.externos === 0) return `${total}, todos de los apuntes`;
-  if (s.apuntes === 0) return `${total}, todos de fuentes externas`;
-  return `${total}: ${s.apuntes} de los apuntes y ${s.externos} de fuentes externas`;
-}
-
 function MiniAnillo({
   sistemas,
   actual,
@@ -136,19 +126,19 @@ function MiniAnillo({
 }
 
 export function Presentacion({
-  nombre,
-  nombreComun,
-  nivel,
-  imagen,
+  centro: centroContenido,
   principal,
+  antetituloSistema,
   sistemas,
   enlaces,
+  anchoSistemas = 800,
+  contenidoAncho = false,
 }: {
-  nombre: string;
-  nombreComun?: string;
-  nivel: string;
-  imagen?: { src: string; alt: string };
-  principal: React.ReactNode;
+  anchoSistemas?: number;
+  contenidoAncho?: boolean;
+  centro: { etiqueta: string; contenido: React.ReactNode };
+  principal: { antetitulo: string; titulo: string; subtitulo: string; contenido: React.ReactNode };
+  antetituloSistema: string;
   sistemas: DiapositivaSistema[];
   enlaces: EnlaceGrupo[];
 }) {
@@ -208,7 +198,7 @@ export function Presentacion({
 
   const ancho = caja.x1 - caja.x0;
   const alto = caja.y1 - caja.y0;
-  const anchoMax = actual === 'principal' ? 1080 : 800;
+  const anchoMax = actual === 'principal' ? 1080 : anchoSistemas;
   const pagina = escritorio
     ? { w: Math.min(anchoMax, tam.w - 48), h: tam.h - 68 - 84, x: 0, y: 68 }
     : { w: tam.w - 16, h: tam.h - 64 - 80, x: 8, y: 64 };
@@ -250,29 +240,11 @@ export function Presentacion({
           type="button"
           onClick={() => ir('principal')}
           tabIndex={actual ? -1 : 0}
-          aria-label={`Abrir resumen y desarrollo embrionario de ${nombre}`}
+          aria-label={centroContenido.etiqueta}
           className="group absolute overflow-hidden rounded-full bg-tinta text-left shadow-[0_20px_60px_rgba(22,42,56,0.25)] ring-8 ring-white/80"
           style={{ left: centro.x - centro.r, top: centro.y - centro.r, width: centro.r * 2, height: centro.r * 2 }}
         >
-          {imagen && (
-            <Image
-              src={imagen.src}
-              alt=""
-              fill
-              sizes="480px"
-              priority
-              className="object-cover opacity-90 transition-opacity duration-300 group-hover:opacity-100"
-            />
-          )}
-          <span className="absolute inset-0 bg-gradient-to-t from-tinta/90 via-tinta/30 to-transparent" />
-          <span className="absolute inset-x-0 bottom-[16%] block px-[14%] text-center text-white">
-            <span className="block text-[14px] font-medium text-white/70">{nivel}</span>
-            <span className="block font-display text-[44px] font-semibold leading-none">{nombre}</span>
-            {nombreComun && <span className="mt-1 block text-lg text-white/80">{nombreComun}</span>}
-            <span className="mt-3 inline-block rounded-full bg-white/15 px-3 py-1 text-[13px] text-white/90">
-              Resumen y desarrollo embrionario
-            </span>
-          </span>
+          {centroContenido.contenido}
         </button>
 
         {sistemas.map((s, i) => {
@@ -284,7 +256,7 @@ export function Presentacion({
               type="button"
               onClick={() => ir(s.sistema)}
               tabIndex={actual ? -1 : 0}
-              aria-label={`${s.titulo}: ${s.estado === 'datos' ? `${s.cantidad} ${s.cantidad === 1 ? 'dato' : 'datos'}` : ESTADO_TEXTO[s.estado].toLowerCase()}`}
+              aria-label={`${s.titulo}: ${s.detalle}`}
               className={`absolute flex flex-col items-center justify-center gap-1.5 rounded-full border-2 bg-white px-3 text-center transition-[border-color,box-shadow] duration-200 hover:shadow-[0_10px_30px_rgba(22,42,56,0.18)] ${
                 s.estado === 'datos'
                   ? 'border-helecho/60 text-tinta hover:border-helecho'
@@ -296,9 +268,15 @@ export function Presentacion({
             >
               <IconoSistema id={s.sistema} className={`size-[38%] ${vacio ? '' : 'text-helecho'}`} />
               <span className="font-display text-[15px] font-semibold leading-tight">{s.titulo}</span>
-              <span className="text-[12px] text-zinc-500">
-                {s.estado === 'datos' ? `${s.cantidad} ${s.cantidad === 1 ? 'dato' : 'datos'}` : ESTADO_TEXTO[s.estado]}
+              <span className={`text-[12px] ${s.destacado ? 'font-medium text-ocre' : 'text-zinc-500'}`}>
+                {s.detalle}
               </span>
+              {s.destacado && (
+                <span
+                  aria-hidden="true"
+                  className="absolute right-[13%] top-[13%] size-3.5 rounded-full bg-ocre ring-[3px] ring-white"
+                />
+              )}
             </button>
           );
         })}
@@ -361,7 +339,7 @@ export function Presentacion({
               </span>
             )}
             <div className="min-w-0">
-              <p className="text-sm text-zinc-500">{sistemaActual ? nombre : nivel}</p>
+              <p className="text-sm text-zinc-500">{sistemaActual ? antetituloSistema : principal.antetitulo}</p>
               <h2
                 id="diapositiva-titulo"
                 ref={titulo}
@@ -369,10 +347,10 @@ export function Presentacion({
                 style={{ outline: 'none' }}
                 className="font-display text-2xl font-semibold leading-tight text-tinta sm:text-[28px]"
               >
-                {sistemaActual ? sistemaActual.titulo : nombre}
+                {sistemaActual ? sistemaActual.titulo : principal.titulo}
               </h2>
               <p className="mt-0.5 text-sm text-zinc-500">
-                {sistemaActual ? resumenFuentes(sistemaActual) : (nombreComun ?? 'Resumen y desarrollo embrionario')}
+                {sistemaActual ? sistemaActual.resumen : principal.subtitulo}
               </p>
             </div>
             {sistemas.length > 0 && <MiniAnillo sistemas={sistemas} actual={actual} onIr={ir} />}
@@ -382,7 +360,7 @@ export function Presentacion({
               <div className="mx-auto flex h-full max-w-[52ch] flex-col items-center justify-center gap-4 text-center">
                 <IconoSistema id={sistemaActual.sistema} className="size-12 text-zinc-300" />
                 <p className="text-[17px] leading-relaxed text-zinc-600">
-                  No hay datos sobre «{sistemaActual.titulo}» de {nombre} en los apuntes ni en las fuentes consultadas.
+                  {sistemaActual.vacio ?? 'No hay datos en los apuntes ni en las fuentes consultadas.'}
                 </p>
                 <button
                   type="button"
@@ -393,8 +371,8 @@ export function Presentacion({
                 </button>
               </div>
             ) : (
-              <div className={`text-[17px] ${sistemaActual ? 'mx-auto max-w-[68ch]' : ''}`}>
-                {sistemaActual ? sistemaActual.contenido : principal}
+              <div className={`text-[17px] ${sistemaActual && !contenidoAncho ? 'mx-auto max-w-[68ch]' : ''}`}>
+                {sistemaActual ? sistemaActual.contenido : principal.contenido}
               </div>
             )}
           </div>

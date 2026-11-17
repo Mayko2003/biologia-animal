@@ -6,7 +6,7 @@ Aplicación de estudio de biología animal basada en los apuntes de la cátedra,
 
 - **Explorador** (`/buscar`): red interactiva a pantalla completa con todos los grupos y sus rasgos embrionarios. Búsqueda (un resultado: vuela al grupo; varios: oculta el resto), filtros por linaje, nivel y criterio embrionario que agrupan los nodos, y panel de cada grupo. Reemplaza al mapa conceptual, al árbol y al buscador anteriores.
 - **Fichas** (`/grupo/[slug]`): presentación estilo Prezi a pantalla completa. Diapositiva principal (imagen, resumen y desarrollo embrionario con herencia del phylum) rodeada por una diapositiva por sistema; barra lateral con morfología, estructuras especiales, reproducción, bioecología, ejemplos y notas.
-- **Comparador** (`/comparar?a=X&b=Y`): dos grupos lado a lado, con ancestro común.
+- **Comparador** (`/comparar?a=X&b=Y`): presentación como la ficha. Centro "A vs B" con el ancestro común, tabla de desarrollo embrionario y una tabla comparativa en dos columnas por sistema.
 - **Filtro de fuentes**: "Todas las fuentes" / "Solo apuntes", con insignias por dato (`A` apunte, `W` web).
 
 ## Requisitos
@@ -36,7 +36,7 @@ Monorepo con pnpm workspaces. Cada app vive en `apps/` y el código compartido i
 ```
 apps/
   web/                  # app Next.js (@biologia-animal/web)
-    app/                # (sitio)/: inicio, comparar; buscar/: explorador; grupo/[slug]/: ficha; not-found
+    app/                # (sitio)/: inicio; buscar/: explorador; grupo/[slug]/: ficha; comparar/: comparador; not-found
     components/         # layout/ taxon/ fuentes/ navegacion/ explorar/ busqueda/ comparar/ inicio/
     data/
       taxa/<slug>.ts    # un archivo por grupo taxonómico

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { Comparador } from '@/components/comparar/comparador';
+import { IMAGENES_GRUPOS } from '@/data/imagenes-grupos';
 import type { GrupoOpciones } from '@/components/comparar/selector-taxon';
 import { esGrupoSuperior } from '@/lib/arbol';
 import { getHijos, todos } from '@/lib/taxa';
@@ -38,16 +39,8 @@ function construirOpciones(): GrupoOpciones[] {
 
 export default function Page() {
   return (
-    <div className="space-y-6">
-      <header className="space-y-2">
-        <h1 className="text-2xl font-bold">Comparar grupos</h1>
-        <p className="text-sm text-zinc-600">
-          Elegí dos grupos o clases para ver un cuadro comparativo.
-        </p>
-      </header>
-      <Suspense fallback={<div className="h-96 animate-pulse rounded-lg bg-zinc-100" />}>
-        <Comparador taxa={todos} opciones={construirOpciones()} />
-      </Suspense>
-    </div>
+    <Suspense fallback={<div className="explorar-fondo fixed inset-0" />}>
+      <Comparador taxa={todos} opciones={construirOpciones()} imagenes={IMAGENES_GRUPOS} />
+    </Suspense>
   );
 }

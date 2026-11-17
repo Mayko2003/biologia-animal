@@ -31,7 +31,8 @@ Qdrant).
 
 ```
 app/
-  (sitio)/      # inicio y comparar: con encabezado, footer y barra móvil (layout del grupo)
+  (sitio)/      # inicio: con encabezado, footer y barra móvil (layout del grupo)
+  comparar/     # comparador a pantalla completa (presentación), sin el marco del sitio
   buscar/       # explorador a pantalla completa, sin el marco del sitio
   grupo/[slug]/ # ficha a pantalla completa (presentación), sin el marco del sitio
   not-found.tsx # 404 (dibuja el marco del sitio por su cuenta)
@@ -102,6 +103,13 @@ construye en el servidor y la pasa por props.
 | `components/ficha/pantalla-ficha.tsx` | Pantalla completa con `BarraLateral` (compartida con el explorador, en `components/layout/barra-lateral.tsx`). Si el hash apunta a una sección lateral, abre la barra y despliega esa sección. |
 | `components/ficha/presentacion.tsx` | Lienzo Prezi hecho con HTML y CSS (sin canvas): un "mundo" con los círculos posicionados y una cámara que es un `transform` (traslación y escala). La diapositiva abierta sale del hash; cambiar de diapositiva usa `history.replaceState` y emite `hashchange`. El contenido se muestra en una capa encima del círculo agrandado, a tamaño normal, para que el texto sea nítido y se pueda desplazar. En pantallas verticales los círculos se ordenan en dos columnas. |
 | `components/ficha/seccion-lateral.tsx` | Secciones plegables con `<details>`. |
+| `components/ficha/centro.tsx` | Contenido del círculo central: `CentroGrupo` (ficha) y `CentroComparacion` (comparador). |
+
+`Presentacion` es genérica: recibe el contenido del círculo central, los textos y el contenido de la diapositiva principal, y por cada sistema su detalle, resumen, estado, si está destacado y el texto para cuando no hay datos. La usan la ficha y el comparador.
+
+### Comparador
+
+`components/comparar/comparador.tsx` es un Client Component (lee `a` y `b` con `useSearchParams`, como pide la regla de no leer `searchParams` en las páginas). Recibe todos los taxones e imágenes por props y arma la comparación con `lib/comparacion.ts`; la tabla embrionaria usa `getEmbriologiaEfectiva` de `crearConsultas`. Cambiar A o B usa `useActualizarParametros` (sin pedir la página al servidor).
 
 Las coordenadas de los círculos se redondean a dos decimales: si no, `Math.cos` da distinto en el servidor y en el
 navegador y la hidratación falla.
