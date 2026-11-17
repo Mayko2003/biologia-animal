@@ -51,7 +51,7 @@ export function PantallaFicha({
       <div className="relative min-w-0 flex-1">
         {children}
         <div className="pointer-events-none absolute right-3 top-3 z-20 flex justify-end">
-          <div className="pointer-events-auto rounded-full bg-white/90 p-1 shadow-sm ring-1 ring-zinc-200 backdrop-blur">
+          <div className="pointer-events-auto rounded-full bg-white/90 p-0.5 shadow-sm ring-1 ring-zinc-200 backdrop-blur">
             {arriba}
           </div>
         </div>

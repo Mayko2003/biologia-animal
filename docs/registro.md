@@ -4,6 +4,8 @@ Lo más reciente primero. Cada entrada: fecha, qué cambió y por qué, y qué d
 
 ## 2026-11-16
 
+- **Deploy en Vercel**: el build fallaba con `NEXT_NO_VERSION` desde el paso a monorepo porque el proyecto construía desde la raíz. Se configuró el Root Directory en `apps/web`. Docs: arquitectura.
+- **Filtro de fuentes más chico**: "Todas las fuentes / Solo apuntes" pasó a píldoras compactas (texto de 12 px, 30 px de alto) con el activo en tinta. Se borró `components/ui/clases.ts`, que quedó sin uso.
 - **Selectores del comparador**: el desplegable nativo de "Grupo B" se abría y se cerraba solo, eligiendo el grupo que
   quedaba bajo el mouse. Se reemplazó por un combobox propio (`components/comparar/selector-taxon.tsx`) con búsqueda,
   teclado y la lista siempre debajo del campo. Docs: estado y calidad.

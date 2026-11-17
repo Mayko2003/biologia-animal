@@ -21,6 +21,7 @@ docs/               # esta documentación
 | App nueva (backend, agente IA) | Carpeta `apps/<nombre>/` con su `package.json` (nombre `@biologia-animal/<nombre>`). Si implementa `lint`, `typecheck` o `test`, la verificación de la raíz la incluye sola. |
 | Código compartido | `packages/<nombre>/`, consumido con `"@biologia-animal/<nombre>": "workspace:*"`. Candidato natural: los tipos de `apps/web/lib/types.ts`. |
 | Raíz de Turbopack | Next la detecta por el `pnpm-lock.yaml` de la raíz; no hace falta `turbopack.root`. |
+| Deploy (Vercel) | Proyecto `biologia-animal` con **Root Directory `apps/web`**: Vercel busca `next` en el `package.json` de esa carpeta (en la raíz no está y el build falla con `NEXT_NO_VERSION`). Instala con pnpm desde la raíz del workspace. Producción: https://biologia-animal.vercel.app |
 | `AGENTS.md` | El de la raíz tiene las reglas del proyecto. `apps/web/AGENTS.md` lo escribe `next dev` (bloques administrados por Next). |
 
 ## La app web (`apps/web`)
